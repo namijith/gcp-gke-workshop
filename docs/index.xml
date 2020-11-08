@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JFrog DevOps Google Cloud Workshop on JFrog DevOps Modernization Workshop</title>
+    <link>/</link>
+    <description>Recent content in JFrog DevOps Google Cloud Workshop on JFrog DevOps Modernization Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google Cloud Account</title>
+      <link>/1_prerequisites/21_google_cloud_account.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1_prerequisites/21_google_cloud_account.html</guid>
+      <description>As a registered user for this workshop, you should have received an email with a account detail. When you open the link in email, it should look as follows.
+Note: From this email, keep your project value handy, we will use it further in the lab and refer to it as PROJECT_ID</description>
+    </item>
+    
+    <item>
+      <title>JFrog Free Tier (No CC Required)</title>
+      <link>/1_prerequisites/22_jfrog_free_tier.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1_prerequisites/22_jfrog_free_tier.html</guid>
+      <description>In your welcome email, you also received instructions to sign up for JFrog Platform Cloud Free Tier (No Credit Card Required). If you have not signed up yet, use this link JFrog Platform Cloud Free Tier (No Credit Card Required) to get your own JFrog Platform instance with Artifactory and Xray.
+When signing up for the JFrog Platform Cloud Free Tier, ensure that you select Google Cloud and the US Oregon region.</description>
+    </item>
+    
+    <item>
+      <title>Continuous Integration and Delivery</title>
+      <link>/2_devops_cloud/21_continuous_integration_and_delivery.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/2_devops_cloud/21_continuous_integration_and_delivery.html</guid>
+      <description>Continuous integration and delivery (CI/CD) is the process for which your software components are built from code, integrated, tested, released, deployed and ultimately delivered to end-users. CI/CD pipelines are the software assembly line that orchestrates the building of your software. This CI/CD pipeline line requires infrastructure. Cloud computing has allowed this infrastructure to become dynamic and ephemeral. On cloud infrastructure, your CI/CD pipelines scale up and down to meet your software delivery demands.</description>
+    </item>
+    
+    <item>
+      <title>Binary Repository Management</title>
+      <link>/2_devops_cloud/22_binary_repository_management.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/2_devops_cloud/22_binary_repository_management.html</guid>
+      <description>A Binary Repository Manager is a software hub that simplifies the development process for different teams across an organization by helping them to collaborate on building coherent and compatible software components. It does this by centralizing the management of all the binary artifacts generated and used by the organization, thereby overcoming the incredible complexity arising from diverse binary artifact types, their position in the overall workflow and the set of dependencies between them.</description>
+    </item>
+    
+    <item>
+      <title>DevSecOps</title>
+      <link>/2_devops_cloud/23_dev_sec_ops.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/2_devops_cloud/23_dev_sec_ops.html</guid>
+      <description>Any security issue identified by a security scanning may be reviewed by a small security team that may lack the technical knowledge. This challenge can be reduced by shifting left to the developer and operations teams, making them also responsible for security and compliance. This moves security earlier in the software delivery process. Source code, dependency and artifact security scanning are some examples of moving security into the development process. Implementing the identification of security issues earlier in the CI/CD pipeline, as well as automating security and compliance policies in the Software Development Lifecycle (SDLC), rather than using manual processes, is crucial.</description>
+    </item>
+    
+    <item>
+      <title>JFrog Platform for DevOps in the Cloud</title>
+      <link>/2_devops_cloud/24_jfrog_platform_overview.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/2_devops_cloud/24_jfrog_platform_overview.html</guid>
+      <description>The JFrog Platform is designed to meet the growing needs of companies to develop and distribute software in the cloud. It provides DevOps teams with the tools needed to create, manage, secure and deploy software with ease. These tools cover everything from continuous integration and delivery (CI/CD), binary repository management, artifact maturity, security and vulnerability protection (DevSecOps), release management, analytics and distribution.
+JFrog Artifactory is an Artifact Repository Manager that fully supports software packages created by any language or technology.</description>
+    </item>
+    
+    <item>
+      <title>Configure AWS Secrets Manager for ECS</title>
+      <link>/7_deploy_gke/71_configure_ecs_secrets.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/7_deploy_gke/71_configure_ecs_secrets.html</guid>
+      <description>In the previous sections, we set up the JFrog CLI to authenticate and publish Docker images to Artifactory. In the next sections, we will add the same Artifactory credentials to AWS Secrets Manager. We will then use an IAM Role to allow Amazon ECS to authenticate with Artifactory, pull the image and deploy it.
+Private registry authentication for ECS tasks using AWS Secrets Manager enables you to store your credentials securely and then reference them in your container definition.</description>
+    </item>
+    
+    <item>
+      <title>Configure an IAM Role for ECS</title>
+      <link>/7_deploy_gke/72_configure_ecs_role.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/7_deploy_gke/72_configure_ecs_role.html</guid>
+      <description>We now have our Artifactory credentials in the AWS Secrets Manager. Next, we must create an IAM role that will allow ECS to access our Artifactory secrets and deploy our image.
+Before you can launch ECS container instances and register them into a cluster, you must create an IAM role for those container instances to use when they are launched. The Amazon ECS container agent makes calls to the Amazon ECS API on your behalf using this role.</description>
+    </item>
+    
+    <item>
+      <title>Deploy Your Image with ECS</title>
+      <link>/7_deploy_gke/73_deploy_your_image.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/7_deploy_gke/73_deploy_your_image.html</guid>
+      <description>The Amazon ECS first-run wizard guides you through the process of getting started with Amazon ECS using the Fargate launch type. The wizard gives you the option of creating a cluster and launching your application. It is a great way to get started with deploying your application with Amazon ECS. We will use the wizard to deploy our NPM application Docker image from Artifactory.
+ Go to the Amazon ECS console first-run wizard.</description>
+    </item>
+    
+    <item>
+      <title>View Your Application</title>
+      <link>/7_deploy_gke/74_view_your_application.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/7_deploy_gke/74_view_your_application.html</guid>
+      <description>In the previous section, you deployed your image with Amazon ECS. Now let&amp;rsquo;s check it out!
+ When complete, click on your deployed service, npm-app-service.  Click on the Tasks tab.  Ensure the Last status shows RUNNING before going to the next step. Click on the deploy-npm-app task. On the Details page of the task, locate the Public IP.  In your browser, go to https://&amp;lt;Public IP&amp;gt; to view your deployed web application.</description>
+    </item>
+    
+    <item>
+      <title>Cleanup</title>
+      <link>/cleanup.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/cleanup.html</guid>
+      <description>Your JFrog Platform Instance - The JFrog Platform instance that you used in this workshop will automatically be destroyed after the workshop. There isn&amp;rsquo;t anything you need to do. If you would like keep it, you can upgrade to one of the premium plans. Do this by clicking on the Upgrade button.   Amazon Resources
+ Amazon ECS Resources - To cleanup your Amazon ECS resources, go to your npm-app-cluster in your Amazon ECS console and click Delete Cluster.</description>
+    </item>
+    
+    <item>
+      <title>Resources</title>
+      <link>/resources.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources.html</guid>
+      <description>JFrog Platform Documentation - The full documentation of the JFrog Platform, the universal, hybrid, end-to-end DevOps automation solution. It is designed to take you through all the JFrog Products. Including user, administration and developer guides, installation and upgrade procedures, system architecture and configuration, and working with the JFrog application. JFrog Academy - Learn more about the JFrog Platform at your own pace with JFrog Academy free courses taught by our experts.</description>
+    </item>
+    
+  </channel>
+</rss>
