@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Prerequisites on JFrog DevOps Modernization Workshop</title>
-    <link>/1_prerequisites.html</link>
+    <link>https://jfrogtraining.github.io/clouddays/1_prerequisites.html</link>
     <description>Recent content in Prerequisites on JFrog DevOps Modernization Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language><atom:link href="/1_prerequisites/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-US</language><atom:link href="https://jfrogtraining.github.io/clouddays/1_prerequisites/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Google Cloud Account</title>
-      <link>/1_prerequisites/21_google_cloud_account.html</link>
+      <link>https://jfrogtraining.github.io/clouddays/1_prerequisites/11_google_cloud_account.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/1_prerequisites/21_google_cloud_account.html</guid>
+      <guid>https://jfrogtraining.github.io/clouddays/1_prerequisites/11_google_cloud_account.html</guid>
       <description>As a registered user for this workshop, you should have received an email with a account detail. When you open the link in email, it should look as follows.
 Note: From this email, keep your project value handy, we will use it further in the lab and refer to it as PROJECT_ID</description>
     </item>
     
     <item>
       <title>JFrog Free Tier (No CC Required)</title>
-      <link>/1_prerequisites/22_jfrog_free_tier.html</link>
+      <link>https://jfrogtraining.github.io/clouddays/1_prerequisites/12_jfrog_free_tier.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/1_prerequisites/22_jfrog_free_tier.html</guid>
+      <guid>https://jfrogtraining.github.io/clouddays/1_prerequisites/12_jfrog_free_tier.html</guid>
       <description>In your welcome email, you also received instructions to sign up for JFrog Platform Cloud Free Tier (No Credit Card Required). If you have not signed up yet, use this link JFrog Platform Cloud Free Tier (No Credit Card Required) to get your own JFrog Platform instance with Artifactory and Xray.
 When signing up for the JFrog Platform Cloud Free Tier, ensure that you select Google Cloud and the US Oregon region.</description>
     </item>
