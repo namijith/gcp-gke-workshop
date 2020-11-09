@@ -1,4 +1,5 @@
-baseURL = "https://jfrogtraining.github.io/clouddays/"
+#baseURL = "https://jfrogtraining.github.io/clouddays/"
+baseURL = "/"
 languageCode = "en-US"
 defaultContentLanguage = "en"
 

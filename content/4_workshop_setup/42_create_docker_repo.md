@@ -1,8 +1,8 @@
 ---
-title: "Start GKE Cluster"
+title: "Create Docker Repository"
 chapter: false
-weight: 43
-pre: "<b>4.3 </b>"
+weight: 42
+pre: "<b>4.2 </b>"
 ---
 
 Next, we will create a docker repo to store our docker images

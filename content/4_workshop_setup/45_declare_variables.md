@@ -5,14 +5,22 @@ weight: 45
 pre: "<b>4.5 </b>"
 ---
 
-Let's export following variables in google cloud shell. These will be used throughout this exercise.
+We need to declare following variables
+```
+PROJECT_ID
+_ARTIFACTORY_SERVER_NAME
+_ARTIFACTORY_USER
+_ARTIFACTORY_PASSWORD
+API_KEY
+```
 
-``
-gcloud config set project $PROJECT_ID #You received project id in GCP signup email
-export PROJECT_ID=$(gcloud info --format='value(config.project)')
-export _ARTIFACTORY_SERVER_NAME=`<Your JFrog Free Tier servername e.g. johndoe.jfrog.io>`
-export _ARTIFACTORY_USER=`<Your JFrog Free Tier Username>`
-export _ARTIFACTORY_PASSWORD=`<Your JFrog Free Tier Password>`
-export API_KEY=<your API Key>
-``
+To make it easy, we have a script for you. In your google cloud shell, first `cd` into newly cloned repo folder
+```
+cd clouddays
+```
+
+Then run following command
+```
+. ./scripts/set_env.sh
+```
 

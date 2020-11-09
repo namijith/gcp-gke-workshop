@@ -12,9 +12,10 @@ substitutions:
   _JFROG_CLI_VERSION: 1.40.1
 
 secrets:
-  - kmsKeyName: projects/jfrog-partnership-team/locations/global/keyRings/jfrog-key-ring/cryptoKeys/jfrog-key
+  - kmsKeyName: projects/clgcporg1-001/locations/global/keyRings/jfrog-key-ring/cryptoKeys/jfrog-key
     secretEnv:
-      API_KEY: "<api-key>"
+      API_KEY: "CiQAvsXZdiE8v1lNIpgHhXQpftdPsv7Cc6tynRb3m67zsLg3DYUScwDS9Ypnfht+sDQf9vaUTXnbifqegM5YOnmPoB8BPfvgNKd2juO4tVGaeUx+aMYAtDmVUIFehvLgcQJ6yEq5megw14AB2iT05+6ip4yfoI99sdwlt+3eOxWx2/XtBOYTKswnU4Eioox2eeBcykquuA9mek8="
+
 
 steps:
 - name: 'gcr.io/cloud-builders/docker'

@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Build and Publish the App on JFrog DevOps Modernization Workshop</title>
-    <link>https://jfrogtraining.github.io/clouddays/5_build_publish_app.html</link>
+    <link>/5_build_publish_app.html</link>
     <description>Recent content in Build and Publish the App on JFrog DevOps Modernization Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language><atom:link href="https://jfrogtraining.github.io/clouddays/5_build_publish_app/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-US</language><atom:link href="/5_build_publish_app/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Build and Push JFrog CLI Docker Image</title>
-      <link>https://jfrogtraining.github.io/clouddays/5_build_publish_app/51_build_and_push_jfrog_cli_docker_image-copy.html</link>
+      <link>/5_build_publish_app/51_build_and_push_jfrog_cli_docker_image-copy.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/5_build_publish_app/51_build_and_push_jfrog_cli_docker_image-copy.html</guid>
+      <guid>/5_build_publish_app/51_build_and_push_jfrog_cli_docker_image-copy.html</guid>
       <description>First, we will use an npm docker image and add JFrog CLI to it. This will enable us to use JFrog CLI to build npm packages.
   Return to your Cloud Shell terminal and go to folder 1-create-jfrog-cli-docker
   Let&amp;rsquo;s use gcloud build to create JFrog CLI docker image. This build command uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps
@@ -20,13 +20,22 @@
     
     <item>
       <title>Build and Push JFrog CLI Docker Image</title>
-      <link>https://jfrogtraining.github.io/clouddays/5_build_publish_app/52_build_and_push_npm_docker_image.html</link>
+      <link>/5_build_publish_app/52_build_and_push_npm_docker_image-copy.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/5_build_publish_app/52_build_and_push_npm_docker_image.html</guid>
+      <guid>/5_build_publish_app/52_build_and_push_npm_docker_image-copy.html</guid>
       <description>Now, we can use freshly created JFrog CLI image to build npm project, package it in a Docker image and push it to artifactory&amp;rsquo;s Docker repository.
   Return to your Cloud Shell terminal and cd to folder 2-create-npm-build
   Let&amp;rsquo;s use gcloud build again to build npm project and create docker image. This build command uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps</description>
+    </item>
+    
+    <item>
+      <title>Scan With Xray</title>
+      <link>/5_build_publish_app/55_scan_with_xray.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/5_build_publish_app/55_scan_with_xray.html</guid>
+      <description></description>
     </item>
     
   </channel>

@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>JFrog DevOps Google Cloud Workshop :: JFrog DevOps Modernization Workshop</title>
+    <title>Get Artifactory API Key :: JFrog DevOps Modernization Workshop</title>
 
     
     <link href="/css/nucleus.css?1604900097" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/4_workshop_setup/41_get_artifactory_api_key.html">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -303,7 +303,7 @@
   
     
     <li data-nav-id="/4_workshop_setup.html" title="Setup Workshop" class="dd-item 
-        
+        parent
         
         
         ">
@@ -331,7 +331,7 @@
  
   
     
-      <li data-nav-id="/4_workshop_setup/41_get_artifactory_api_key.html" title="Get Artifactory API Key" class="dd-item ">
+      <li data-nav-id="/4_workshop_setup/41_get_artifactory_api_key.html" title="Get Artifactory API Key" class="dd-item active">
         <a href="/4_workshop_setup/41_get_artifactory_api_key.html">
         <b>4.1 </b>Get Artifactory API Key
         <i class="fas fa-check read-icon"></i>
@@ -661,35 +661,95 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>JFrog DevOps Google Cloud Workshop</a> > <a href='/4_workshop_setup.html'>Setup Workshop</a> > Get Artifactory API Key
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Get Artifactory API Key
+            </h1>
           
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<p><img src="/images/jfrog-logo.png" alt="JFrog Logo"></p>
-<h1 id="google-cloud-workshop">Google Cloud Workshop</h1>
-<p>In this workshop you will learnt following tools to build and deploy an NPM project.</p>
-<ul>
-<li>JFrog Platform Free Tier</li>
-<li>JFrog CLI</li>
-<li>Google Kubernetes Engine (GKE)</li>
-<li>GCP Cloud Build</li>
-</ul>
+<p>Now let&rsquo;s get an API key for our Free Tier JFrog Platform instance. This will be used by Google&rsquo;s cloud build and JFrog CLI to access artifactory instance.</p>
+<ol>
+<li>
+<p>Go to your JFrog Platform instance at <em>https://[server name].jfrog.io</em>. Refer to your <em>JFrog Free Subscription Activation</em> email if needed. Substitute your <em>server name</em>.
+<img src="/images/activation-email.png" alt="Activation Email"></p>
+</li>
+<li>
+<p>Login to your JFrog Platform instance with your credentials.
+<img src="/images/login.png" alt="Login"></p>
+</li>
+<li>
+<p>Once logged into your JFrog Platform instance, you will be presented with the landing page.</p>
+</li>
+</ol>
+<p>4 . Click on your name and then <em>Edit Profile</em> as shown below</p>
+<p><img src="/images/gcp/GetJFrogApiKey1.png" alt="Edit Profile"></p>
+<p>5 . In <code>Current Password</code> box, enter your Free Tier password and press <code>Unlock</code></p>
+<p><img src="/images/gcp/GetJFrogApiKey2.png" alt="Edit Profile"></p>
+<p>6 . Under <code>Authentication Settings</code>, click on the copy button to copy the API key. Keep this key handy as we will need it in next step.</p>
+<p><img src="/images/gcp/GetJFrogApiKey3.png" alt="Edit Profile"></p>
+
+
+<footer class="footline">
 	
-  
-        
-            </div> 
+</footer>
+
         
         </div>
         
@@ -881,6 +941,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -896,6 +957,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1080,8 +1144,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/4_workshop_setup.html" title="Setup Workshop"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/1_prerequisites.html" title="Prerequisites" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/4_workshop_setup/42_create_docker_repo.html" title="Create Docker Repository" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

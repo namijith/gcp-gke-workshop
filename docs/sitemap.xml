@@ -3,103 +3,111 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/1_prerequisites.html</loc>
+    <loc>/1_prerequisites.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/2_devops_cloud.html</loc>
+    <loc>/2_devops_cloud.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/3_workshop.html</loc>
+    <loc>/3_workshop.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup.html</loc>
+    <loc>/4_workshop_setup.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/5_build_publish_app.html</loc>
+    <loc>/5_build_publish_app.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/1_prerequisites/11_google_cloud_account.html</loc>
+    <loc>/1_prerequisites/11_google_cloud_account.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/1_prerequisites/12_jfrog_free_tier.html</loc>
+    <loc>/1_prerequisites/12_jfrog_free_tier.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/2_devops_cloud/21_continuous_integration_and_delivery.html</loc>
+    <loc>/2_devops_cloud/21_continuous_integration_and_delivery.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/2_devops_cloud/22_binary_repository_management.html</loc>
+    <loc>/2_devops_cloud/22_binary_repository_management.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/2_devops_cloud/23_dev_sec_ops.html</loc>
+    <loc>/2_devops_cloud/23_dev_sec_ops.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/2_devops_cloud/24_jfrog_platform_overview.html</loc>
+    <loc>/2_devops_cloud/24_jfrog_platform_overview.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_start_gcp_cloud_shell.html</loc>
+    <loc>/4_workshop_setup/41_get_artifactory_api_key.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_start_gke_cluster.html</loc>
+    <loc>/4_workshop_setup/42_create_docker_repo.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/43_create_docker_repo.html</loc>
+    <loc>/4_workshop_setup/43_start_gcp_cloud_shell.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/44_get_artifactory_api_key.html</loc>
+    <loc>/4_workshop_setup/44_clone_git_repo.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/45_declare_variables.html</loc>
+    <loc>/4_workshop_setup/45_declare_variables.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/5_build_publish_app/51_build_and_push_jfrog_cli_docker_image-copy.html</loc>
+    <loc>/4_workshop_setup/46_start_gke_cluster.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/5_build_publish_app/52_build_and_push_npm_docker_image.html</loc>
+    <loc>/5_build_publish_app/51_build_and_push_jfrog_cli_docker_image-copy.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/6_deploy_gke.html</loc>
+    <loc>/5_build_publish_app/52_build_and_push_npm_docker_image-copy.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/7_conclusion.html</loc>
+    <loc>/5_build_publish_app/55_scan_with_xray.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/</loc>
+    <loc>/6_deploy_gke.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/categories.html</loc>
+    <loc>/7_conclusion.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/cleanup.html</loc>
+    <loc>/</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/resources.html</loc>
+    <loc>/categories.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/tags.html</loc>
+    <loc>/cleanup.html</loc>
+  </url>
+  
+  <url>
+    <loc>/resources.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags.html</loc>
   </url>
   
 </urlset>

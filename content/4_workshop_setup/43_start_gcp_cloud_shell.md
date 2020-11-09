@@ -1,8 +1,8 @@
 ---
-title: "Start Cloud Shell"
+title: "Start GCP Cloud Shell"
 chapter: false
-weight: 41
-pre: "<b>4.1 </b>"
+weight: 43
+pre: "<b>4.3 </b>"
 ---
 
 You can configure `gcloud` CLI on your local machine, however that is beyond the scope of this workshop.

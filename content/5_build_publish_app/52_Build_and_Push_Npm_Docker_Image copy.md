@@ -16,9 +16,9 @@ Now, we can use freshly created JFrog CLI image to build npm project, package it
 - `docker build` to build docker image of npm code.
 - `docker push` to push the newly created image to Artifactory's Docker repository.
 
-``
+```
 gcloud builds submit --gcs-log-dir=gs://${PROJECT_ID}_cloudbuild/clouddays --substitutions=_ARTIFACTORY_SERVER_NAME="${_ARTIFACTORY_SERVER_NAME}",_ARTIFACTORY_USER="${_ARTIFACTORY_USER}",_ARTIFACTORY_PASSWORD="${_ARTIFACTORY_PASSWORD}" --config=cloudbuild.yaml .
-``
+```
 
 This command should result in a successful build of docker image and it should be pushed to Artifactory. 
 ![JFrog CLI build success](/images/gcp/build2_success1.png)
@@ -27,6 +27,6 @@ This command should result in a successful build of docker image and it should b
 
 3. Note the build id is used for docker image tagging. Inside your cloud shell, declare a variable as follows. This will be used in next section.
 
-`export TAG=2cb51a04-d499-4199-8f20-4c0cc27820d5`
+`export TAG=<enter your tag id`
 
 
