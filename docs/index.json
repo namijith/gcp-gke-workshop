@@ -1,188 +1,188 @@
 [
 {
-	"uri": "/1_prerequisites.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/1_prerequisites.html",
 	"title": "Prerequisites",
 	"tags": [],
 	"description": "",
 	"content": "The following items are required for this workshop.\n  Google Cloud Account\n  JFrog Free Tier\n  "
 },
 {
-	"uri": "/2_devops_cloud.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/2_devops_cloud.html",
 	"title": "DevOps in the Cloud",
 	"tags": [],
 	"description": "",
 	"content": "The goal of DevOps is to allow your development teams to deliver quality software faster to your customers through continuous process improvement, leveraging the best of breed development tools and infrastructure, and utilizing software development and IT operations best practices. Your team must deliver software faster than your competitors in order to get features and fixes to your customers sooner. JFrog terms this ideal as liquid software.\n Looking forward, as release cycles get shorter and microservices get smaller, we can imagine a world in which at any one time, our systems’ software is being updated. Effectively, software will become liquid in that products and services will be connected to “software pipes” that constantly stream updates into our systems and devices; liquid software continuously and automatically updating our systems with no human intervention.\n\u0026ndash; JFrog (2017), A Vision of Liquid Software, Retrieved from https://jfrog.com/whitepaper/a-vision-of-liquid-software/ A critical aspect of DevOps is infrastructure. Cloud computing infrastructure has allowed DevOps to advance and come closer to realizing liquid software. Cloud computing has allowed development teams to build these software pipes by:\n Using ephemeral cloud infrastructure to scale their development process and software delivery at levels not achievable with on-premise infrastructure. Providing applications on a global scale with real-time response and resiliency. Leveraging new cloud services in their application and software development processes to improve the quality, security and delivery of their applications. Allowing multi-discipline teams to collaborate in the cloud across the software lifecycle to ensure quality, security, velocity and scale of applications.  "
 },
 {
-	"uri": "/3_workshop.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/3_workshop.html",
 	"title": "Workshop Overview",
 	"tags": [],
 	"description": "",
 	"content": "In this workshop, we will demonstrate DevOps in the cloud with GKE and JFrog. We will build and deploy a containerized NPM application. Using the JFrog Platform, we will compile our code, build our NPM package, execute a docker build and push, security scan the image and publish it to a repository. We will then deploy the image and serve the application with Googke Kubernetes Enginer (GKE).\n"
 },
 {
-	"uri": "/4_workshop_setup.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/4_workshop_setup.html",
 	"title": "Setup Workshop",
 	"tags": [],
 	"description": "",
 	"content": "To setup workshop, we will perform two steps\n  Start a google cloud shell\n  Start a GKE Cluster\n  This Google cloud account will expire at the end of the workshop and any resources will automatically be de-provisioned. You will not be able to access this account after today.\n "
 },
 {
-	"uri": "/5_build_publish_app.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/5_build_publish_app.html",
 	"title": "Build and Publish the App",
 	"tags": [],
 	"description": "",
 	"content": "The JFrog CLI is a powerful tool that you can use in your CI/CD process and toolchain. It can be used to build code and publish artifacts while collecting valuable build information along the way. It greatly simplifies the publishing of the build artifacts and the build info to JFrog Artifactory. It is commonly used in automation scripts and with CI/CD software tools. In the next steps, we will execute a CI/CD process with JFrog CLI commands to demonstrate how to build and publish with NPM and Docker.\nIn this workshop, we use NPM and Docker, but the JFrog Platform is a universal solution supporting all major package formats including Alpine, Maven, Gradle, Docker, Conda, Conan, Debian, Go, Helm, Vagrant, YUM, P2, Ivy, NuGet, PHP, NPM, RubyGems, PyPI, Bower, CocoaPods, GitLFS, Opkg, SBT and more.\n "
 },
 {
-	"uri": "/1_prerequisites/11_google_cloud_account.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/1_prerequisites/11_google_cloud_account.html",
 	"title": "Google Cloud Account",
 	"tags": [],
 	"description": "",
 	"content": "As a registered user for this workshop, you should have received a link to register along with activation code. After you register, it should take you to a page with credentials.\nNote: From this page, keep the value of project field handy, we will use it further in the lab and refer to it as PROJECT_ID\n"
 },
 {
-	"uri": "/1_prerequisites/12_jfrog_free_tier.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/1_prerequisites/12_jfrog_free_tier.html",
 	"title": "JFrog Free Tier (No CC Required)",
 	"tags": [],
 	"description": "",
 	"content": "In your welcome email, you also received instructions to sign up for JFrog Platform Cloud Free Tier (No Credit Card Required). If you have not signed up yet, use this link JFrog Platform Cloud Free Tier (No Credit Card Required) to get your own JFrog Platform instance with Artifactory and Xray.\nWhen signing up for the JFrog Platform Cloud Free Tier, ensure that you select Google Cloud and the US Oregon region.\n  JFrog Platform Cloud Free Tier   "
 },
 {
-	"uri": "/2_devops_cloud/21_continuous_integration_and_delivery.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/2_devops_cloud/21_continuous_integration_and_delivery.html",
 	"title": "Continuous Integration and Delivery",
 	"tags": [],
 	"description": "",
 	"content": "Continuous integration and delivery (CI/CD) is the process for which your software components are built from code, integrated, tested, released, deployed and ultimately delivered to end-users. CI/CD pipelines are the software assembly line that orchestrates the building of your software. This CI/CD pipeline line requires infrastructure. Cloud computing has allowed this infrastructure to become dynamic and ephemeral. On cloud infrastructure, your CI/CD pipelines scale up and down to meet your software delivery demands. It saves costs by providing the right amount of cloud infrastructure just as it is needed. This is further realized by using cloud-native technologies like Kubernetes and extending across clouds and on-premise datacenters. Google Cloud Build is a Google cloud technologies that your pipelines can utilize to run CI and CD tasks.\n"
 },
 {
-	"uri": "/2_devops_cloud/22_binary_repository_management.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/2_devops_cloud/22_binary_repository_management.html",
 	"title": "Binary Repository Management",
 	"tags": [],
 	"description": "",
 	"content": "A Binary Repository Manager is a software hub that simplifies the development process for different teams across an organization by helping them to collaborate on building coherent and compatible software components. It does this by centralizing the management of all the binary artifacts generated and used by the organization, thereby overcoming the incredible complexity arising from diverse binary artifact types, their position in the overall workflow and the set of dependencies between them.\nSome of the many benefits of using a Binary Repository Manager are:\n Reliable and consistent access to remote artifacts. Reduced network traffic and optimized builds. Tight integration with build ecosystems. Custom handling of artifacts to comply with any organization’s requirements. Security and access control to artifacts and repositories. Manage licensing requirements and open source governance for use of software components. Distributing and sharing artifacts across an organization. System stability and reliability with high availability architecture. Smart search for binaries. Advanced maintenance and monitoring tools.  Cloud infrastructure has provided additional benefits. With the cloud, binary repositories can now:\n Enable replication and resiliency through the use of global data centers. Provide lower latency and improved network performance by being available closer to end-users. Provide their services at the edge of the network regionally and globally to edge devices. Utilize cloud storage for reduced costs, scalability and lower maintenance. Leverage cloud services such as security vulnerability databases to extend their functionality.  "
 },
 {
-	"uri": "/2_devops_cloud/23_dev_sec_ops.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/2_devops_cloud/23_dev_sec_ops.html",
 	"title": "DevSecOps",
 	"tags": [],
 	"description": "",
 	"content": "Any security issue identified by a security scanning may be reviewed by a small security team that may lack the technical knowledge. This challenge can be reduced by shifting left to the developer and operations teams, making them also responsible for security and compliance. This moves security earlier in the software delivery process. Source code, dependency and artifact security scanning are some examples of moving security into the development process. Implementing the identification of security issues earlier in the CI/CD pipeline, as well as automating security and compliance policies in the Software Development Lifecycle (SDLC), rather than using manual processes, is crucial. Moreover, organizations that leave the Sec out of DevOps, may face security and compliance issues that are closer to their release, resulting in additional costs for remediating such issues.\nAs you move your SDLC to the cloud, your DevSecOps strategy must also adapt to the cloud. As discussed previously, binary repository managers that scale globally across cloud data centers require DevSecOps tools that will likewise scale and adjust. An enterprise scale software delivery system with multiple development teams, end users and devices mean more entry points for potential security and compliance issues. Therefore, it is critical that your SLDC is well-integrated with your DevSecOps system.\n"
 },
 {
-	"uri": "/2_devops_cloud/24_jfrog_platform_overview.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/2_devops_cloud/24_jfrog_platform_overview.html",
 	"title": "JFrog Platform for DevOps in the Cloud",
 	"tags": [],
 	"description": "",
 	"content": "The JFrog Platform is designed to meet the growing needs of companies to develop and distribute software in the cloud. It provides DevOps teams with the tools needed to create, manage, secure and deploy software with ease. These tools cover everything from continuous integration and delivery (CI/CD), binary repository management, artifact maturity, security and vulnerability protection (DevSecOps), release management, analytics and distribution.\nJFrog Artifactory is an Artifact Repository Manager that fully supports software packages created by any language or technology. Furthermore, it integrates with all major CI/CD and DevOps tools to provide an end-to-end, automated solution for tracking artifacts from development to production.\nJFrog Xray provides universal artifact analysis, increasing visibility and performance of your software components by recursively scanning all layers of your organization’s binary packages to provide radical transparency and unparalleled insight into your software architecture.\nJFrog Distribution empowers DevOps to distribute and continuously update remote locations with release-ready binaries.\nJFrog Artifactory Edge accelerates and provides control of release-ready binary distribution through a secure distributed network and edge nodes.\nJFrog Mission Control and Insight is your DevOps dashboard solution for managing multiple services of Artifactory, Xray, Edge and Distribution.\nJFrog Access with Federation provides governance to the distribution of artifacts by managing releases, permissions and access levels.\nJFrog Pipelines (coming to GCP soon) helps automate the non-human part of the whole software development process with continuous integration and empowers teams to implement the technical aspects of continuous delivery.\nAll of these JFrog Platform components are designed and developed to work together out-of-the-box with minimal configuration. Management and monitoring of your software delivery lifecycle from build to distribution is accessible though a central, unified user interface. The JFrog platform is enterprise ready with your choice of on-prem, cloud, multi-cloud or hybrid deployments that scale as you grow.\n "
 },
 {
-	"uri": "/4_workshop_setup/41_get_artifactory_api_key.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_get_artifactory_api_key.html",
 	"title": "Get Artifactory API Key",
 	"tags": [],
 	"description": "",
 	"content": "Now let\u0026rsquo;s get an API key for our Free Tier JFrog Platform instance. This will be used by Google\u0026rsquo;s cloud build and JFrog CLI to access artifactory instance.\n  Go to your JFrog Platform instance at https://[server name].jfrog.io. Refer to your JFrog Free Subscription Activation email if needed. Substitute your server name.   Login to your JFrog Platform instance with your credentials.   Once logged into your JFrog Platform instance, you will be presented with the landing page.\n  4 . Click on your name and then Edit Profile as shown below\n5 . In Current Password box, enter your Free Tier password and press Unlock\n6 . Under Authentication Settings, click on the copy button to copy the API key. Keep this key handy as we will need it in next step.\n"
 },
 {
-	"uri": "/4_workshop_setup/42_create_docker_repo.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_create_docker_repo.html",
 	"title": "Create Docker Repository",
 	"tags": [],
 	"description": "",
 	"content": "Next, we will create a docker repo to store our docker images\n1 . Log into your free tier account. Click on your name and then \u0026ldquo;New Local Repository\u0026rdquo; as shown below\n2 . A popup will ask for repository type you want to create, select docker\n3 . Enter clouddays as your repo name and click Save \u0026amp; Finish\n"
 },
 {
-	"uri": "/4_workshop_setup/43_start_gcp_cloud_shell.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/4_workshop_setup/43_start_gcp_cloud_shell.html",
 	"title": "Start GCP Cloud Shell",
 	"tags": [],
 	"description": "",
 	"content": "You can configure gcloud CLI on your local machine, however that is beyond the scope of this workshop.\nFortunately, google provides an easy way to start a pre configured shell inside your google cloud console. We will use this mechanism.\nOn the top right, you see a \u0026gt;_ icon, click on it and it will start a shell that is pre-configured with your credentials.\nThis command should result in successful install. "
 },
 {
-	"uri": "/4_workshop_setup/44_clone_git_repo.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/4_workshop_setup/44_clone_git_repo.html",
 	"title": "Clone Git Repository",
 	"tags": [],
 	"description": "",
 	"content": "Next, let\u0026rsquo;s clone git repo. In your cloud shell, use following command\ngit clone https://github.com/jfrogtraining/clouddays.git "
 },
 {
-	"uri": "/4_workshop_setup/45_declare_variables.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/4_workshop_setup/45_declare_variables.html",
 	"title": "Declare environment variables",
 	"tags": [],
 	"description": "",
 	"content": "We need to declare following variables\nPROJECT_ID _ARTIFACTORY_SERVER_NAME _ARTIFACTORY_USER _ARTIFACTORY_PASSWORD API_KEY To make it easy, we have a script for you. In your google cloud shell, first cd into newly cloned repo folder\ncd clouddays Then run following command\n. ./scripts/set_env.sh "
 },
 {
-	"uri": "/4_workshop_setup/46_start_gke_cluster.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/4_workshop_setup/46_start_gke_cluster.html",
 	"title": "Start GKE Cluster",
 	"tags": [],
 	"description": "",
 	"content": "In this section, we will start a GKE Cluster. There are two ways to start a GKE cluster.\n1 . We can go to our console and start a cluster from there.\n2 . However, since we already have a cloud shell working, we can simply use gcloud CLI to start the cluster.\ngcloud beta container --project \u0026quot;$PROJECT_ID\u0026quot; clusters create \u0026quot;jfrog-gke-devop-days-cluster\u0026quot; --zone \u0026quot;us-west1-a\u0026quot; --release-channel \u0026quot;rapid\u0026quot; --machine-type \u0026quot;e2-standard-2\u0026quot; --image-type \u0026quot;COS\u0026quot; --disk-type \u0026quot;pd-ssd\u0026quot; --disk-size \u0026quot;10\u0026quot; --num-nodes \u0026quot;1\u0026quot; --enable-stackdriver-kubernetes --enable-autoupgrade --enable-autorepair Note that we are using GKE functionality to\n Select VM type Use SSD disk for performance Configure Number of nodes (we only need 1 for our exercize) Eneble logging to stackdriver Enable auto upgrades of GKE versions Enable auto repair in case some part of our infrastructure fails  "
 },
 {
-	"uri": "/5_build_publish_app/51_build_and_push_jfrog_cli_docker_image-copy.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/5_build_publish_app/51_build_and_push_jfrog_cli_docker_image-copy.html",
 	"title": "Build and Push JFrog CLI Docker Image",
 	"tags": [],
 	"description": "",
 	"content": "First, we will use an npm docker image and add JFrog CLI to it. This will enable us to use JFrog CLI to build npm packages.\n  Return to your Cloud Shell terminal and go to folder 1-create-jfrog-cli-docker\n  Let\u0026rsquo;s use gcloud build to create JFrog CLI docker image. This build command uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps\n   docker build to create the docker image docker tag to tag newly created image docker login to log into your Free Tier docker push to push the newly created image to Artifactory\u0026rsquo;s Docker repository.  gcloud builds submit --gcs-log-dir=gs://${PROJECT_ID}_cloudbuild/clouddays --substitutions=_ARTIFACTORY_SERVER_NAME=\u0026quot;${_ARTIFACTORY_SERVER_NAME}\u0026quot;,_ARTIFACTORY_USER=\u0026quot;${_ARTIFACTORY_USER}\u0026quot;,_ARTIFACTORY_PASSWORD=\u0026quot;${_ARTIFACTORY_PASSWORD}\u0026quot; --config=cloudbuild.yaml . This command should result in a successful build of docker image and it should be pushed to Artifactory. "
 },
 {
-	"uri": "/5_build_publish_app/52_build_and_push_npm_docker_image-copy.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/5_build_publish_app/52_build_and_push_npm_docker_image-copy.html",
 	"title": "Build and Push JFrog CLI Docker Image",
 	"tags": [],
 	"description": "",
 	"content": "Now, we can use freshly created JFrog CLI image to build npm project, package it in a Docker image and push it to artifactory\u0026rsquo;s Docker repository.\n  Return to your Cloud Shell terminal and cd to folder 2-create-npm-build\n  Let\u0026rsquo;s use gcloud build again to build npm project and create docker image. This build command uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps\n   docker login to log into your Free Tier jfrog rt c to configure JFrog CLI so it can access your free tier jfrog rt npmi to perform npm build docker build to build docker image of npm code. docker push to push the newly created image to Artifactory\u0026rsquo;s Docker repository.  gcloud builds submit --gcs-log-dir=gs://${PROJECT_ID}_cloudbuild/clouddays --substitutions=_ARTIFACTORY_SERVER_NAME=\u0026quot;${_ARTIFACTORY_SERVER_NAME}\u0026quot;,_ARTIFACTORY_USER=\u0026quot;${_ARTIFACTORY_USER}\u0026quot;,_ARTIFACTORY_PASSWORD=\u0026quot;${_ARTIFACTORY_PASSWORD}\u0026quot; --config=cloudbuild.yaml . This command should result in a successful build of docker image and it should be pushed to Artifactory. Note the build id is used for docker image tagging. Inside your cloud shell, declare a variable as follows. This will be used in next section.  export TAG=\u0026lt;enter your tag id\n"
 },
 {
-	"uri": "/5_build_publish_app/55_scan_with_xray.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/5_build_publish_app/55_scan_with_xray.html",
 	"title": "Scan With Xray",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "/6_deploy_gke.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/6_deploy_gke.html",
 	"title": "Deploy Application on GKE",
 	"tags": [],
 	"description": "",
 	"content": "We are now ready to deploy your image with GKE. If not yet created, GKE can create a new VPC as well as the other components that are required to serve your application. GKE will then authenticate, pull the image from Artifactory and deploy the container to the GKE.\n1 . Remember the kubernetes cluster we created in the beginning of the lab? It must be ready by now. Let\u0026rsquo;s first verify that our cluster is healthy and kubectl is working using following command on cloud shell\nkubectl get pods -A\n2 . Now let\u0026rsquo;s deploy our new application\nkubectl create deployment devopsdays-deployment --image=${_ARTIFACTORY_SERVER_NAME}/clouddays/npm-app:${TAG}\n3 . You can watch the pods being started using following command\nkubectl get pods -w\n4 . Once the pods are in running state, lets create a service so we can access the application. This command will create a service and a load balancer to access the application.\nkubectl expose deployment devopsdays-deployment --type=LoadBalancer --port=1337\n5 . Again, we can watch the service and load balancer being created using following command.\nkubectl get svc -w\nOnce the EXTERNAL-IP field shows an IP address, our service is ready to be tested.\nNow open a browser and go to following URL (replace LOAD_BALANCER_IP with your own ip address from previous step)  http://\u0026lt;LOAD_BALANCER_IP\u0026gt;:1337\n"
 },
 {
-	"uri": "/7_conclusion.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/7_conclusion.html",
 	"title": "Conclusion",
 	"tags": [],
 	"description": "",
-	"content": "In this workshop, we used the JFrog Platform to build an application, manage the artifacts, scan the artifacts for security vulnerabilities and license compliance, and publish the artifacts of your application to a staging repository. Then we used Amazon ECS to deploy your application so that end-users can access it. The JFrog Platform and Amazon ECS demonstrate how you can build a DevOps cloud platform on AWS to delivery your software to your end-users. This modernizes your software delivery life cycle enabling your organization to deliver quality software continuously by leveraging advanced cloud services and elastic infrastructure.\n"
+	"content": "In this workshop, we used google cloud build to build JFrog CLI, then used the JFrog Platform to build an application, manage the artifacts, scan the artifacts for security vulnerabilities and license compliance, and publish the artifacts of your application to a staging repository. Then we used Google GKE to deploy your application so that end-users can access it. The JFrog Platform and Google Cloud demonstrate how you can build a DevOps cloud platform to delivery your software to your end-users. This modernizes your software delivery life cycle enabling your organization to deliver quality software continuously by leveraging advanced cloud services and infrastructure.\n"
 },
 {
-	"uri": "/",
+	"uri": "https://jfrogtraining.github.io/clouddays/",
 	"title": "JFrog DevOps Google Cloud Workshop",
 	"tags": [],
 	"description": "",
 	"content": "Google Cloud Workshop In this workshop you will learnt following tools to build and deploy an NPM project.\n JFrog Platform Free Tier JFrog CLI Google Kubernetes Engine (GKE) GCP Cloud Build  "
 },
 {
-	"uri": "/categories.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/categories.html",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "/cleanup.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/cleanup.html",
 	"title": "Cleanup",
 	"tags": [],
 	"description": "",
 	"content": " Your JFrog Platform Instance - The JFrog Platform instance that you used in this workshop will automatically be destroyed after the workshop. There isn\u0026rsquo;t anything you need to do. If you would like keep it, you can upgrade to one of the premium plans. Do this by clicking on the Upgrade button.   GKE Cluster - To cleanup your GKE resources, go to your GKE console and delete following resources\n- GKE Cluster - Key Ring and Key - Cloud Build history  "
 },
 {
-	"uri": "/resources.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/resources.html",
 	"title": "Resources",
 	"tags": [],
 	"description": "",
 	"content": " JFrog Platform Documentation - The full documentation of the JFrog Platform, the universal, hybrid, end-to-end DevOps automation solution. It is designed to take you through all the JFrog Products. Including user, administration and developer guides, installation and upgrade procedures, system architecture and configuration, and working with the JFrog application. JFrog Academy - Learn more about the JFrog Platform at your own pace with JFrog Academy free courses taught by our experts.  "
 },
 {
-	"uri": "/tags.html",
+	"uri": "https://jfrogtraining.github.io/clouddays/tags.html",
 	"title": "Tags",
 	"tags": [],
 	"description": "",
