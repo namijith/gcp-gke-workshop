@@ -13,7 +13,7 @@
       
       <guid>https://jfrogtraining.github.io/clouddays/5_build_publish_app/51_build_jfrog_cli_image.html</guid>
       <description>First, we will use an npm docker image and add JFrog CLI to it. This will enable us to use JFrog CLI to build npm packages.
-  Return to your Cloud Shell terminal and change directory to azureworkshop/jfrog-cli-docker.
+  Return to your Cloud Shell terminal and change directory to clouddays/jfrog-cli-docker.
   We will use Google Cloud Build to create JFrog CLI docker image. This build command uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps</description>
     </item>
     

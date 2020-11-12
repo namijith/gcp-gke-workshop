@@ -22,27 +22,39 @@ steps:
   - '${_JFROG_API_KEY}'
 
 - name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  entrypoint: 'bash'
-  args: ['-c', 'jfrog rt c ${_JFROG_REPO_NAME} --url=https://${_JFROG_SERVER_NAME}/artifactory --user=${_JFROG_USER} --apikey=${_JFROG_API_KEY}']
-  secretEnv: ['API_KEY']
-  dir: 'npm-example'
+  args: ['rt', 'c', '${_JFROG_REPO_NAME}', '--url=https://${_JFROG_SERVER_NAME}/artifactory', '--user=${_JFROG_USER}', '--apikey=${_JFROG_API_KEY}']
+  env: ['TMPDIR=/workspace']
+
+  # Configure npm repo
+- name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
+  args: ['rt', 'npmc', '--repo-resolve=npm', '--repo-deploy=npm','--server-id-resolve=${_JFROG_REPO_NAME}','--server-id-deploy=${_JFROG_REPO_NAME}']
+  env: ['TMPDIR=/workspace']
 
 # Build a sample npm project
 - name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  args: ['-c','jfrog rt npm-install --build-name=npm-build --build-number=$BUILD_ID']
-  dir: 'npm-example'
+  args: ['rt', 'npm-install', '--build-name=npm_build', '--build-number=1']
+  env: ['TMPDIR=/workspace']
+
+  # Build a sample npm project
+- name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
+  args: ['rt', 'npm-publish', '--build-name=npm_build', '--build-number=1']
+  env: ['TMPDIR=/workspace']
+
+  # Build a sample npm project
+- name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
+  args: ['rt', 'build-publish', 'npm_build', '1']
+  env: ['TMPDIR=/workspace']
 
 # Containerize npm app
 - name: 'gcr.io/cloud-builders/docker'
   args:
   - 'build'
-  - '--tag=${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:$BUILD_ID'
+  - '--tag=${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:latest'
   - '.'
-  dir: 'npm-example'
 
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['-c', 'jfrog rt docker-push ${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:latest --build-name=npm_build --build-number=1']
-
+- name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
+  args: ['rt', 'docker-push', '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:latest','${_JFROG_REPO_NAME}','--build-name=npm_build', '--build-number=1']
+  env: ['TMPDIR=/workspace']
 
 images:
 - '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:latest'

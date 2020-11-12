@@ -50,7 +50,7 @@ JFrog Artifactory is an Artifact Repository Manager that fully supports software
       
       <guid>https://jfrogtraining.github.io/clouddays/5_build_publish_app/51_build_jfrog_cli_image.html</guid>
       <description>First, we will use an npm docker image and add JFrog CLI to it. This will enable us to use JFrog CLI to build npm packages.
-  Return to your Cloud Shell terminal and change directory to azureworkshop/jfrog-cli-docker.
+  Return to your Cloud Shell terminal and change directory to clouddays/jfrog-cli-docker.
   We will use Google Cloud Build to create JFrog CLI docker image. This build command uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps</description>
     </item>
     
@@ -93,7 +93,7 @@ The gcloud command-line interface is the primary CLI tool to create and manage G
       
       <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/43_jfrog_setup/431_jfrog_free.html</guid>
       <description>If you do not have access to a JFrog Platform instance, use the JFrog Platform Cloud Free Tier to get your own JFrog Platform instance with Artifactory and Xray.
-When signing up for the JFrog Platform Cloud Free Tier, ensure that you select Azure and the US West (California) region.
+When signing up for the JFrog Platform Cloud Free Tier, ensure that you select Google Cloud and the US Oregon region.
   JFrog Platform Cloud Free Tier   </description>
     </item>
     
@@ -103,16 +103,16 @@ When signing up for the JFrog Platform Cloud Free Tier, ensure that you select A
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/43_jfrog_setup/432_api_key.html</guid>
-      <description>Remember your username and API key. We will use it again with the JFrog CLI and to set up Azure AKS to deploy your image.
+      <description>Remember your username and API key. We will use it again with the JFrog CLI and to set up GKE to deploy your image.
   Go to your JFrog Platform instance at https://[server name].jfrog.io. Refer to your JFrog Free Subscription Activation email if needed. Substitute your server name.  Login to your JFrog Platform instance with your credentials.  Once logged into your JFrog Platform instance, you will be presented with the landing page.</description>
     </item>
     
     <item>
-      <title>Create a Docker Repo</title>
-      <link>https://jfrogtraining.github.io/clouddays/4_workshop_setup/43_jfrog_setup/433_create_docker_repo.html</link>
+      <title>Create Docker Repos</title>
+      <link>https://jfrogtraining.github.io/clouddays/4_workshop_setup/43_jfrog_setup/433_create_docker_repos.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/43_jfrog_setup/433_create_docker_repo.html</guid>
+      <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/43_jfrog_setup/433_create_docker_repos.html</guid>
       <description>Next, we will set up a new Docker repository in Artifacory. We will use this repository to host our workshop application image.
  In your JFrog Platform instance go to Administration ► Repositories ► Repositories.  Click on New Local Repository on the right.  For package type, select Docker.  Specify clouddays for the Repository Key.   Click Save &amp;amp; Finish.
   Close the New Docker Repository dialog.</description>

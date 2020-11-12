@@ -7,7 +7,7 @@ pre: "<b>5.1 </b>"
 
 First, we will use an npm docker image and add JFrog CLI to it. This will enable us to use JFrog CLI to build npm packages.
 
-1. Return to your Cloud Shell terminal and change directory to _azureworkshop/jfrog-cli-docker_.
+1. Return to your Cloud Shell terminal and change directory to _clouddays/jfrog-cli-docker_.
 
 2. We will use Google Cloud Build to create JFrog CLI docker image. This build command uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps
 - `docker build` to create the docker image

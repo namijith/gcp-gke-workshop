@@ -1,5 +1,5 @@
 ---
-title: "Setup Workshop"
+title: "Workshop Setup"
 chapter: false
 weight: 4
 pre: "<b>4 </b>"

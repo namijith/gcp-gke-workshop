@@ -11,6 +11,7 @@ We have built and published our NPM package and Docker image. Let's view these r
 2. Type ```workshop-app``` and search. This will show the NPM package that was published with the JFrog CLI.
 3. Click on it to view the details.
 ![Npm Workshop App](/images/npm-workshop-app.png)
+4. Click on the _workshop-app:1.0.0_ under the **Published Modules** tab to see the artifacts and dependencies.
 2. Go back to the **Packages** view and search for  ```npm-app```. This shows the Docker image that was published.
 3. Click on the docker _npm-app_ listing.
 ![Npm App Package](/images/npm-app-package.png)

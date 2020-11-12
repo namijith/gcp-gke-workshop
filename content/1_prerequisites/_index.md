@@ -14,7 +14,7 @@ The following items are required for this workshop.
 - Have a notepad available for saving important workshop data.
 
 {{% notice warning %}}
-When signing up for the [JFrog Platform Cloud Free Tier](https://jfrog.com/artifactory/start-free/), ensure that you select **Azure** and the **US West (California)** region.
+When signing up for the [JFrog Platform Cloud Free Tier](https://jfrog.com/artifactory/start-free/), ensure that you select **Google Cloud** and the **US Oregon** region.
 {{% /notice %}}
 
 {{< figure src="/images/cloud-free-tier.png" title="JFrog Platform Cloud Free Tier" target="_blank"  link="https://jfrog.com/artifactory/start-free/">}}
