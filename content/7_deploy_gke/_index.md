@@ -38,7 +38,7 @@ kubectl create secret docker-registry regcred
 3. Set an environment variable for our image name.
 
 ``
-export $IMAGE_NAME=$JFROG_SERVER_NAME/clouddays/npm-app:latest
+export IMAGE_NAME=$JFROG_SERVER_NAME/clouddays/npm-app:latest
 ``
 
 3. We will use a Kubernetes deployment manifest to deploy the NPM application image. First, we must make a substitution in the file for the image that we want to deploy.
