@@ -51,8 +51,7 @@ JFrog Artifactory is an Artifact Repository Manager that fully supports software
       <guid>https://jfrogtraining.github.io/clouddays/5_build_publish_app/51_build_jfrog_cli_image.html</guid>
       <description>First, we will use an npm docker image and add JFrog CLI to it. This will enable us to use JFrog CLI to build npm packages.
   Return to your Cloud Shell terminal and change directory to azureworkshop/jfrog-cli-docker.
-  Let&amp;rsquo;s use gcloud build to create JFrog CLI docker image. This build command uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps
-   docker build to create the docker image docker tag to tag newly created image docker login to log into your Free Tier docker push to push the newly created image to Artifactory&amp;rsquo;s Docker repository.</description>
+  We will use Google Cloud Build to create JFrog CLI docker image. This build command uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps</description>
     </item>
     
     <item>
@@ -61,9 +60,9 @@ JFrog Artifactory is an Artifact Repository Manager that fully supports software
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jfrogtraining.github.io/clouddays/5_build_publish_app/52_build_docker_image.html</guid>
-      <description>Now, we can use freshly created JFrog CLI image to build npm project, package it in a Docker image and push it to artifactory&amp;rsquo;s Docker repository.
-  Return to your Google Cloud Shell terminal and cd to folder 2-create-npm-build
-  Let&amp;rsquo;s use gcloud build again to build npm project and create docker image. This build command uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps</description>
+      <description>Now, we can use new JFrog CLI image to build the NPM application Docker image and push it to Artifactory&amp;rsquo;s Docker repository.
+  Return to your Google Cloud Shell terminal and change directory to clouddays/workshop-app.
+  Use Google Cloud Build and the JFrog CLI to build the NPM Docker image. This build command uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps:</description>
     </item>
     
     <item>

@@ -1,55 +1,49 @@
-# Sample cloudbuild.yaml that can containerize a Java app with JFrog Artifactory as a source of truth. 
+# Sample cloudbuild.yaml that can containerize a Java app with JFrog Artifactory as a source of truth.
 # NOTE: JFrog cloud builder image should exist. cloudbuild.yaml to build JFrog cloud builder image exists one level up.
 
 # In this directory, run the following command to build this builder.
 # $ gcloud builds submit . --config=cloudbuild.yaml
 
 substitutions:
-  _ARTIFACTORY_SERVER_NAME: <servername>.jfrog.io
-  _ARTIFACTORY_USER: <name>@<yourcompany>.com
-  _ARTIFACTORY_PASSWORD: <password>
-  _ARTIFACTORY_REPO_NAME: clouddays
+  _JFROG_SERVER_NAME: <servername>.jfrog.io
+  _JFROG_USER: <name>@<yourcompany>.com
+  _JFROG_API_KEY: <password>
+  _JFROG_REPO_NAME: clouddays
   _JFROG_CLI_VERSION: 1.40.1
-
-secrets:
-  - kmsKeyName: projects/clgcporg1-001/locations/global/keyRings/jfrog-key-ring/cryptoKeys/jfrog-key
-    secretEnv:
-      API_KEY: "CiQAvsXZdiE8v1lNIpgHhXQpftdPsv7Cc6tynRb3m67zsLg3DYUScwDS9Ypnfht+sDQf9vaUTXnbifqegM5YOnmPoB8BPfvgNKd2juO4tVGaeUx+aMYAtDmVUIFehvLgcQJ6yEq5megw14AB2iT05+6ip4yfoI99sdwlt+3eOxWx2/XtBOYTKswnU4Eioox2eeBcykquuA9mek8="
-
 
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args:
   - 'login'
-  - '${_ARTIFACTORY_SERVER_NAME}/${_ARTIFACTORY_REPO_NAME}/java-app'
+  - '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/java-app'
   - '-u'
-  - '${_ARTIFACTORY_USER}'
+  - '${_JFROG_USER}'
   - '-p'
-  - '${_ARTIFACTORY_PASSWORD}'
+  - '${_JFROG_API_KEY}'
 
-- name: '${_ARTIFACTORY_SERVER_NAME}/${_ARTIFACTORY_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
+- name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
   entrypoint: 'bash'
-  args: ['-c', 'jfrog rt c ${_ARTIFACTORY_REPO_NAME} --url=https://${_ARTIFACTORY_SERVER_NAME}/artifactory --user=${_ARTIFACTORY_USER} --password=$$API_KEY']
+  args: ['-c', 'jfrog rt c ${_JFROG_REPO_NAME} --url=https://${_JFROG_SERVER_NAME}/artifactory --user=${_JFROG_USER} --apikey=${_JFROG_API_KEY}']
   secretEnv: ['API_KEY']
   dir: 'npm-example'
 
 # Build a sample npm project
-- name: '${_ARTIFACTORY_SERVER_NAME}/${_ARTIFACTORY_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  args: ['rt', 'npmi', 'npm', '--build-name=my-npm-build', '--build-number=$BUILD_ID']
+- name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
+  args: ['-c','jfrog rt npm-install --build-name=npm-build --build-number=$BUILD_ID']
   dir: 'npm-example'
 
 # Containerize npm app
 - name: 'gcr.io/cloud-builders/docker'
   args:
   - 'build'
-  - '--tag=${_ARTIFACTORY_SERVER_NAME}/${_ARTIFACTORY_REPO_NAME}/npm-app:$BUILD_ID'
+  - '--tag=${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:$BUILD_ID'
   - '.'
   dir: 'npm-example'
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', '${_ARTIFACTORY_SERVER_NAME}/${_ARTIFACTORY_REPO_NAME}/npm-app:$BUILD_ID']
+  args: ['-c', 'jfrog rt docker-push ${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:$BUILD_ID --build-name=npm_build --build-number=1']
 
 
 images:
-- '${_ARTIFACTORY_SERVER_NAME}/${_ARTIFACTORY_REPO_NAME}/npm-app:$BUILD_ID'
+- '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:$BUILD_ID'
 tags: ['cloud-builders-community']
