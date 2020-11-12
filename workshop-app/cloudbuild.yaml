@@ -41,9 +41,9 @@ steps:
   dir: 'npm-example'
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['-c', 'jfrog rt docker-push ${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:$BUILD_ID --build-name=npm_build --build-number=1']
+  args: ['-c', 'jfrog rt docker-push ${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:latest --build-name=npm_build --build-number=1']
 
 
 images:
-- '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:$BUILD_ID'
+- '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:latest'
 tags: ['cloud-builders-community']
