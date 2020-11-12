@@ -5,11 +5,11 @@ weight: 4
 pre: "<b>4 </b>"
 ---
 
-To setup workshop, we will perform two steps
+Before we get started on building, publishing and deploying our NPM application, we must set up our workshop environment. In this setup section, we will:
 
-- Start a google cloud shell
-
-- Start a GKE Cluster
+- Set up our GCP environment.
+- Clone our workshop GitHub repository which contains our code.
+- Configure our JFrog Platform instance (Artifactory and Xray).
 
 
 {{% notice warning %}}

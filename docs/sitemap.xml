@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jfrogtraining.github.io/clouddays/</loc>
+  </url>
+  
+  <url>
     <loc>https://jfrogtraining.github.io/clouddays/1_prerequisites.html</loc>
   </url>
   
@@ -23,11 +27,15 @@
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/1_prerequisites/11_google_cloud_account.html</loc>
+    <loc>https://jfrogtraining.github.io/clouddays/6_view_results.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/1_prerequisites/12_jfrog_free_tier.html</loc>
+    <loc>https://jfrogtraining.github.io/clouddays/7_deploy_gke.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/clouddays/8_conclusion.html</loc>
   </url>
   
   <url>
@@ -47,51 +55,55 @@
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_get_artifactory_api_key.html</loc>
+    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_create_docker_repo.html</loc>
+    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_code_setup.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/43_start_gcp_cloud_shell.html</loc>
+    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/43_jfrog_setup.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/44_clone_git_repo.html</loc>
+    <loc>https://jfrogtraining.github.io/clouddays/5_build_publish_app/51_build_jfrog_cli_image.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/45_declare_variables.html</loc>
+    <loc>https://jfrogtraining.github.io/clouddays/5_build_publish_app/52_build_docker_image.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/46_start_gke_cluster.html</loc>
+    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/5_build_publish_app/51_build_and_push_jfrog_cli_docker_image-copy.html</loc>
+    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/412_create_gke_cluster.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/5_build_publish_app/52_build_and_push_npm_docker_image-copy.html</loc>
+    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/43_jfrog_setup/431_jfrog_free.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/5_build_publish_app/55_scan_with_xray.html</loc>
+    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/43_jfrog_setup/432_api_key.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/6_deploy_gke.html</loc>
+    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/43_jfrog_setup/433_create_docker_repo.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/7_conclusion.html</loc>
+    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/43_jfrog_setup/434_configure_xray_index.html</loc>
   </url>
   
   <url>
-    <loc>https://jfrogtraining.github.io/clouddays/</loc>
+    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/43_jfrog_setup/435_create_xray_policy.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/clouddays/4_workshop_setup/43_jfrog_setup/436_create_xray_watch.html</loc>
   </url>
   
   <url>

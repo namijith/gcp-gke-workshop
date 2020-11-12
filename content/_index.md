@@ -1,16 +1,25 @@
 ---
-title: "JFrog DevOps Google Cloud Workshop"
+title: "JFrog DevOps Modernization Workshop"
 chapter: true
-weight: 70
-pre: "<b>7.0 </b>"
+weight: 1
 ---
 
-![JFrog Logo](/images/jfrog-logo.png) 
-# Google Cloud Workshop
+![GCP Logo](/images/gcp-logo.png) 
 
-In this workshop you will learnt following tools to build and deploy an NPM project.
-- JFrog Platform Free Tier
-- JFrog CLI
-- Google Kubernetes Engine (GKE)
-- GCP Cloud Build
+# DevOps Modernization Workshop
+
+### Welcome
+
+In this workshop you will learn about the JFrog Platform and how to leverage Artifactory and Xray for managing your Software Development Lifecycle (SDLC) and bring DevOps to the cloud on Google Cloud Platform.
+
+### Learning Objectives
+- Understand the roles of Artifactory and Xray in your software delivery life cycle (SDLC).
+- Use Local, Remote and Virtual Repositories in Artifactory.
+- Publish and promote Build Info.
+- Scan your artifacts and builds for security vulnerabilities.
+
+{{% notice warning %}}
+The examples and sample code provided in this workshop are intended to be consumed as instructional content. These will help you understand how various services can be architected to build a solution while demonstrating best practices along the way. These examples are not intended for use in production environments.
+{{% /notice %}}
+
 

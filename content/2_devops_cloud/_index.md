@@ -1,11 +1,11 @@
 ---
 title: "DevOps in the Cloud"
 chapter: false
-weight: 3
+weight: 2
 pre: "<b>2 </b>"
 ---
 
-![Cloud Devops](/images/gcp/jfrog-google-cloud.jpg)
+![Cloud Devops](/images/cloud-devops.png)
 
 The goal of DevOps is to allow your development teams to deliver quality software faster to your customers through continuous process improvement, leveraging the best of breed development tools and infrastructure,  and utilizing software development and IT operations best practices. Your team must deliver software faster than your competitors in order to get features and fixes to your customers sooner. JFrog terms this ideal as _[liquid software](https://jfrog.com/whitepaper/a-vision-of-liquid-software/)_.
 
