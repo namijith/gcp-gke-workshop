@@ -28,16 +28,7 @@ gcloud config set project $PROJECT_ID
 This will result in the following response.
 ![GCP Project ID Set](/images/gcp-project-id-set.png)
 
-3. Next, we need to enable the GKE containers API. Execute the following command to do this.
-
-```
-gcloud services enable container.googleapis.com
-```
-
-This will result in the following response.
-![GCP K8s Enable](/images/gcp-k8s-enable.png)
-
-4. Execute the following gcloud CLI command to create a GKE cluster.
+3. Execute the following gcloud CLI command to create a GKE cluster.
 
 ```
 gcloud container clusters create "gcpworkshop" --zone "us-west1-a" --release-channel "rapid" --machine-type "e2-standard-2" --image-type "COS" --disk-type "pd-ssd" --disk-size "10" --num-nodes "1" --enable-stackdriver-kubernetes --enable-autoupgrade --enable-autorepair
