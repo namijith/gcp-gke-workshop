@@ -9,7 +9,7 @@
 
     <link rel="icon" href="https://jfrogtraining.github.io/clouddays/images/favicon.png" type="image/png">
 
-    <title>Get a GCP Environment :: JFrog DevOps Modernization Workshop</title>
+    <title>Create a GKE Cluster :: JFrog DevOps Modernization Workshop</title>
 
     
     <link href="https://jfrogtraining.github.io/clouddays/css/nucleus.css?1605549617" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="https://jfrogtraining.github.io/clouddays/amp/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html">
+  <body class="" data-url="https://jfrogtraining.github.io/clouddays/amp/4_workshop_setup/41_gcp_environment_setup/413_create_gke_cluster.html">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -324,7 +324,7 @@ viewBox="0 0 1014.42 981.05"
  
   
     
-      <li data-nav-id="/amp/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html" title="Get a GCP Environment" class="dd-item active">
+      <li data-nav-id="/amp/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html" title="Get a GCP Environment" class="dd-item ">
         <a href="https://jfrogtraining.github.io/clouddays/amp/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html">
         <b>4.1.1 </b>Get a GCP Environment
         <i class="fas fa-check read-icon"></i>
@@ -366,7 +366,7 @@ viewBox="0 0 1014.42 981.05"
  
   
     
-      <li data-nav-id="/amp/4_workshop_setup/41_gcp_environment_setup/413_create_gke_cluster.html" title="Create a GKE Cluster" class="dd-item ">
+      <li data-nav-id="/amp/4_workshop_setup/41_gcp_environment_setup/413_create_gke_cluster.html" title="Create a GKE Cluster" class="dd-item active">
         <a href="https://jfrogtraining.github.io/clouddays/amp/4_workshop_setup/41_gcp_environment_setup/413_create_gke_cluster.html">
         <b>4.1.3 </b>Create a GKE Cluster
         <i class="fas fa-check read-icon"></i>
@@ -800,7 +800,7 @@ viewBox="0 0 1014.42 981.05"
             
           
           
-            <a href='https://jfrogtraining.github.io/clouddays/'>JFrog DevOps Modernization Workshop</a> > <a href='https://jfrogtraining.github.io/clouddays/4_workshop_setup.html'>Workshop Setup</a> > <a href='https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup.html'>Prepare the GCP Environment</a> > Get a GCP Environment
+            <a href='https://jfrogtraining.github.io/clouddays/'>JFrog DevOps Modernization Workshop</a> > <a href='https://jfrogtraining.github.io/clouddays/4_workshop_setup.html'>Workshop Setup</a> > <a href='https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup.html'>Prepare the GCP Environment</a> > Create a GKE Cluster
           
         
           
@@ -831,65 +831,46 @@ viewBox="0 0 1014.42 981.05"
           
             <h1>
               
-              Get a GCP Environment
+              Create a GKE Cluster
             </h1>
           
 
         
 
 
-<p>This workshop requires a GCP environment. Your instructor will provide a link and an activation code. The following steps walk through the process of obtaining a GCP environment using the provided link and activation code.</p>
+<p>In this section, we will create a GKE Cluster in our Google Cloud Shell using the gcloud CLI.</p>
+
+<div class="notices info" ><p>The gcloud command-line interface is the primary CLI tool to create and manage Google Cloud resources. You can use this tool to perform many common platform tasks either from the command line or in scripts and other automations.</p>
+</div>
+
 <ol>
-<li>Open the instructor provided link in your browser. This will take you to environment registration page.</li>
+<li>In your Google Cloud Shell, execute the following command to set an environment variable for the GCP environment project ID. This is one of the properties that was provided in the <em>environment details</em>. Or, you can see the project ID at the top left of your Google Cloud Console.</li>
 </ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-environment-registration.png" alt="GCP Environment Registration"></p>
+<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-project-id.png" alt="GCP Project ID"></p>
+<p><code>export PROJECT_ID=&lt;project ID&gt;</code></p>
 <ol start="2">
-<li>Fill out the form with your information and click <strong>Submit</strong>.</li>
+<li>Execute the following command to set the project ID.</li>
 </ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-environment-registration-form.png" alt="GCP Environment Registration"></p>
+<pre><code>gcloud config set project $PROJECT_ID
+</code></pre><p>This will result in the following response.
+<img src="https://jfrogtraining.github.io/clouddays/images/gcp-project-id-set.png" alt="GCP Project ID Set"></p>
 <ol start="3">
-<li>Next, click on the <strong>Launch Lab</strong> button.</li>
+<li>Execute the following gcloud CLI command to create a GKE cluster.</li>
 </ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-environment-launch-lab.png" alt="GCP Environment Launch"></p>
-<ol start="4">
-<li>It will take a couple minutes for your environment to be ready.</li>
-</ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-environment-waiting.png" alt="GCP Environment Waiting"></p>
-<ol start="5">
-<li>When ready, your environment information will be provided. Take a moment to copy these values to your notepad.</li>
-</ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-environment-ready.png" alt="GCP Environment Ready"></p>
-<ol start="6">
-<li>
-<p>Open the <strong>Sign-in link</strong> in a new browser tab. If you are already signed into Google Cloud with an exiting account, please sign out.</p>
-</li>
-<li>
-<p>Sign in using the account credentials provided for the environment.</p>
-</li>
-</ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-sign-in.png" alt="GCP Sign In"></p>
-<ol start="8">
-<li>
-<p><strong>Accept</strong> the new account agreement.</p>
-</li>
-<li>
-<p>Accept the terms of service.</p>
-</li>
-</ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-terms.png" alt="GCP Terms"></p>
-<ol start="10">
-<li>You are now on your Google Cloud Console.</li>
-</ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-cloud-console.png" alt="GCP Cloud Console"></p>
-<ol start="11">
-<li>Click on the Google Cloud Shell button at the top right of the console to open Google Cloud Shell terminal in your browser.</li>
-</ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-shell.png" alt="GCP Cloud Shell"></p>
-<ol start="12">
-<li>Click the <strong>Continue</strong> button and wait a few moments for you Google Cloud Shell Machine to be ready.</li>
-</ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-shell-ready.png" alt="GCP Cloud Shell Ready"></p>
-<p>Great work! Let&rsquo;s move onto the next step and create a GKE cluster.</p>
+<pre><code>gcloud container clusters create &quot;gcpworkshop&quot; --zone &quot;us-west1-a&quot; --release-channel &quot;rapid&quot; --machine-type &quot;e2-standard-2&quot; --image-type &quot;COS&quot; --disk-type &quot;pd-ssd&quot; --disk-size &quot;10&quot; --num-nodes &quot;1&quot; --enable-stackdriver-kubernetes --enable-autoupgrade --enable-autorepair
+</code></pre><p>With this command we have specified the following GKE cluster properties:</p>
+<ul>
+<li>Specified the cluster name as <em>gcpworkshop</em>.</li>
+<li>Specified the zone as <em>us-west1-a</em>.</li>
+<li>Specified the Kubernetes release channel which controls Kubernetes cluster version updates. Rapid gets the latest Kubernete release as early as possible.</li>
+<li>Specified the Kubernetes node machine type as <em>e2-standard-2</em> and set it to container optimized.</li>
+<li>Set disk storage type and size (SSD).</li>
+<li>Configured the number of Kubernetes worker nodes (we only need 1 for our workshop).</li>
+<li>Enabled logging to Stackdriver.</li>
+<li>Enabled auto-upgrade.</li>
+<li>Enabled auto-repair in case some part of our infrastructure fails.</li>
+</ul>
+<p>It will take a few minutes to create the GKE cluster. While we wait, we can move on to set up the rest of the workshop.</p>
 
 
 <footer class="footline">
@@ -1070,26 +1051,6 @@ viewBox="0 0 1014.42 981.05"
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -1117,6 +1078,23 @@ viewBox="0 0 1014.42 981.05"
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1124,6 +1102,9 @@ viewBox="0 0 1014.42 981.05"
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1340,10 +1321,10 @@ viewBox="0 0 1014.42 981.05"
 	 
 	 
 		
-			<a class="nav nav-prev" href="https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup.html" title="Prepare the GCP Environment"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="https://jfrogtraining.github.io/clouddays/amp/4_workshop_setup/41_gcp_environment_setup/412_download_workshop_code.html" title="Download the Workshop Code"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="https://jfrogtraining.github.io/clouddays/amp/4_workshop_setup/41_gcp_environment_setup/412_download_workshop_code.html" title="Download the Workshop Code" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup.html" title="JFrog Platform Setup" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

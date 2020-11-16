@@ -9,7 +9,7 @@
 
     <link rel="icon" href="https://jfrogtraining.github.io/clouddays/images/favicon.png" type="image/png">
 
-    <title>Get a GCP Environment :: JFrog DevOps Modernization Workshop</title>
+    <title>Create a Xray Watch :: JFrog DevOps Modernization Workshop</title>
 
     
     <link href="https://jfrogtraining.github.io/clouddays/css/nucleus.css?1605549617" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="https://jfrogtraining.github.io/clouddays/amp/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html">
+  <body class="" data-url="https://jfrogtraining.github.io/clouddays/amp/4_workshop_setup/42_jfrog_setup/426_create_xray_watch.html">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -296,7 +296,7 @@ viewBox="0 0 1014.42 981.05"
   
     
     <li data-nav-id="/4_workshop_setup/41_gcp_environment_setup.html" title="Prepare the GCP Environment" class="dd-item 
-        parent
+        
         
         
         ">
@@ -324,7 +324,7 @@ viewBox="0 0 1014.42 981.05"
  
   
     
-      <li data-nav-id="/amp/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html" title="Get a GCP Environment" class="dd-item active">
+      <li data-nav-id="/amp/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html" title="Get a GCP Environment" class="dd-item ">
         <a href="https://jfrogtraining.github.io/clouddays/amp/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html">
         <b>4.1.1 </b>Get a GCP Environment
         <i class="fas fa-check read-icon"></i>
@@ -397,7 +397,7 @@ viewBox="0 0 1014.42 981.05"
   
     
     <li data-nav-id="/4_workshop_setup/42_jfrog_setup.html" title="JFrog Platform Setup" class="dd-item 
-        
+        parent
         
         
         ">
@@ -530,7 +530,7 @@ viewBox="0 0 1014.42 981.05"
  
   
     
-      <li data-nav-id="/amp/4_workshop_setup/42_jfrog_setup/426_create_xray_watch.html" title="Create a Xray Watch" class="dd-item ">
+      <li data-nav-id="/amp/4_workshop_setup/42_jfrog_setup/426_create_xray_watch.html" title="Create a Xray Watch" class="dd-item active">
         <a href="https://jfrogtraining.github.io/clouddays/amp/4_workshop_setup/42_jfrog_setup/426_create_xray_watch.html">
         <b>4.2.5 </b>Create a Xray Watch
         <i class="fas fa-check read-icon"></i>
@@ -800,7 +800,7 @@ viewBox="0 0 1014.42 981.05"
             
           
           
-            <a href='https://jfrogtraining.github.io/clouddays/'>JFrog DevOps Modernization Workshop</a> > <a href='https://jfrogtraining.github.io/clouddays/4_workshop_setup.html'>Workshop Setup</a> > <a href='https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup.html'>Prepare the GCP Environment</a> > Get a GCP Environment
+            <a href='https://jfrogtraining.github.io/clouddays/'>JFrog DevOps Modernization Workshop</a> > <a href='https://jfrogtraining.github.io/clouddays/4_workshop_setup.html'>Workshop Setup</a> > <a href='https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup.html'>JFrog Platform Setup</a> > Create a Xray Watch
           
         
           
@@ -831,65 +831,62 @@ viewBox="0 0 1014.42 981.05"
           
             <h1>
               
-              Get a GCP Environment
+              Create a Xray Watch
             </h1>
           
 
         
 
 
-<p>This workshop requires a GCP environment. Your instructor will provide a link and an activation code. The following steps walk through the process of obtaining a GCP environment using the provided link and activation code.</p>
+<p>Next, we will create an Xray security watch to scan our new Docker repository.</p>
 <ol>
-<li>Open the instructor provided link in your browser. This will take you to environment registration page.</li>
+<li>Go to <strong>Application</strong> ► <strong>Security &amp; Compliance</strong> ► <strong>Watches</strong>.</li>
 </ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-environment-registration.png" alt="GCP Environment Registration"></p>
+<p><img src="https://jfrogtraining.github.io/clouddays/images/xray-watches.png" alt="Xray Watches"></p>
 <ol start="2">
-<li>Fill out the form with your information and click <strong>Submit</strong>.</li>
+<li>
+<p>Click on <strong>Set up a Watch</strong>.</p>
+</li>
+<li>
+<p>Give the watch a name like <em>clouddays-docker-repo-watch</em> and a description.</p>
+</li>
 </ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-environment-registration-form.png" alt="GCP Environment Registration"></p>
-<ol start="3">
-<li>Next, click on the <strong>Launch Lab</strong> button.</li>
-</ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-environment-launch-lab.png" alt="GCP Environment Launch"></p>
+<p><img src="https://jfrogtraining.github.io/clouddays/images/xray-create-watch.png" alt="Xray Create Watch"></p>
 <ol start="4">
-<li>It will take a couple minutes for your environment to be ready.</li>
+<li>
+<p>Click on <strong>Add Repositories</strong>.</p>
+</li>
+<li>
+<p>Move the <em>clouddays</em> repository into the <strong>Included Repositories</strong>.</p>
+</li>
 </ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-environment-waiting.png" alt="GCP Environment Waiting"></p>
-<ol start="5">
-<li>When ready, your environment information will be provided. Take a moment to copy these values to your notepad.</li>
-</ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-environment-ready.png" alt="GCP Environment Ready"></p>
+<p><img src="https://jfrogtraining.github.io/clouddays/images/xray-watch-repositories.png" alt="Xray Watch Repostiories"></p>
 <ol start="6">
 <li>
-<p>Open the <strong>Sign-in link</strong> in a new browser tab. If you are already signed into Google Cloud with an exiting account, please sign out.</p>
+<p>Click <strong>Save</strong>.</p>
 </li>
 <li>
-<p>Sign in using the account credentials provided for the environment.</p>
+<p>Scroll down to the <strong>Assigned Policies</strong> and click on <strong>Manage Policies</strong>.</p>
 </li>
 </ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-sign-in.png" alt="GCP Sign In"></p>
+<p><img src="https://jfrogtraining.github.io/clouddays/images/xray-manage-policies.png" alt="Xray Manage Policies"></p>
 <ol start="8">
+<li>Drag the new policy that we created earlier, _default-securtity into the <strong>Include Policies</strong>.</li>
+</ol>
+<p><img src="https://jfrogtraining.github.io/clouddays/images/xray-watch-add-policy.png" alt="Xray Watch Add Policy"></p>
+<ol start="9">
 <li>
-<p><strong>Accept</strong> the new account agreement.</p>
+<p>Click <strong>Save</strong>.</p>
 </li>
 <li>
-<p>Accept the terms of service.</p>
+<p>Click <strong>Create</strong> to create the new watch. We have now configured Xray to scan our new Docker repository for security violations.</p>
 </li>
 </ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-terms.png" alt="GCP Terms"></p>
-<ol start="10">
-<li>You are now on your Google Cloud Console.</li>
-</ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-cloud-console.png" alt="GCP Cloud Console"></p>
-<ol start="11">
-<li>Click on the Google Cloud Shell button at the top right of the console to open Google Cloud Shell terminal in your browser.</li>
-</ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-shell.png" alt="GCP Cloud Shell"></p>
-<ol start="12">
-<li>Click the <strong>Continue</strong> button and wait a few moments for you Google Cloud Shell Machine to be ready.</li>
-</ol>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp-shell-ready.png" alt="GCP Cloud Shell Ready"></p>
-<p>Great work! Let&rsquo;s move onto the next step and create a GKE cluster.</p>
+<p><img src="https://jfrogtraining.github.io/clouddays/images/xray-watch-complete.png" alt="Xray Watch Complete"></p>
+
+<div class="notices info" ><p>Xray Watches are the focal point for viewing and managing your security and license violations in the JFrog Platform. Watches provide you with the flexibility you need to meet your specific security and violation requirements. You select the resources you would like to scan for security vulnerabilities and compliance and determine the actions to be taken once a security vulnerability is detected.</p>
+</div>
+
 
 
 <footer class="footline">
@@ -1070,7 +1067,6 @@ viewBox="0 0 1014.42 981.05"
             
                 
                     
-                    
                 
                 
 
@@ -1086,9 +1082,6 @@ viewBox="0 0 1014.42 981.05"
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1132,22 +1125,6 @@ viewBox="0 0 1014.42 981.05"
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1229,6 +1206,23 @@ viewBox="0 0 1014.42 981.05"
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1239,6 +1233,9 @@ viewBox="0 0 1014.42 981.05"
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1340,10 +1337,10 @@ viewBox="0 0 1014.42 981.05"
 	 
 	 
 		
-			<a class="nav nav-prev" href="https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup.html" title="Prepare the GCP Environment"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="https://jfrogtraining.github.io/clouddays/amp/4_workshop_setup/42_jfrog_setup/425_create_xray_policy.html" title="Create a Xray Policy"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="https://jfrogtraining.github.io/clouddays/amp/4_workshop_setup/41_gcp_environment_setup/412_download_workshop_code.html" title="Download the Workshop Code" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://jfrogtraining.github.io/clouddays/5_build_publish_app.html" title="Build and Publish the Npm App" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

@@ -1,8 +1,8 @@
 ---
 title: "JFrog Platform Setup"
 chapter: false
-weight: 43
-pre: "<b>4.3 </b>"
+weight: 42
+pre: "<b>4.2 </b>"
 ---
 
 Next, we will setup our JFrog Platform instance and the JFrog CLI. We will:

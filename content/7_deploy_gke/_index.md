@@ -56,7 +56,7 @@ kubectl apply -f my-deployment.yaml --namespace clouddays
 5. Execute the following to see your deployed pod.
 
 ``
-kubectl get pods --namespace clouddays
+kubectl get pods --namespace clouddays -w
 ``
 
 You should see you npm-app pod.
@@ -66,7 +66,7 @@ You should see you npm-app pod.
 6. Now let's get the external IP so that we can view your application. Execute the following.
 
 ``
-kubectl get services --namespace clouddays
+kubectl get services --namespace clouddays -w
 ``
 
 This will provide the EXTERNAL-IP.

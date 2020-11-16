@@ -1,8 +1,8 @@
 ---
 title: "Create a GKE Cluster"
 chapter: false
-weight: 412
-pre: "<b>4.1.2 </b>"
+weight: 413
+pre: "<b>4.1.3 </b>"
 ---
 
 In this section, we will create a GKE Cluster in our Google Cloud Shell using the gcloud CLI.

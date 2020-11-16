@@ -1,8 +1,8 @@
 ﻿---
 title: "Create a Xray Watch"
 chapter: false
-weight: 435
-pre: "<b>4.3.5 </b>"
+weight: 425
+pre: "<b>4.2.5 </b>"
 ---
 
 Next, we will create an Xray security watch to scan our new Docker repository.

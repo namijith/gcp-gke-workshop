@@ -1,8 +1,8 @@
 ﻿---
 title: "Create Docker Repos"
 chapter: false
-weight: 433
-pre: "<b>4.3.3 </b>"
+weight: 423
+pre: "<b>4.2.3 </b>"
 ---
 
 Next, we will set up a new Docker repository in Artifacory. We will use this repository to host our workshop application image.

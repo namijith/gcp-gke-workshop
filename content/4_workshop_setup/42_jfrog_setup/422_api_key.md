@@ -1,8 +1,8 @@
 ---
 title: "Generate an API Key"
 chapter: false
-weight: 432
-pre: "<b>4.3.2 </b>"
+weight: 422
+pre: "<b>4.2.2 </b>"
 ---
 
 {{% notice tip %}}

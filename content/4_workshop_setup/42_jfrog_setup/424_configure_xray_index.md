@@ -1,8 +1,8 @@
 ﻿---
 title: "Configure a Xray Index"
 chapter: false
-weight: 434
-pre: "<b>4.3.4 </b>"
+weight: 424
+pre: "<b>4.2.4 </b>"
 ---
 
 Next, we will configure Xray to index our new Docker repository. This allows Xray to automatically analyze all the artifacts in this repository.

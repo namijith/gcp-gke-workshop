@@ -17,11 +17,21 @@
     </item>
     
     <item>
-      <title>Create a GKE Cluster</title>
-      <link>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/412_create_gke_cluster.html</link>
+      <title>Download the Workshop Code</title>
+      <link>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/412_download_workshop_code.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/412_create_gke_cluster.html</guid>
+      <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/412_download_workshop_code.html</guid>
+      <description>The workshop code is located at https://github.com/jfrogtraining/clouddays GitHub repository. We will clone this repository locally in order to pull the required workshop files and scripts. In your Google Cloud Shell, clone this repository to your local directory with the following command.
+git clone https://github.com/jfrogtraining/clouddays.git</description>
+    </item>
+    
+    <item>
+      <title>Create a GKE Cluster</title>
+      <link>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/413_create_gke_cluster.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/413_create_gke_cluster.html</guid>
       <description>In this section, we will create a GKE Cluster in our Google Cloud Shell using the gcloud CLI.
 The gcloud command-line interface is the primary CLI tool to create and manage Google Cloud resources. You can use this tool to perform many common platform tasks either from the command line or in scripts and other automations.
   In your Google Cloud Shell, execute the following command to set an environment variable for the GCP environment project ID.</description>
