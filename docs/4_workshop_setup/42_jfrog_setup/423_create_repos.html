@@ -9,7 +9,7 @@
 
     <link rel="icon" href="https://jfrogtraining.github.io/clouddays/images/favicon.png" type="image/png">
 
-    <title>Build the JFrog CLI Docker Image :: JFrog DevOps on GCP Workshop</title>
+    <title>Create NPM and Docker Repos :: JFrog DevOps on GCP Workshop</title>
 
     
     <link href="https://jfrogtraining.github.io/clouddays/css/nucleus.css?1605650241" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="https://jfrogtraining.github.io/clouddays/5_build_publish_app/51_build_jfrog_cli_image.html">
+  <body class="" data-url="https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup/423_create_repos.html">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -265,7 +265,7 @@ viewBox="0 0 1014.42 981.05"
   
     
     <li data-nav-id="/4_workshop_setup.html" title="Workshop Setup" class="dd-item 
-        
+        parent
         
         
         ">
@@ -397,7 +397,7 @@ viewBox="0 0 1014.42 981.05"
   
     
     <li data-nav-id="/4_workshop_setup/42_jfrog_setup.html" title="JFrog Platform Setup" class="dd-item 
-        
+        parent
         
         
         ">
@@ -467,7 +467,7 @@ viewBox="0 0 1014.42 981.05"
  
   
     
-      <li data-nav-id="/4_workshop_setup/42_jfrog_setup/423_create_repos.html" title="Create NPM and Docker Repos" class="dd-item ">
+      <li data-nav-id="/4_workshop_setup/42_jfrog_setup/423_create_repos.html" title="Create NPM and Docker Repos" class="dd-item active">
         <a href="https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup/423_create_repos.html">
         <b>4.2.3 </b>Create NPM and Docker Repos
         <i class="fas fa-check read-icon"></i>
@@ -568,7 +568,7 @@ viewBox="0 0 1014.42 981.05"
   
     
     <li data-nav-id="/5_build_publish_app.html" title="Build and Publish the Npm App" class="dd-item 
-        parent
+        
         
         
         ">
@@ -596,7 +596,7 @@ viewBox="0 0 1014.42 981.05"
  
   
     
-      <li data-nav-id="/5_build_publish_app/51_build_jfrog_cli_image.html" title="Build the JFrog CLI Docker Image" class="dd-item active">
+      <li data-nav-id="/5_build_publish_app/51_build_jfrog_cli_image.html" title="Build the JFrog CLI Docker Image" class="dd-item ">
         <a href="https://jfrogtraining.github.io/clouddays/5_build_publish_app/51_build_jfrog_cli_image.html">
         <b>5.1 </b>Build the JFrog CLI Docker Image
         <i class="fas fa-check read-icon"></i>
@@ -796,7 +796,13 @@ viewBox="0 0 1014.42 981.05"
             
           
           
-            <a href='https://jfrogtraining.github.io/clouddays/'>JFrog DevOps on GCP Workshop</a> > <a href='https://jfrogtraining.github.io/clouddays/5_build_publish_app.html'>Build and Publish the Npm App</a> > Build the JFrog CLI Docker Image
+            
+            
+          
+          
+            <a href='https://jfrogtraining.github.io/clouddays/'>JFrog DevOps on GCP Workshop</a> > <a href='https://jfrogtraining.github.io/clouddays/4_workshop_setup.html'>Workshop Setup</a> > <a href='https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup.html'>JFrog Platform Setup</a> > Create NPM and Docker Repos
+          
+        
           
         
           
@@ -825,53 +831,54 @@ viewBox="0 0 1014.42 981.05"
           
             <h1>
               
-              Build the JFrog CLI Docker Image
+              Create NPM and Docker Repos
             </h1>
           
 
         
 
 
-<p>First, we will use Google Cloud Build to create a npm docker image with the JFrog CLI. This will enable us to use JFrog CLI to build npm packages.</p>
-
-<div class="notices info" ><p><a href="https://cloud.google.com/cloud-build" target="_blank">Google Cloud Build</a> uses Docker to execute builds. For each build step, Cloud Build executes a Docker container as an instance of docker run.</p>
-</div>
-
+<p>Next, we will set up a NPM and Docker repositories in Artifactory.</p>
 <ol>
+<li>In your JFrog Platform instance go to <strong>Administration</strong> ► <strong>Repositories</strong> ► <strong>Repositories</strong>.</li>
+</ol>
+<p><img src="https://jfrogtraining.github.io/clouddays/images/repositories-repositories.png" alt="Repositories Repositories"></p>
+<ol start="2">
+<li>Click on <strong>New Local Repository</strong> on the right.</li>
+</ol>
+<p><img src="https://jfrogtraining.github.io/clouddays/images/new-local-repository.png" alt="New Local Repository"></p>
+<ol start="3">
+<li>For package type, select <strong>Docker</strong>.</li>
+</ol>
+<p><img src="https://jfrogtraining.github.io/clouddays/images/select-docker-repository.png" alt="Select Docker Repository"></p>
+<ol start="4">
+<li>Specify <em>clouddays</em> for the <strong>Repository Key</strong>.</li>
+</ol>
+<p><img src="https://jfrogtraining.github.io/clouddays/images/new-docker-repository.png" alt="New Docker Repository"></p>
+<ol start="5">
 <li>
-<p>Return to your Cloud Shell terminal and change directory to <em>clouddays/jfrog-cli-docker</em>.</p>
+<p>Click <strong>Save &amp; Finish</strong>.</p>
 </li>
 <li>
-<p>We will use Google Cloud Build to create JFrog CLI docker image. This build command uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps</p>
+<p><strong>Close</strong> the <em>New Docker Repository</em> dialog.</p>
+</li>
+<li>
+<p>Next, we must create NPM repositories that will be used for NPM dependencies. JFrog provides an easy <em>Quick Setup</em> option for this. Go to your profile and select <strong>Quick Setup</strong>.</p>
 </li>
 </ol>
-<ul>
-<li><code>docker build</code> to create the docker image</li>
-<li><code>docker tag</code> to tag newly created image</li>
-<li><code>docker login</code> to log into your Free Tier</li>
-<li><code>docker push</code> to push the newly created image to Artifactory&rsquo;s Docker repository.</li>
-</ul>
-<pre><code>gcloud builds submit --substitutions=_JFROG_SERVER_NAME=&quot;${JFROG_SERVER_NAME}&quot;,_JFROG_USER=&quot;${JFROG_USER}&quot;,_JFROG_API_KEY=&quot;${JFROG_API_KEY}&quot; --gcs-log-dir=gs://${PROJECT_ID}_cloudbuild/clouddays --config=cloudbuild.yaml .
-</code></pre>
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	What&#39;s going on here?
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <p><img src="https://jfrogtraining.github.io/clouddays/images/cloud-build-jfrog-cli.png" alt="Google Cloud Build JFrog CLI">
-.</p>
+<p><img src="https://jfrogtraining.github.io/clouddays/images/jfrog-quick-setup.png" alt="Quick Setup"></p>
+<ol start="8">
+<li>Select <strong>NPM</strong>.</li>
+</ol>
+<p><img src="https://jfrogtraining.github.io/clouddays/images/jfrog-quick-setup-npm.png" alt="Quick Setup NPM"></p>
+<ol start="9">
+<li>Then click <strong>Create</strong> and then <strong>Finish</strong>. This create default NPM repositories including a remote repository for npmjs.</li>
+</ol>
+<p><img src="https://jfrogtraining.github.io/clouddays/images/jfrog-quick-setup-done.png" alt="Quick Setup Done"></p>
 
-    </div>
+<div class="notices info" ><p>Three different types of repositories can be created: local, remote and virtual. <strong>Local repositories</strong> are physical, locally-managed repositories into which you can deploy artifacts. These are repositories that are local to the JFrog Artifactory instance. A <strong>remote repository</strong> serves as a caching proxy for a repository managed at a remote URL (which may itself be another Artifactory remote repository). A <strong>virtual repository</strong> (or &ldquo;repository group&rdquo;) aggregates several repositories with the same package type under a common URL. A virtual repository can aggregate local and remote repositories.</p>
 </div>
-<p>This command should result in a successful build of docker image and it should be pushed to Artifactory.
-<img src="https://jfrogtraining.github.io/clouddays/images/gcp/build_success1.png" alt="JFrog CLI build success"></p>
-<p><img src="https://jfrogtraining.github.io/clouddays/images/gcp/build_success2.png" alt="JFrog CLI build success"></p>
+
 
 
 <footer class="footline">
@@ -1148,6 +1155,26 @@ viewBox="0 0 1014.42 981.05"
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -1191,22 +1218,6 @@ viewBox="0 0 1014.42 981.05"
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1231,7 +1242,6 @@ viewBox="0 0 1014.42 981.05"
             
                 
                     
-                    
                 
                 
 
@@ -1247,9 +1257,6 @@ viewBox="0 0 1014.42 981.05"
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1322,10 +1329,10 @@ viewBox="0 0 1014.42 981.05"
 	 
 	 
 		
-			<a class="nav nav-prev" href="https://jfrogtraining.github.io/clouddays/5_build_publish_app.html" title="Build and Publish the Npm App"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup/422_api_key.html" title="Generate an API Key"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="https://jfrogtraining.github.io/clouddays/5_build_publish_app/52_build_docker_image.html" title="Build the NPM Application Docker Image" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup/424_configure_xray_index.html" title="Configure a Xray Index" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

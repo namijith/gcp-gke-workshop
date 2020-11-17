@@ -1,11 +1,11 @@
 ﻿---
-title: "Create Docker Repos"
+title: "Create NPM and Docker Repos"
 chapter: false
 weight: 423
 pre: "<b>4.2.3 </b>"
 ---
 
-Next, we will set up a new Docker repository in Artifacory. We will use this repository to host our workshop application image.
+Next, we will set up a NPM and Docker repositories in Artifactory.
 
 1. In your JFrog Platform instance go to **Administration** ► **Repositories** ► **Repositories**.
 
