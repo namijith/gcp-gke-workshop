@@ -11,24 +11,14 @@ In this section, we will create a GKE Cluster in our Google Cloud Shell using th
 The gcloud command-line interface is the primary CLI tool to create and manage Google Cloud resources. You can use this tool to perform many common platform tasks either from the command line or in scripts and other automations.
 {{% /notice %}}
 
-1. In your Google Cloud Shell, execute the following command to set an environment variable for the GCP environment project ID. This is one of the properties that was provided in the _environment details_. Or, you can see the project ID at the top left of your Google Cloud Console.
-
-![GCP Project ID](/images/gcp-project-id.png)
-
-``
-export PROJECT_ID=<project ID>
-``
-
-2. Execute the following command to set the project ID.
+1. In your Google Cloud Shell, execute the following command to set an environment variable for the GCP environment project ID.
 
 ```
-gcloud config set project $PROJECT_ID
+export PROJECT_ID=`gcloud config get-value project`
+echo $PROJECT_ID
 ```
 
-This will result in the following response.
-![GCP Project ID Set](/images/gcp-project-id-set.png)
-
-3. Execute the following gcloud CLI command to create a GKE cluster.
+2. Execute the following gcloud CLI command to create a GKE cluster.
 
 ```
 gcloud container clusters create "gcpworkshop" --zone "us-west1-a" --release-channel "rapid" --machine-type "e2-standard-2" --image-type "COS" --disk-type "pd-ssd" --disk-size "10" --num-nodes "1" --enable-stackdriver-kubernetes --enable-autoupgrade --enable-autorepair
