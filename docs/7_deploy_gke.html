@@ -12,21 +12,21 @@
     <title>Deploy Application on GKE :: JFrog DevOps on GCP Workshop</title>
 
     
-    <link href="https://jfrogtraining.github.io/clouddays/css/nucleus.css?1605650241" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/fontawesome-all.min.css?1605650241" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/hybrid.css?1605650241" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/featherlight.min.css?1605650241" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/perfect-scrollbar.min.css?1605650241" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/auto-complete.css?1605650241" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/atom-one-dark-reasonable.css?1605650241" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/theme.css?1605650241" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/hugo-theme.css?1605650241" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/nucleus.css?1605650420" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/fontawesome-all.min.css?1605650420" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/hybrid.css?1605650420" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/featherlight.min.css?1605650420" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/perfect-scrollbar.min.css?1605650420" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/auto-complete.css?1605650420" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/atom-one-dark-reasonable.css?1605650420" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/theme.css?1605650420" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/hugo-theme.css?1605650420" rel="stylesheet">
     
-    <link href="https://jfrogtraining.github.io/clouddays/css/theme-mine.css?1605650241" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/theme-mine.css?1605650420" rel="stylesheet">
     
     
 
-    <script src="https://jfrogtraining.github.io/clouddays/js/jquery-3.3.1.min.js?1605650241"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/jquery-3.3.1.min.js?1605650420"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -67,14 +67,14 @@ viewBox="0 0 1014.42 981.05"
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://jfrogtraining.github.io/clouddays/js/lunr.min.js?1605650241"></script>
-<script type="text/javascript" src="https://jfrogtraining.github.io/clouddays/js/auto-complete.js?1605650241"></script>
+<script type="text/javascript" src="https://jfrogtraining.github.io/clouddays/js/lunr.min.js?1605650420"></script>
+<script type="text/javascript" src="https://jfrogtraining.github.io/clouddays/js/auto-complete.js?1605650420"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/jfrogtraining.github.io\/clouddays\/";
     
 </script>
-<script type="text/javascript" src="https://jfrogtraining.github.io/clouddays/js/search.js?1605650241"></script>
+<script type="text/javascript" src="https://jfrogtraining.github.io/clouddays/js/search.js?1605650420"></script>
 
     
   </div>
@@ -847,45 +847,32 @@ viewBox="0 0 1014.42 981.05"
 </ol>
 <pre><code>export IMAGE_NAME=$JFROG_SERVER_NAME/clouddays/npm-app:latest
 echo $IMAGE_NAME
-```
+</code></pre><ol start="3">
+<li>We will use a Kubernetes deployment manifest to deploy the NPM application image. First, we must make a substitution in the file for the image that we want to deploy.</li>
+</ol>
+<p><code>sed &quot;s|imageName|$IMAGE_NAME|g&quot; deployment.yaml &gt; my-deployment.yaml</code></p>
+<ol start="4">
+<li>Now we can deploy with the following command.</li>
+</ol>
+<p><code>kubectl apply -f my-deployment.yaml --namespace clouddays</code></p>
+<ol start="5">
+<li>Execute the following to see your deployed pod.</li>
+</ol>
+<p><code>kubectl get pods --namespace clouddays -w</code></p>
+<p>You should see you npm-app pod.</p>
+<p><img src="https://jfrogtraining.github.io/clouddays/images/kubectl-get-pods.png" alt="Kubectl Get Pods"></p>
+<ol start="6">
+<li>Now let&rsquo;s get the external IP so that we can view your application. Execute the following.</li>
+</ol>
+<p><code>kubectl get services --namespace clouddays -w</code></p>
+<p>This will provide the EXTERNAL-IP.</p>
+<p><img src="https://jfrogtraining.github.io/clouddays/images/kubectl-external-ip.png" alt="Kubectl External IP"></p>
+<ol start="7">
+<li>In your browser, go to https://&lt;EXTERNAL-IP&gt; to view your deployed web application.</li>
+<li>Click through the self-signed certificate warning. You should see the following web application.</li>
+</ol>
+<p><img src="https://jfrogtraining.github.io/clouddays/images/npm-app.png" alt="NPM Application"></p>
 
-3. We will use a Kubernetes deployment manifest to deploy the NPM application image. First, we must make a substitution in the file for the image that we want to deploy.
-
-``
-sed &quot;s|imageName|$IMAGE_NAME|g&quot; deployment.yaml &gt; my-deployment.yaml
-``
-
-4. Now we can deploy with the following command.
-
-``
-kubectl apply -f my-deployment.yaml --namespace clouddays
-``
-
-5. Execute the following to see your deployed pod.
-
-``
-kubectl get pods --namespace clouddays -w
-``
-
-You should see you npm-app pod.
-
-![Kubectl Get Pods](/images/kubectl-get-pods.png)
-
-6. Now let's get the external IP so that we can view your application. Execute the following.
-
-``
-kubectl get services --namespace clouddays -w
-``
-
-This will provide the EXTERNAL-IP.
-
-![Kubectl External IP](/images/kubectl-external-ip.png)
-
-7. In your browser, go to https://\&lt;EXTERNAL-IP\&gt; to view your deployed web application. 
-8. Click through the self-signed certificate warning. You should see the following web application.
-
-![NPM Application](/images/npm-app.png)
-</code></pre>
 
 
 
@@ -1351,19 +1338,19 @@ This will provide the EXTERNAL-IP.
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://jfrogtraining.github.io/clouddays/js/clipboard.min.js?1605650241"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/perfect-scrollbar.min.js?1605650241"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/perfect-scrollbar.jquery.min.js?1605650241"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/jquery.sticky.js?1605650241"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/featherlight.min.js?1605650241"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/highlight.pack.js?1605650241"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/clipboard.min.js?1605650420"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/perfect-scrollbar.min.js?1605650420"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/perfect-scrollbar.jquery.min.js?1605650420"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/jquery.sticky.js?1605650420"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/featherlight.min.js?1605650420"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/highlight.pack.js?1605650420"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/modernizr.custom-3.6.0.js?1605650241"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/learn.js?1605650241"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/hugo-learn.js?1605650241"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/modernizr.custom-3.6.0.js?1605650420"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/learn.js?1605650420"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/hugo-learn.js?1605650420"></script>
     
         
-            <script src="https://jfrogtraining.github.io/clouddays/mermaid/mermaid.js?1605650241"></script>
+            <script src="https://jfrogtraining.github.io/clouddays/mermaid/mermaid.js?1605650420"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

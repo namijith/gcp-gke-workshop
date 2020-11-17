@@ -37,7 +37,7 @@ kubectl create secret docker-registry regcred
 
 3. Set an environment variable for our image name.
 
-````
+```
 export IMAGE_NAME=$JFROG_SERVER_NAME/clouddays/npm-app:latest
 echo $IMAGE_NAME
 ```
