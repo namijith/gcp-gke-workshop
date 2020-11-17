@@ -12,21 +12,21 @@
     <title>Build the JFrog CLI Docker Image :: JFrog DevOps on GCP Workshop</title>
 
     
-    <link href="https://jfrogtraining.github.io/clouddays/css/nucleus.css?1605590463" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/fontawesome-all.min.css?1605590463" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/hybrid.css?1605590463" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/featherlight.min.css?1605590463" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/perfect-scrollbar.min.css?1605590463" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/auto-complete.css?1605590463" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/atom-one-dark-reasonable.css?1605590463" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/theme.css?1605590463" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/hugo-theme.css?1605590463" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/nucleus.css?1605636012" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/fontawesome-all.min.css?1605636012" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/hybrid.css?1605636012" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/featherlight.min.css?1605636012" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/perfect-scrollbar.min.css?1605636012" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/auto-complete.css?1605636012" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/atom-one-dark-reasonable.css?1605636012" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/theme.css?1605636012" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/hugo-theme.css?1605636012" rel="stylesheet">
     
-    <link href="https://jfrogtraining.github.io/clouddays/css/theme-mine.css?1605590463" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/theme-mine.css?1605636012" rel="stylesheet">
     
     
 
-    <script src="https://jfrogtraining.github.io/clouddays/js/jquery-3.3.1.min.js?1605590463"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/jquery-3.3.1.min.js?1605636012"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -67,14 +67,14 @@ viewBox="0 0 1014.42 981.05"
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://jfrogtraining.github.io/clouddays/js/lunr.min.js?1605590463"></script>
-<script type="text/javascript" src="https://jfrogtraining.github.io/clouddays/js/auto-complete.js?1605590463"></script>
+<script type="text/javascript" src="https://jfrogtraining.github.io/clouddays/js/lunr.min.js?1605636012"></script>
+<script type="text/javascript" src="https://jfrogtraining.github.io/clouddays/js/auto-complete.js?1605636012"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/jfrogtraining.github.io\/clouddays\/";
     
 </script>
-<script type="text/javascript" src="https://jfrogtraining.github.io/clouddays/js/search.js?1605590463"></script>
+<script type="text/javascript" src="https://jfrogtraining.github.io/clouddays/js/search.js?1605636012"></script>
 
     
   </div>
@@ -832,7 +832,11 @@ viewBox="0 0 1014.42 981.05"
         
 
 
-<p>First, we will use an npm docker image and add JFrog CLI to it. This will enable us to use JFrog CLI to build npm packages.</p>
+<p>First, we will use Google Cloud Build to create a npm docker image with the JFrog CLI. This will enable us to use JFrog CLI to build npm packages.</p>
+
+<div class="notices info" ><p><a href="https://cloud.google.com/cloud-build" target="_blank">Google Cloud Build</a> uses Docker to execute builds. For each build step, Cloud Build executes a Docker container as an instance of docker run.</p>
+</div>
+
 <ol>
 <li>
 <p>Return to your Cloud Shell terminal and change directory to <em>clouddays/jfrog-cli-docker</em>.</p>
@@ -848,7 +852,24 @@ viewBox="0 0 1014.42 981.05"
 <li><code>docker push</code> to push the newly created image to Artifactory&rsquo;s Docker repository.</li>
 </ul>
 <pre><code>gcloud builds submit --substitutions=_JFROG_SERVER_NAME=&quot;${JFROG_SERVER_NAME}&quot;,_JFROG_USER=&quot;${JFROG_USER}&quot;,_JFROG_API_KEY=&quot;${JFROG_API_KEY}&quot; --gcs-log-dir=gs://${PROJECT_ID}_cloudbuild/clouddays --config=cloudbuild.yaml .
-</code></pre><p>This command should result in a successful build of docker image and it should be pushed to Artifactory.
+</code></pre>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	What&#39;s going on here?
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p><img src="https://jfrogtraining.github.io/clouddays/images/cloud-build-jfrog-cli.png" alt="Google Cloud Build JFrog CLI">
+.</p>
+
+    </div>
+</div>
+<p>This command should result in a successful build of docker image and it should be pushed to Artifactory.
 <img src="https://jfrogtraining.github.io/clouddays/images/gcp/build_success1.png" alt="JFrog CLI build success"></p>
 <p><img src="https://jfrogtraining.github.io/clouddays/images/gcp/build_success2.png" alt="JFrog CLI build success"></p>
 
@@ -1314,19 +1335,19 @@ viewBox="0 0 1014.42 981.05"
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://jfrogtraining.github.io/clouddays/js/clipboard.min.js?1605590463"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/perfect-scrollbar.min.js?1605590463"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/perfect-scrollbar.jquery.min.js?1605590463"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/jquery.sticky.js?1605590463"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/featherlight.min.js?1605590463"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/highlight.pack.js?1605590463"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/clipboard.min.js?1605636012"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/perfect-scrollbar.min.js?1605636012"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/perfect-scrollbar.jquery.min.js?1605636012"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/jquery.sticky.js?1605636012"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/featherlight.min.js?1605636012"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/highlight.pack.js?1605636012"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/modernizr.custom-3.6.0.js?1605590463"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/learn.js?1605590463"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/hugo-learn.js?1605590463"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/modernizr.custom-3.6.0.js?1605636012"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/learn.js?1605636012"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/hugo-learn.js?1605636012"></script>
     
         
-            <script src="https://jfrogtraining.github.io/clouddays/mermaid/mermaid.js?1605590463"></script>
+            <script src="https://jfrogtraining.github.io/clouddays/mermaid/mermaid.js?1605636012"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
