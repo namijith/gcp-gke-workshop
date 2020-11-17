@@ -19,7 +19,7 @@ Now, we can use new JFrog CLI image to build the NPM application Docker image an
 The JFrog CLI is used to collect build information during this process and publish it to Artifactory.
 
 ```
-gcloud builds submit --substitutions=_JFROG_SERVER_NAME="${JFROG_SERVER_NAME}",_JFROG_USER="${JFROG_USER}",_JFROG_API_KEY="${JFROG_API_KEY}" --config=cloudbuild.yaml .
+gcloud builds submit --substitutions=_JFROG_SERVER_NAME="${JFROG_SERVER_NAME}",_JFROG_USER="${JFROG_USER}",_JFROG_API_KEY="${JFROG_API_KEY}" --gcs-log-dir=gs://${PROJECT_ID}_cloudbuild/clouddays --config=cloudbuild.yaml .
 ```
 
 {{%expand "Let's review!" %}}

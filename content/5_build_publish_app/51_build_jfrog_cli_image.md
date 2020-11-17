@@ -17,7 +17,7 @@ First, we will use an npm docker image and add JFrog CLI to it. This will enable
 
 
 ```
-gcloud builds submit --substitutions=_JFROG_SERVER_NAME="${JFROG_SERVER_NAME}",_JFROG_USER="${JFROG_USER}",_JFROG_API_KEY="${JFROG_API_KEY}" --config=cloudbuild.yaml .
+gcloud builds submit --substitutions=_JFROG_SERVER_NAME="${JFROG_SERVER_NAME}",_JFROG_USER="${JFROG_USER}",_JFROG_API_KEY="${JFROG_API_KEY}" --gcs-log-dir=gs://${PROJECT_ID}_cloudbuild/clouddays --config=cloudbuild.yaml .
 ```
 
 This command should result in a successful build of docker image and it should be pushed to Artifactory.

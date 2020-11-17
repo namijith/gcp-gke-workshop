@@ -1,12 +1,12 @@
 ---
-title: "JFrog DevOps Modernization Workshop"
+title: "JFrog DevOps on GCP Workshop"
 chapter: true
 weight: 1
 ---
 
 ![GCP Logo](/images/gcp-logo.png) 
 
-# DevOps Modernization Workshop
+# DevOps on GCP Workshop
 
 ### Welcome
 
@@ -14,8 +14,10 @@ In this workshop you will learn about the JFrog Platform and how to leverage Art
 
 ### Learning Objectives
 - Understand the roles of Artifactory and Xray in your software delivery life cycle (SDLC).
+- Use the JFrog CLI in your build process.
+- Use Cloud Build for your CI/CD solution.
 - Use Local, Remote and Virtual Repositories in Artifactory.
-- Publish and promote Build Info.
+- Publish artifact Build Info.
 - Scan your artifacts and builds for security vulnerabilities.
 
 {{% notice warning %}}

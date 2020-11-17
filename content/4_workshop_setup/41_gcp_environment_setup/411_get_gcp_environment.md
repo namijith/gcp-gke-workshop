@@ -7,6 +7,10 @@ pre: "<b>4.1.1 </b>"
 
 This workshop requires a GCP environment. Your instructor will provide a link and an activation code. The following steps walk through the process of obtaining a GCP environment using the provided link and activation code.
 
+{{% notice warning %}}
+When using this temporary GCP environment, use an **Incognito Window** to avoid conflicts with your existing Google Account.
+{{% /notice %}}
+
 1. Open the instructor provided link in your browser. This will take you to environment registration page.
 
 ![GCP Environment Registration](/images/gcp-environment-registration.png)

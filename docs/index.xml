@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JFrog DevOps Modernization Workshop</title>
+    <title>JFrog DevOps on GCP Workshop</title>
     <link>https://jfrogtraining.github.io/clouddays/</link>
-    <description>Recent content on JFrog DevOps Modernization Workshop</description>
+    <description>Recent content on JFrog DevOps on GCP Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language><atom:link href="https://jfrogtraining.github.io/clouddays/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -72,7 +72,8 @@ JFrog Artifactory is an Artifact Repository Manager that fully supports software
       
       <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html</guid>
       <description>This workshop requires a GCP environment. Your instructor will provide a link and an activation code. The following steps walk through the process of obtaining a GCP environment using the provided link and activation code.
- Open the instructor provided link in your browser. This will take you to environment registration page.  Fill out the form with your information and click Submit.  Next, click on the Launch Lab button.</description>
+When using this temporary GCP environment, use an Incognito Window to avoid conflicts with your existing Google Account.
+  Open the instructor provided link in your browser. This will take you to environment registration page.</description>
     </item>
     
     <item>
