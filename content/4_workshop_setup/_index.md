@@ -11,7 +11,3 @@ Before we get started on building, publishing and deploying our NPM application,
 - Clone our workshop GitHub repository which contains our code.
 - Configure our JFrog Platform instance (Artifactory and Xray).
 
-
-{{% notice warning %}}
-This Google cloud account will expire at the end of the workshop and any resources will automatically be de-provisioned. You will not be able to access this account after today.
-{{% /notice %}}

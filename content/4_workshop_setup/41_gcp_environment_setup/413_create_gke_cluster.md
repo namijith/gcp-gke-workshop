@@ -18,16 +18,23 @@ export PROJECT_ID=`gcloud config get-value project`
 echo $PROJECT_ID
 ```
 
-2. Execute the following gcloud CLI command to create a GKE cluster.
+2. In your Google Cloud Shell, execute the following command to set an environment variable for the GCP region that you would like to use.
 
 ```
-gcloud container clusters create "gcpworkshop" --zone "us-west1-a" --release-channel "rapid" --machine-type "e2-standard-2" --image-type "COS" --disk-type "pd-ssd" --disk-size "10" --num-nodes "1" --enable-stackdriver-kubernetes --enable-autoupgrade --enable-autorepair
+export REGION=<your region>
+echo $REGION
+```
+
+3. Execute the following gcloud CLI command to create a GKE cluster.
+
+```
+gcloud container clusters create "gcpworkshop" --zone $REGION --release-channel "rapid" --machine-type "e2-standard-2" --image-type "COS" --disk-type "pd-ssd" --disk-size "10" --num-nodes "1" --enable-stackdriver-kubernetes --enable-autoupgrade --enable-autorepair
 ```
 
 With this command we have specified the following GKE cluster properties: 
 
 - Specified the cluster name as _gcpworkshop_.
-- Specified the zone as _us-west1-a_.
+- Specified the zone.
 - Specified the Kubernetes release channel which controls Kubernetes cluster version updates. Rapid gets the latest Kubernete release as early as possible.
 - Specified the Kubernetes node machine type as _e2-standard-2_ and set it to container optimized.
 - Set disk storage type and size (SSD).

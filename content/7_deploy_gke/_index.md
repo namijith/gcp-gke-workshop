@@ -10,7 +10,7 @@ We are now ready to deploy your image with GKE. If not yet created, GKE can crea
 1 . Remember the kubernetes cluster we created in the beginning of the lab? It must be ready by now. Let's establish connectivity to it with the following command.
 
 ```
-gcloud container clusters get-credentials gcpworkshop --project=$PROJECT_ID --zone=us-west1-a
+gcloud container clusters get-credentials gcpworkshop --project=$PROJECT_ID --zone=$REGION
 ```
 
 2. Verify that our cluster is healthy and by showing the Kubernetes nodes.

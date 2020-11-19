@@ -11,7 +11,7 @@ First, we will use Google Cloud Build to create a npm docker image with the JFro
 [Google Cloud Build](https://cloud.google.com/cloud-build) uses Docker to execute builds. For each build step, Cloud Build executes a Docker container as an instance of docker run.
 {{% /notice %}}
 
-1. Return to your Cloud Shell terminal and change directory to _clouddays/jfrog-cli-docker_.
+1. Return to your Cloud Shell terminal and change directory to _gcp-gke-workshop/jfrog-cli-docker_.
 
 2. We will use Google Cloud Build to create JFrog CLI docker image. This build command uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps
 - `docker build` to create the docker image

@@ -12,9 +12,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html</guid>
-      <description>This workshop requires a GCP environment. Your instructor will provide a link and an activation code. The following steps walk through the process of obtaining a GCP environment using the provided link and activation code.
-When using this temporary GCP environment, use an Incognito Window to avoid conflicts with your existing Google Account.
-  Open the instructor provided link in your browser. This will take you to environment registration page.</description>
+      <description>If you have your own Google account and have your own GCP environment, skip this step.
+ This workshop requires a GCP environment. If this is a JFrog and Google hosted event, your instructor will provide a link and an activation code. The following steps walk through the process of obtaining a GCP environment using the provided link and activation code. Otherwise, use your own GCP environment and skip this step.</description>
     </item>
     
     <item>
@@ -23,8 +22,8 @@ When using this temporary GCP environment, use an Incognito Window to avoid conf
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/412_download_workshop_code.html</guid>
-      <description>The workshop code is located at https://github.com/jfrogtraining/clouddays GitHub repository. We will clone this repository locally in order to pull the required workshop files and scripts. In your Google Cloud Shell, clone this repository to your local directory with the following command.
-git clone https://github.com/jfrogtraining/clouddays.git</description>
+      <description>The workshop code is located at https://github.com/jfrogtraining/gcp-gke-workshop GitHub repository. We will clone this repository locally in order to pull the required workshop files and scripts.
+ Click on the Google Cloud Shell button at the top right of the console to open Google Cloud Shell terminal in your browser.  Click the Continue button and wait a few moments for you Google Cloud Shell Machine to be ready.  Clone this repository to your local directory with the following command.</description>
     </item>
     
     <item>

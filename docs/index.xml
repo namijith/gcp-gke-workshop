@@ -51,7 +51,7 @@ JFrog Artifactory is an Artifact Repository Manager that fully supports software
       <guid>https://jfrogtraining.github.io/clouddays/5_build_publish_app/51_build_jfrog_cli_image.html</guid>
       <description>First, we will use Google Cloud Build to create a npm docker image with the JFrog CLI. This will enable us to use JFrog CLI to build npm packages.
 Google Cloud Build uses Docker to execute builds. For each build step, Cloud Build executes a Docker container as an instance of docker run.
-   Return to your Cloud Shell terminal and change directory to clouddays/jfrog-cli-docker.
+   Return to your Cloud Shell terminal and change directory to gcp-gke-workshop/jfrog-cli-docker.
   We will use Google Cloud Build to create JFrog CLI docker image.</description>
     </item>
     
@@ -62,7 +62,7 @@ Google Cloud Build uses Docker to execute builds. For each build step, Cloud Bui
       
       <guid>https://jfrogtraining.github.io/clouddays/5_build_publish_app/52_build_docker_image.html</guid>
       <description>Now, we can use new JFrog CLI image to build the NPM application Docker image and push it to Artifactory&amp;rsquo;s Docker repository.
-  Return to your Google Cloud Shell terminal and change directory to clouddays/workshop-app.
+  Return to your Google Cloud Shell terminal and change directory to gcp-gke-workshop/workshop-app.
   Use Google Cloud Build and the JFrog CLI to build the NPM Docker image. This build command uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps:</description>
     </item>
     
@@ -72,9 +72,8 @@ Google Cloud Build uses Docker to execute builds. For each build step, Cloud Bui
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html</guid>
-      <description>This workshop requires a GCP environment. Your instructor will provide a link and an activation code. The following steps walk through the process of obtaining a GCP environment using the provided link and activation code.
-When using this temporary GCP environment, use an Incognito Window to avoid conflicts with your existing Google Account.
-  Open the instructor provided link in your browser. This will take you to environment registration page.</description>
+      <description>If you have your own Google account and have your own GCP environment, skip this step.
+ This workshop requires a GCP environment. If this is a JFrog and Google hosted event, your instructor will provide a link and an activation code. The following steps walk through the process of obtaining a GCP environment using the provided link and activation code. Otherwise, use your own GCP environment and skip this step.</description>
     </item>
     
     <item>
@@ -83,8 +82,8 @@ When using this temporary GCP environment, use an Incognito Window to avoid conf
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/412_download_workshop_code.html</guid>
-      <description>The workshop code is located at https://github.com/jfrogtraining/clouddays GitHub repository. We will clone this repository locally in order to pull the required workshop files and scripts. In your Google Cloud Shell, clone this repository to your local directory with the following command.
-git clone https://github.com/jfrogtraining/clouddays.git</description>
+      <description>The workshop code is located at https://github.com/jfrogtraining/gcp-gke-workshop GitHub repository. We will clone this repository locally in order to pull the required workshop files and scripts.
+ Click on the Google Cloud Shell button at the top right of the console to open Google Cloud Shell terminal in your browser.  Click the Continue button and wait a few moments for you Google Cloud Shell Machine to be ready.  Clone this repository to your local directory with the following command.</description>
     </item>
     
     <item>
@@ -105,7 +104,7 @@ The gcloud command-line interface is the primary CLI tool to create and manage G
       
       <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup/421_jfrog_free.html</guid>
       <description>If you do not have access to a JFrog Platform instance, use the JFrog Platform Cloud Free Tier to get your own JFrog Platform instance with Artifactory and Xray.
-When signing up for the JFrog Platform Cloud Free Tier, ensure that you select Google Cloud and the US Oregon region.
+When signing up for the JFrog Platform Cloud Free Tier, ensure that you select Google Cloud.
   JFrog Platform Cloud Free Tier   </description>
     </item>
     

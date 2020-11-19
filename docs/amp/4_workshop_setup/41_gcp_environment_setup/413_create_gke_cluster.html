@@ -12,21 +12,21 @@
     <title>Create a GKE Cluster :: JFrog DevOps on GCP Workshop</title>
 
     
-    <link href="https://jfrogtraining.github.io/clouddays/css/nucleus.css?1605650420" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/fontawesome-all.min.css?1605650420" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/hybrid.css?1605650420" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/featherlight.min.css?1605650420" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/perfect-scrollbar.min.css?1605650420" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/auto-complete.css?1605650420" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/atom-one-dark-reasonable.css?1605650420" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/theme.css?1605650420" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/clouddays/css/hugo-theme.css?1605650420" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/nucleus.css?1605807899" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/fontawesome-all.min.css?1605807899" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/hybrid.css?1605807899" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/featherlight.min.css?1605807899" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/perfect-scrollbar.min.css?1605807899" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/auto-complete.css?1605807899" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/atom-one-dark-reasonable.css?1605807899" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/theme.css?1605807899" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/hugo-theme.css?1605807899" rel="stylesheet">
     
-    <link href="https://jfrogtraining.github.io/clouddays/css/theme-mine.css?1605650420" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/clouddays/css/theme-mine.css?1605807899" rel="stylesheet">
     
     
 
-    <script src="https://jfrogtraining.github.io/clouddays/js/jquery-3.3.1.min.js?1605650420"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/jquery-3.3.1.min.js?1605807899"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -67,14 +67,14 @@ viewBox="0 0 1014.42 981.05"
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://jfrogtraining.github.io/clouddays/js/lunr.min.js?1605650420"></script>
-<script type="text/javascript" src="https://jfrogtraining.github.io/clouddays/js/auto-complete.js?1605650420"></script>
+<script type="text/javascript" src="https://jfrogtraining.github.io/clouddays/js/lunr.min.js?1605807899"></script>
+<script type="text/javascript" src="https://jfrogtraining.github.io/clouddays/js/auto-complete.js?1605807899"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/jfrogtraining.github.io\/clouddays\/";
     
 </script>
-<script type="text/javascript" src="https://jfrogtraining.github.io/clouddays/js/search.js?1605650420"></script>
+<script type="text/javascript" src="https://jfrogtraining.github.io/clouddays/js/search.js?1605807899"></script>
 
     
   </div>
@@ -849,13 +849,18 @@ viewBox="0 0 1014.42 981.05"
 <pre><code>export PROJECT_ID=`gcloud config get-value project`
 echo $PROJECT_ID
 </code></pre><ol start="2">
+<li>In your Google Cloud Shell, execute the following command to set an environment variable for the GCP region that you would like to use.</li>
+</ol>
+<pre><code>export REGION=&lt;your region&gt;
+echo $REGION
+</code></pre><ol start="3">
 <li>Execute the following gcloud CLI command to create a GKE cluster.</li>
 </ol>
-<pre><code>gcloud container clusters create &quot;gcpworkshop&quot; --zone &quot;us-west1-a&quot; --release-channel &quot;rapid&quot; --machine-type &quot;e2-standard-2&quot; --image-type &quot;COS&quot; --disk-type &quot;pd-ssd&quot; --disk-size &quot;10&quot; --num-nodes &quot;1&quot; --enable-stackdriver-kubernetes --enable-autoupgrade --enable-autorepair
+<pre><code>gcloud container clusters create &quot;gcpworkshop&quot; --zone $REGION --release-channel &quot;rapid&quot; --machine-type &quot;e2-standard-2&quot; --image-type &quot;COS&quot; --disk-type &quot;pd-ssd&quot; --disk-size &quot;10&quot; --num-nodes &quot;1&quot; --enable-stackdriver-kubernetes --enable-autoupgrade --enable-autorepair
 </code></pre><p>With this command we have specified the following GKE cluster properties:</p>
 <ul>
 <li>Specified the cluster name as <em>gcpworkshop</em>.</li>
-<li>Specified the zone as <em>us-west1-a</em>.</li>
+<li>Specified the zone.</li>
 <li>Specified the Kubernetes release channel which controls Kubernetes cluster version updates. Rapid gets the latest Kubernete release as early as possible.</li>
 <li>Specified the Kubernetes node machine type as <em>e2-standard-2</em> and set it to container optimized.</li>
 <li>Set disk storage type and size (SSD).</li>
@@ -1328,19 +1333,19 @@ echo $PROJECT_ID
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://jfrogtraining.github.io/clouddays/js/clipboard.min.js?1605650420"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/perfect-scrollbar.min.js?1605650420"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/perfect-scrollbar.jquery.min.js?1605650420"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/jquery.sticky.js?1605650420"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/featherlight.min.js?1605650420"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/highlight.pack.js?1605650420"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/clipboard.min.js?1605807899"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/perfect-scrollbar.min.js?1605807899"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/perfect-scrollbar.jquery.min.js?1605807899"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/jquery.sticky.js?1605807899"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/featherlight.min.js?1605807899"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/highlight.pack.js?1605807899"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/modernizr.custom-3.6.0.js?1605650420"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/learn.js?1605650420"></script>
-    <script src="https://jfrogtraining.github.io/clouddays/js/hugo-learn.js?1605650420"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/modernizr.custom-3.6.0.js?1605807899"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/learn.js?1605807899"></script>
+    <script src="https://jfrogtraining.github.io/clouddays/js/hugo-learn.js?1605807899"></script>
     
         
-            <script src="https://jfrogtraining.github.io/clouddays/mermaid/mermaid.js?1605650420"></script>
+            <script src="https://jfrogtraining.github.io/clouddays/mermaid/mermaid.js?1605807899"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
