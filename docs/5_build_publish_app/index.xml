@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Build and Publish the Npm App on JFrog DevOps on GCP Workshop</title>
-    <link>https://jfrogtraining.github.io/clouddays/5_build_publish_app.html</link>
+    <link>https://jfrogtraining.github.io/gcp-gke-workshop/5_build_publish_app.html</link>
     <description>Recent content in Build and Publish the Npm App on JFrog DevOps on GCP Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language><atom:link href="https://jfrogtraining.github.io/clouddays/5_build_publish_app/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-US</language><atom:link href="https://jfrogtraining.github.io/gcp-gke-workshop/5_build_publish_app/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Build the JFrog CLI Docker Image</title>
-      <link>https://jfrogtraining.github.io/clouddays/5_build_publish_app/51_build_jfrog_cli_image.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/5_build_publish_app/51_build_jfrog_cli_image.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/5_build_publish_app/51_build_jfrog_cli_image.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/5_build_publish_app/51_build_jfrog_cli_image.html</guid>
       <description>First, we will use Google Cloud Build to create a npm docker image with the JFrog CLI. This will enable us to use JFrog CLI to build npm packages.
 Google Cloud Build uses Docker to execute builds. For each build step, Cloud Build executes a Docker container as an instance of docker run.
    Return to your Cloud Shell terminal and change directory to gcp-gke-workshop/jfrog-cli-docker.
@@ -20,10 +20,10 @@ Google Cloud Build uses Docker to execute builds. For each build step, Cloud Bui
     
     <item>
       <title>Build the NPM Application Docker Image</title>
-      <link>https://jfrogtraining.github.io/clouddays/5_build_publish_app/52_build_docker_image.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/5_build_publish_app/52_build_docker_image.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/5_build_publish_app/52_build_docker_image.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/5_build_publish_app/52_build_docker_image.html</guid>
       <description>Now, we can use new JFrog CLI image to build the NPM application Docker image and push it to Artifactory&amp;rsquo;s Docker repository.
   Return to your Google Cloud Shell terminal and change directory to gcp-gke-workshop/workshop-app.
   Use Google Cloud Build and the JFrog CLI to build the NPM Docker image. This build command uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps:</description>

@@ -2,36 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Prepare the GCP Environment on JFrog DevOps on GCP Workshop</title>
-    <link>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup.html</link>
+    <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup.html</link>
     <description>Recent content in Prepare the GCP Environment on JFrog DevOps on GCP Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language><atom:link href="https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-US</language><atom:link href="https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Get a GCP Environment</title>
-      <link>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html</guid>
       <description>If you have your own Google account and have your own GCP environment, skip this step.
  This workshop requires a GCP environment. If this is a JFrog and Google hosted event, your instructor will provide a link and an activation code. The following steps walk through the process of obtaining a GCP environment using the provided link and activation code. Otherwise, use your own GCP environment and skip this step.</description>
     </item>
     
     <item>
       <title>Download the Workshop Code</title>
-      <link>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/412_download_workshop_code.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/412_download_workshop_code.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/412_download_workshop_code.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/412_download_workshop_code.html</guid>
       <description>The workshop code is located at https://github.com/jfrogtraining/gcp-gke-workshop GitHub repository. We will clone this repository locally in order to pull the required workshop files and scripts.
  Click on the Google Cloud Shell button at the top right of the console to open Google Cloud Shell terminal in your browser.  Click the Continue button and wait a few moments for you Google Cloud Shell Machine to be ready.  Clone this repository to your local directory with the following command.</description>
     </item>
     
     <item>
       <title>Create a GKE Cluster</title>
-      <link>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/413_create_gke_cluster.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/413_create_gke_cluster.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/413_create_gke_cluster.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/413_create_gke_cluster.html</guid>
       <description>In this section, we will create a GKE Cluster in our Google Cloud Shell using the gcloud CLI.
 The gcloud command-line interface is the primary CLI tool to create and manage Google Cloud resources. You can use this tool to perform many common platform tasks either from the command line or in scripts and other automations.
   In your Google Cloud Shell, execute the following command to set an environment variable for the GCP environment project ID.</description>

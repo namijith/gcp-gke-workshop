@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JFrog DevOps on GCP Workshop</title>
-    <link>https://jfrogtraining.github.io/clouddays/</link>
+    <link>https://jfrogtraining.github.io/gcp-gke-workshop/</link>
     <description>Recent content on JFrog DevOps on GCP Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language><atom:link href="https://jfrogtraining.github.io/clouddays/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-US</language><atom:link href="https://jfrogtraining.github.io/gcp-gke-workshop/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Continuous Integration and Delivery</title>
-      <link>https://jfrogtraining.github.io/clouddays/2_devops_cloud/21_continuous_integration_and_delivery.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/2_devops_cloud/21_continuous_integration_and_delivery.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/2_devops_cloud/21_continuous_integration_and_delivery.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/2_devops_cloud/21_continuous_integration_and_delivery.html</guid>
       <description>Continuous integration and delivery (CI/CD) is the process for which your software components are built from code, integrated, tested, released, deployed and ultimately delivered to end-users. CI/CD pipelines are the software assembly line that orchestrates the building of your software. This CI/CD pipeline line requires infrastructure. Cloud computing has allowed this infrastructure to become dynamic and ephemeral. On cloud infrastructure, your CI/CD pipelines scale up and down to meet your software delivery demands.</description>
     </item>
     
     <item>
       <title>Binary Repository Management</title>
-      <link>https://jfrogtraining.github.io/clouddays/2_devops_cloud/22_binary_repository_management.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/2_devops_cloud/22_binary_repository_management.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/2_devops_cloud/22_binary_repository_management.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/2_devops_cloud/22_binary_repository_management.html</guid>
       <description>A Binary Repository Manager is a software hub that simplifies the development process for different teams across an organization by helping them to collaborate on building coherent and compatible software components. It does this by centralizing the management of all the binary artifacts generated and used by the organization, thereby overcoming the incredible complexity arising from diverse binary artifact types, their position in the overall workflow and the set of dependencies between them.</description>
     </item>
     
     <item>
       <title>DevSecOps</title>
-      <link>https://jfrogtraining.github.io/clouddays/2_devops_cloud/23_dev_sec_ops.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/2_devops_cloud/23_dev_sec_ops.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/2_devops_cloud/23_dev_sec_ops.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/2_devops_cloud/23_dev_sec_ops.html</guid>
       <description>Any security issue identified by a security scanning may be reviewed by a small security team that may lack the technical knowledge. This challenge can be reduced by shifting left to the developer and operations teams, making them also responsible for security and compliance. This moves security earlier in the software delivery process. Source code, dependency and artifact security scanning are some examples of moving security into the development process. Implementing the identification of security issues earlier in the CI/CD pipeline, as well as automating security and compliance policies in the Software Development Lifecycle (SDLC), rather than using manual processes, is crucial.</description>
     </item>
     
     <item>
       <title>JFrog Platform for DevOps in the Cloud</title>
-      <link>https://jfrogtraining.github.io/clouddays/2_devops_cloud/24_jfrog_platform_overview.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/2_devops_cloud/24_jfrog_platform_overview.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/2_devops_cloud/24_jfrog_platform_overview.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/2_devops_cloud/24_jfrog_platform_overview.html</guid>
       <description>The JFrog Platform is designed to meet the growing needs of companies to develop and distribute software in the cloud. It provides DevOps teams with the tools needed to create, manage, secure and deploy software with ease. These tools cover everything from continuous integration and delivery (CI/CD), binary repository management, artifact maturity, security and vulnerability protection (DevSecOps), release management, analytics and distribution.
 JFrog Artifactory is an Artifact Repository Manager that fully supports software packages created by any language or technology.</description>
     </item>
     
     <item>
       <title>Build the JFrog CLI Docker Image</title>
-      <link>https://jfrogtraining.github.io/clouddays/5_build_publish_app/51_build_jfrog_cli_image.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/5_build_publish_app/51_build_jfrog_cli_image.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/5_build_publish_app/51_build_jfrog_cli_image.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/5_build_publish_app/51_build_jfrog_cli_image.html</guid>
       <description>First, we will use Google Cloud Build to create a npm docker image with the JFrog CLI. This will enable us to use JFrog CLI to build npm packages.
 Google Cloud Build uses Docker to execute builds. For each build step, Cloud Build executes a Docker container as an instance of docker run.
    Return to your Cloud Shell terminal and change directory to gcp-gke-workshop/jfrog-cli-docker.
@@ -57,10 +57,10 @@ Google Cloud Build uses Docker to execute builds. For each build step, Cloud Bui
     
     <item>
       <title>Build the NPM Application Docker Image</title>
-      <link>https://jfrogtraining.github.io/clouddays/5_build_publish_app/52_build_docker_image.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/5_build_publish_app/52_build_docker_image.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/5_build_publish_app/52_build_docker_image.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/5_build_publish_app/52_build_docker_image.html</guid>
       <description>Now, we can use new JFrog CLI image to build the NPM application Docker image and push it to Artifactory&amp;rsquo;s Docker repository.
   Return to your Google Cloud Shell terminal and change directory to gcp-gke-workshop/workshop-app.
   Use Google Cloud Build and the JFrog CLI to build the NPM Docker image. This build command uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps:</description>
@@ -68,30 +68,30 @@ Google Cloud Build uses Docker to execute builds. For each build step, Cloud Bui
     
     <item>
       <title>Get a GCP Environment</title>
-      <link>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html</guid>
       <description>If you have your own Google account and have your own GCP environment, skip this step.
  This workshop requires a GCP environment. If this is a JFrog and Google hosted event, your instructor will provide a link and an activation code. The following steps walk through the process of obtaining a GCP environment using the provided link and activation code. Otherwise, use your own GCP environment and skip this step.</description>
     </item>
     
     <item>
       <title>Download the Workshop Code</title>
-      <link>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/412_download_workshop_code.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/412_download_workshop_code.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/412_download_workshop_code.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/412_download_workshop_code.html</guid>
       <description>The workshop code is located at https://github.com/jfrogtraining/gcp-gke-workshop GitHub repository. We will clone this repository locally in order to pull the required workshop files and scripts.
  Click on the Google Cloud Shell button at the top right of the console to open Google Cloud Shell terminal in your browser.  Click the Continue button and wait a few moments for you Google Cloud Shell Machine to be ready.  Clone this repository to your local directory with the following command.</description>
     </item>
     
     <item>
       <title>Create a GKE Cluster</title>
-      <link>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/413_create_gke_cluster.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/413_create_gke_cluster.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/41_gcp_environment_setup/413_create_gke_cluster.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/413_create_gke_cluster.html</guid>
       <description>In this section, we will create a GKE Cluster in our Google Cloud Shell using the gcloud CLI.
 The gcloud command-line interface is the primary CLI tool to create and manage Google Cloud resources. You can use this tool to perform many common platform tasks either from the command line or in scripts and other automations.
   In your Google Cloud Shell, execute the following command to set an environment variable for the GCP environment project ID.</description>
@@ -99,10 +99,10 @@ The gcloud command-line interface is the primary CLI tool to create and manage G
     
     <item>
       <title>Get a Free JFrog Platform Instance</title>
-      <link>https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup/421_jfrog_free.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/421_jfrog_free.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup/421_jfrog_free.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/421_jfrog_free.html</guid>
       <description>If you do not have access to a JFrog Platform instance, use the JFrog Platform Cloud Free Tier to get your own JFrog Platform instance with Artifactory and Xray.
 When signing up for the JFrog Platform Cloud Free Tier, ensure that you select Google Cloud.
   JFrog Platform Cloud Free Tier   </description>
@@ -110,20 +110,20 @@ When signing up for the JFrog Platform Cloud Free Tier, ensure that you select G
     
     <item>
       <title>Generate an API Key</title>
-      <link>https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup/422_api_key.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/422_api_key.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup/422_api_key.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/422_api_key.html</guid>
       <description>Remember your username and API key. We will use it again with the JFrog CLI and to set up GKE to deploy your image.
   Go to your JFrog Platform instance at https://[server name].jfrog.io. Refer to your JFrog Free Subscription Activation email if needed. Substitute your server name.  Login to your JFrog Platform instance with your credentials.  Once logged into your JFrog Platform instance, you will be presented with the landing page.</description>
     </item>
     
     <item>
       <title>Create NPM and Docker Repos</title>
-      <link>https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup/423_create_repos.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/423_create_repos.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup/423_create_repos.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/423_create_repos.html</guid>
       <description>Next, we will set up a NPM and Docker repositories in Artifactory.
  In your JFrog Platform instance go to Administration ► Repositories ► Repositories.  Click on New Local Repository on the right.  For package type, select Docker.  Specify clouddays for the Repository Key.   Click Save &amp;amp; Finish.
   Close the New Docker Repository dialog.
@@ -132,10 +132,10 @@ When signing up for the JFrog Platform Cloud Free Tier, ensure that you select G
     
     <item>
       <title>Configure a Xray Index</title>
-      <link>https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup/424_configure_xray_index.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/424_configure_xray_index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup/424_configure_xray_index.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/424_configure_xray_index.html</guid>
       <description>Next, we will configure Xray to index our new Docker repository. This allows Xray to automatically analyze all the artifacts in this repository.
  Let&amp;rsquo;s configure Xray to index the new Docker repository automatically. Go to Administration ► Xray Security &amp;amp; Compliance.   Click on Indexed Resources.
   Click on Add a Repository on the right.
@@ -144,10 +144,10 @@ When signing up for the JFrog Platform Cloud Free Tier, ensure that you select G
     
     <item>
       <title>Create a Xray Policy</title>
-      <link>https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup/425_create_xray_policy.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/425_create_xray_policy.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup/425_create_xray_policy.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/425_create_xray_policy.html</guid>
       <description>Next, we will create an Xray security policy that sets the types of security violations to alert on.
  Go to Application ► Security &amp;amp; Compliance ► Policies.   Click on Create a Policy.
   Give the policy a name like default-security and a description.
@@ -158,10 +158,10 @@ When signing up for the JFrog Platform Cloud Free Tier, ensure that you select G
     
     <item>
       <title>Create a Xray Watch</title>
-      <link>https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup/426_create_xray_watch.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/426_create_xray_watch.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/4_workshop_setup/42_jfrog_setup/426_create_xray_watch.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/426_create_xray_watch.html</guid>
       <description>Next, we will create an Xray security watch to scan our new Docker repository.
  Go to Application ► Security &amp;amp; Compliance ► Watches.   Click on Set up a Watch.
   Give the watch a name like clouddays-docker-repo-watch and a description.
@@ -173,19 +173,19 @@ When signing up for the JFrog Platform Cloud Free Tier, ensure that you select G
     
     <item>
       <title>Cleanup</title>
-      <link>https://jfrogtraining.github.io/clouddays/cleanup.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/cleanup.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/cleanup.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/cleanup.html</guid>
       <description>Your JFrog Platform Instance - The JFrog Platform instance that you used in this workshop will automatically be destroyed after the workshop. There isn&amp;rsquo;t anything you need to do. If you would like keep it, you can upgrade to one of the premium plans. Do this by clicking on the Upgrade button.   GKE Cluster - To cleanup your GKE resources, go to your GKE console and delete following resources</description>
     </item>
     
     <item>
       <title>Resources</title>
-      <link>https://jfrogtraining.github.io/clouddays/resources.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/resources.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/clouddays/resources.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/resources.html</guid>
       <description>JFrog Platform Documentation - The full documentation of the JFrog Platform, the universal, hybrid, end-to-end DevOps automation solution. It is designed to take you through all the JFrog Products. Including user, administration and developer guides, installation and upgrade procedures, system architecture and configuration, and working with the JFrog application. JFrog Academy - Learn more about the JFrog Platform at your own pace with JFrog Academy free courses taught by our experts.</description>
     </item>
     
