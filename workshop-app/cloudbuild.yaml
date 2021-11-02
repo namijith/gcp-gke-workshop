@@ -6,8 +6,8 @@
 
 substitutions:
   _JFROG_SERVER_NAME: partnership-clouddays.jfrog.io
-  _JFROG_USER: mitalib@jfrog.com
-  _JFROG_API_KEY: AKCp8ihVhkTHxPMBEVgwaSv1vB97cH5bs6cPXxPC9M1zbn3A68eQwed2HmVhzKKB3q1SGo7fm
+  _JFROG_USER: <company-name>@jfrog.com
+  _JFROG_API_KEY: <api-key>
   _JFROG_REPO_NAME: clouddays
 
 steps:
