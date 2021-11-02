@@ -14,7 +14,7 @@ steps:
 
 
 - name: 'gcr.io/$PROJECT_ID/java/jfrog:1.17.1'
-  args: ['config', 'add', '${_JFROG_REPO_NAME}', '--artifactory-url=https://${_JFROG_SERVER_NAME}/artifactory', '--user=${_JFROG_USER}', '--apikey=${_JFROG_API_KEY}']
+  args: ['rt', 'c', '${_JFROG_REPO_NAME}', '--url=https://${_JFROG_SERVER_NAME}/artifactory', '--user=${_JFROG_USER}', '--apikey=${_JFROG_API_KEY}']
   env: ['TMPDIR=/workspace']
 
   # Configure npm repo
