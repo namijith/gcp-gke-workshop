@@ -11,29 +11,27 @@ substitutions:
   _JFROG_REPO_NAME: clouddays
 
 steps:
-
-
-- name: 'gcr.io/$PROJECT_ID/java/jfrog:1.17.1'
-  args: ['rt', 'c', '${_JFROG_REPO_NAME}', '--url=https://${_JFROG_SERVER_NAME}/artifactory', '--user=${_JFROG_USER}', '--apikey=${_JFROG_API_KEY}']
+- name: 'gcr.io/$PROJECT_ID/npm/jfrog:1.17.1'
+  args: ['config', 'add', '${_JFROG_REPO_NAME}', '--artifactory-url=https://${_JFROG_SERVER_NAME}/artifactory','--enc-password=false','--interactive=false', '--user=${_JFROG_USER}', '--apikey=${_JFROG_API_KEY}']
   env: ['TMPDIR=/workspace']
 
   # Configure npm repo
-- name: 'gcr.io/$PROJECT_ID/java/jfrog:1.17.1'
+- name: 'gcr.io/$PROJECT_ID/npm/jfrog:1.17.1'
   args: ['rt', 'npmc', '--repo-resolve=npm', '--repo-deploy=npm','--server-id-resolve=${_JFROG_REPO_NAME}','--server-id-deploy=${_JFROG_REPO_NAME}']
   env: ['TMPDIR=/workspace']
 
 # Build a sample npm project
-- name: 'gcr.io/$PROJECT_ID/java/jfrog:1.17.1'
-  args: ['rt', 'npm-install', '--build-name=npm_build', '--build-number=1']
+- name: 'gcr.io/$PROJECT_ID/npm/jfrog:1.17.1'
+  args: ['rt', 'npm-install', '--build-name=npm_build', '--build-number=$BUILD_ID']
   env: ['TMPDIR=/workspace']
 
   # Build a sample npm project
-- name: 'gcr.io/$PROJECT_ID/java/jfrog:1.17.1'
-  args: ['rt', 'npm-publish', '--build-name=npm_build', '--build-number=1']
+- name: 'gcr.io/$PROJECT_ID/npm/jfrog:1.17.1'
+  args: ['rt', 'npm-publish', '--build-name=npm_build', '--build-number=$BUILD_ID']
   env: ['TMPDIR=/workspace']
 
   # Build a sample npm project
-- name: 'gcr.io/$PROJECT_ID/java/jfrog:1.17.1'
+- name: 'gcr.io/$PROJECT_ID/npm/jfrog:1.17.1'
   args: ['rt', 'build-publish', 'npm_build', '1']
   env: ['TMPDIR=/workspace']
 
@@ -44,7 +42,7 @@ steps:
   - '--tag=${_JFROG_SERVER_NAME}/npm-app:latest'
   - '.'
 
-- name: 'gcr.io/$PROJECT_ID/java/jfrog:1.17.1'
+- name: 'gcr.io/$PROJECT_ID/npm/jfrog:1.17.1'
   args: ['rt', 'docker-push', '${_JFROG_SERVER_NAME}/npm-app:latest','${_JFROG_REPO_NAME}','--build-name=npm_build', '--build-number=1']
   env: ['TMPDIR=/workspace']
 
