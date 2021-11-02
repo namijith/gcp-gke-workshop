@@ -21,27 +21,27 @@ steps:
   - '-p'
   - '${_JFROG_API_KEY}'
 
-- name: 'jfrog-docker-reg2.bintray.io/google-cloud-builder/java/jfrog:0.1'
+- name: 'gcr.io/$PROJECT_ID/java/jfrog:1.17.0'
   args: ['rt', 'c', '${_JFROG_REPO_NAME}', '--url=https://${_JFROG_SERVER_NAME}/artifactory', '--user=${_JFROG_USER}', '--apikey=${_JFROG_API_KEY}']
   env: ['TMPDIR=/workspace']
 
   # Configure npm repo
-- name: 'jfrog-docker-reg2.bintray.io/google-cloud-builder/java/jfrog:0.1'
+- name: 'gcr.io/$PROJECT_ID/java/jfrog:1.17.0'
   args: ['rt', 'npmc', '--repo-resolve=npm', '--repo-deploy=npm','--server-id-resolve=${_JFROG_REPO_NAME}','--server-id-deploy=${_JFROG_REPO_NAME}']
   env: ['TMPDIR=/workspace']
 
 # Build a sample npm project
-- name: 'jfrog-docker-reg2.bintray.io/google-cloud-builder/java/jfrog:0.1'
+- name: 'gcr.io/$PROJECT_ID/java/jfrog:1.17.0'
   args: ['rt', 'npm-install', '--build-name=npm_build', '--build-number=1']
   env: ['TMPDIR=/workspace']
 
   # Build a sample npm project
-- name: 'jfrog-docker-reg2.bintray.io/google-cloud-builder/java/jfrog:0.1'
+- name: 'gcr.io/$PROJECT_ID/java/jfrog:1.17.0'
   args: ['rt', 'npm-publish', '--build-name=npm_build', '--build-number=1']
   env: ['TMPDIR=/workspace']
 
   # Build a sample npm project
-- name: 'jfrog-docker-reg2.bintray.io/google-cloud-builder/java/jfrog:0.1'
+- name: 'gcr.io/$PROJECT_ID/java/jfrog:1.17.0'
   args: ['rt', 'build-publish', 'npm_build', '1']
   env: ['TMPDIR=/workspace']
 
@@ -52,7 +52,7 @@ steps:
   - '--tag=${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:latest'
   - '.'
 
-- name: 'jfrog-docker-reg2.bintray.io/google-cloud-builder/java/jfrog:0.1'
+- name: 'gcr.io/$PROJECT_ID/java/jfrog:1.17.0'
   args: ['rt', 'docker-push', '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:latest','${_JFROG_REPO_NAME}','--build-name=npm_build', '--build-number=1']
   env: ['TMPDIR=/workspace']
 
