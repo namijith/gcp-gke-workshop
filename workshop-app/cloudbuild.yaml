@@ -5,24 +5,16 @@
 # $ gcloud builds submit . --config=cloudbuild.yaml
 
 substitutions:
-  _JFROG_SERVER_NAME: <servername>.jfrog.io
-  _JFROG_USER: <name>@<yourcompany>.com
-  _JFROG_API_KEY: <password>
+  _JFROG_SERVER_NAME: partnership-clouddays.jfrog.io
+  _JFROG_USER: mitalib@jfrog.com
+  _JFROG_API_KEY: AKCp8ihVhkTHxPMBEVgwaSv1vB97cH5bs6cPXxPC9M1zbn3A68eQwed2HmVhzKKB3q1SGo7fm
   _JFROG_REPO_NAME: clouddays
-  _JFROG_CLI_VERSION: 1.40.1
 
 steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args:
-  - 'login'
-  - '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/java-app'
-  - '-u'
-  - '${_JFROG_USER}'
-  - '-p'
-  - '${_JFROG_API_KEY}'
+
 
 - name: 'gcr.io/$PROJECT_ID/java/jfrog:1.17.1'
-  args: ['rt', 'c', '${_JFROG_REPO_NAME}', '--url=https://${_JFROG_SERVER_NAME}/artifactory', '--user=${_JFROG_USER}', '--apikey=${_JFROG_API_KEY}']
+  args: ['config', 'add', '${_JFROG_REPO_NAME}', '--artifactory-url=https://${_JFROG_SERVER_NAME}/artifactory', '--user=${_JFROG_USER}', '--apikey=${_JFROG_API_KEY}']
   env: ['TMPDIR=/workspace']
 
   # Configure npm repo
@@ -49,13 +41,13 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args:
   - 'build'
-  - '--tag=${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:latest'
+  - '--tag=${_JFROG_SERVER_NAME}/npm-app:latest'
   - '.'
 
-- name: 'gcr.io/$PROJECT_ID/java/jfrog:1.17.0'
-  args: ['rt', 'docker-push', '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:latest','${_JFROG_REPO_NAME}','--build-name=npm_build', '--build-number=1']
+- name: 'gcr.io/$PROJECT_ID/java/jfrog:1.17.1'
+  args: ['rt', 'docker-push', '${_JFROG_SERVER_NAME}/npm-app:latest','${_JFROG_REPO_NAME}','--build-name=npm_build', '--build-number=1']
   env: ['TMPDIR=/workspace']
 
 images:
-- '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:latest'
+- '${_JFROG_SERVER_NAME}/npm-app:latest'
 tags: ['cloud-builders-community']
