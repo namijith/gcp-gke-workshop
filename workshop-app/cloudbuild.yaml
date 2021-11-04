@@ -48,6 +48,7 @@ steps:
   - 'build'
   - '--tag=${_JFROG_SERVER_NAME}/npm-app:latest'
   - '.'
+  dir: 'workshop-app'
 
 - name: 'gcr.io/cloud-builders/docker'
   args:
