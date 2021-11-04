@@ -16,26 +16,31 @@ steps:
 - name: 'gcr.io/$PROJECT_ID/npm/jfrog:${_JFROG_BUILDER_VERSION}'
   args: ['config', 'add', '${_JFROG_REPO_NAME}', '--artifactory-url=https://${_JFROG_SERVER_NAME}/artifactory','--interactive=false' ,'--access-token=${_JFROG_ACCESS_TOKEN}']
   env: ['TMPDIR=/workspace']
+  dir: 'workshop-app'
 
   # Configure npm repo
 - name: 'gcr.io/$PROJECT_ID/npm/jfrog:${_JFROG_BUILDER_VERSION}'
   args: ['rt', 'npm-config', '--repo-resolve=npm-mitali', '--repo-deploy=npm-mitali','--server-id-resolve=${_JFROG_REPO_NAME}','--server-id-deploy=${_JFROG_REPO_NAME}']
   env: ['TMPDIR=/workspace']
+  dir: 'workshop-app'
 
 # Build a sample npm project
 - name: 'gcr.io/$PROJECT_ID/npm/jfrog:${_JFROG_BUILDER_VERSION}'
   args: ['rt', 'npm-install', '--build-name=npm_build', '--build-number=1']
-  env: ['TMPDIR=/workspace/workshop-app']
+  env: ['TMPDIR=/workspace']
+  dir: 'workshop-app'
 
-  # Build a sample npm project
+  # publish the sample npm project
 - name: 'gcr.io/$PROJECT_ID/npm/jfrog:${_JFROG_BUILDER_VERSION}'
   args: ['rt', 'npm-publish', '--build-name=npm_build', '--build-number=1']
   env: ['TMPDIR=/workspace']
+  dir: 'workshop-app'
 
-  # Build a sample npm project
+  # build-publish the sample npm project
 - name: 'gcr.io/$PROJECT_ID/npm/jfrog:${_JFROG_BUILDER_VERSION}'
   args: ['rt', 'build-publish', 'npm_build', '1']
   env: ['TMPDIR=/workspace']
+  dir: 'workshop-app'
 
 # Containerize npm app
 - name: 'gcr.io/cloud-builders/docker'
@@ -52,11 +57,12 @@ steps:
   - 'mitalib'
   - '-p'
   - '${_JFROG_ACCESS_TOKEN}'
-
+  
+# Docker Push the image to artifactiry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', '${_JFROG_SERVER_NAME}/npm-app:latest']
   env: ['TMPDIR=/workspace']
-
+  dir: 'workshop-app'
 
 images:
 - '${_JFROG_SERVER_NAME}/npm-app:latest'
