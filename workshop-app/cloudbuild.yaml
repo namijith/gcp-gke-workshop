@@ -54,9 +54,10 @@ steps:
   - 'login'
   - '${_JFROG_SERVER_NAME}'
   - '-u'
-  - 'mitalib'
+  - '${_JFROG_USER}'
   - '-p'
   - '${_JFROG_ACCESS_TOKEN}'
+  dir: 'workshop-app'
   
 # Docker Push the image to artifactiry
 - name: 'gcr.io/cloud-builders/docker'
