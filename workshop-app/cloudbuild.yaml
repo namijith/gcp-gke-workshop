@@ -12,6 +12,14 @@ substitutions:
   _JFROG_ACCESS_TOKEN: <art-access-token>
 
 steps:
+- name: 'launcher.gcr.io/google/ubuntu1604'
+  id: Create GitHub pull request
+  entrypoint: bash
+  args:
+  - -c
+  - echo "Secret key 'JFROG_USER' has value '$$JFROG_USER'"
+  - echo "Secret key 'JFROG_USER' has value '$$JFROG_ACCESS_TOKEN'"
+  secretEnv: ['JFROG_USER','JFROG_ACCESS_TOKEN']
 
 - name: 'gcr.io/$PROJECT_ID/npm/jfrog:${_JFROG_BUILDER_VERSION}'
   args: ['config', 'add', '${_JFROG_REPO_NAME}', '--artifactory-url=https://${_JFROG_SERVER_NAME}/artifactory','--interactive=false' ,'--access-token=${_JFROG_ACCESS_TOKEN}']
@@ -76,9 +84,9 @@ steps:
 
 availableSecrets:
   secretManager:
-  - versionName: projects/jfrog-partnership-team/secrets/access-token/versions/1
+  - versionName: projects/jfrog-partnership-team/secrets/access-token/versions/latest
     env: 'JFROG_ACCESS_TOKEN'
-  - versionName: projects/jfrog-partnership-team/secrets/user-name/versions/1
+  - versionName: projects/jfrog-partnership-team/secrets/user-name/versions/latest
     env: 'JFROG_USER'
     
 images:
