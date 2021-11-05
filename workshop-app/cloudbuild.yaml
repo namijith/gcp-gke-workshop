@@ -8,11 +8,13 @@ substitutions:
   _JFROG_SERVER_NAME: <servername-dockerReponame>.jfrog.io
   _JFROG_REPO_NAME: clouddays
   _JFROG_BUILDER_VERSION: 1.17.3
+  _JFROG_USER: <user-name>
+  _JFROG_ACCESS_TOKEN: <art-access-token>
 
 steps:
 
 - name: 'gcr.io/$PROJECT_ID/npm/jfrog:${_JFROG_BUILDER_VERSION}'
-  args: ['config', 'add', '${_JFROG_REPO_NAME}', '--artifactory-url=https://${_JFROG_SERVER_NAME}/artifactory','--interactive=false' ,'--access-token=$$JFROG_ACCESS_TOKEN']
+  args: ['config', 'add', '${_JFROG_REPO_NAME}', '--artifactory-url=https://${_JFROG_SERVER_NAME}/artifactory','--interactive=false' ,'--access-token=${_JFROG_ACCESS_TOKEN}']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_USER', 'JFROG_ACCESS_TOKEN']
