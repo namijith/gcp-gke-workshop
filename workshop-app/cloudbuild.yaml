@@ -17,7 +17,7 @@ steps:
   entrypoint: bash
   args:
   - -c
-  - echo "Secret key 'JFROG_ACCESS_TOKEN' has value '$$JFROG_ACCESS_TOKEN'"
+  - echo "Secret key 'JFROG_ACCESS_TOKEN' has value ${_JFROG_ACCESS_TOKEN}"
   secretEnv: ['JFROG_ACCESS_TOKEN']
 
 - name: 'gcr.io/$PROJECT_ID/npm/jfrog:${_JFROG_BUILDER_VERSION}'
