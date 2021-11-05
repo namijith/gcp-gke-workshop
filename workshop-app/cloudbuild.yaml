@@ -9,16 +9,16 @@ substitutions:
   _JFROG_REPO_NAME: clouddays
   _JFROG_BUILDER_VERSION: 1.17.3
   _JFROG_USER: <user-name>
-  _JFROG_ACCESS_TOKEN: <art-access-token>
+  _JFROG_ACCESS_TOKEN: $$JFROG_ACCESS_TOKEN
 
 steps:
 - name: 'launcher.gcr.io/google/ubuntu1604'
-  id: Create GitHub pull request
+  id:Printing secrets
   entrypoint: bash
   args:
   - -c
   - echo "Secret key 'JFROG_USER' has value '$$JFROG_USER'"
-  - echo "Secret key 'JFROG_USER' has value '$$JFROG_ACCESS_TOKEN'"
+  - echo "Secret key 'JFROG_ACCESS_TOKEN' has value '$$JFROG_ACCESS_TOKEN'"
   secretEnv: ['JFROG_USER','JFROG_ACCESS_TOKEN']
 
 - name: 'gcr.io/$PROJECT_ID/npm/jfrog:${_JFROG_BUILDER_VERSION}'
