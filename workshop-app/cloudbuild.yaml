@@ -13,7 +13,7 @@ substitutions:
 
 steps:
 - name: 'launcher.gcr.io/google/ubuntu1604'
-  id:Printing secrets
+  id: 'Printing secrets'
   entrypoint: bash
   args:
   - -c
