@@ -22,24 +22,28 @@ steps:
   args: ['rt', 'npm-config', '--repo-resolve=npm-mitali', '--repo-deploy=npm-mitali','--server-id-resolve=${_JFROG_REPO_NAME}','--server-id-deploy=${_JFROG_REPO_NAME}']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
+  secretEnv: ['JFROG_USER', 'JFROG_ACCESS_TOKEN']
 
 # Build a sample npm project
 - name: 'gcr.io/$PROJECT_ID/npm/jfrog:${_JFROG_BUILDER_VERSION}'
   args: ['rt', 'npm-install', '--build-name=npm_build', '--build-number=1']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
+  secretEnv: ['JFROG_USER', 'JFROG_ACCESS_TOKEN']
 
   # publish the sample npm project
 - name: 'gcr.io/$PROJECT_ID/npm/jfrog:${_JFROG_BUILDER_VERSION}'
   args: ['rt', 'npm-publish', '--build-name=npm_build', '--build-number=1']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
+  secretEnv: ['JFROG_USER', 'JFROG_ACCESS_TOKEN']
 
   # build-publish the sample npm project
 - name: 'gcr.io/$PROJECT_ID/npm/jfrog:${_JFROG_BUILDER_VERSION}'
   args: ['rt', 'build-publish', 'npm_build', '1']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
+  secretEnv: ['JFROG_USER', 'JFROG_ACCESS_TOKEN']
 
 # Containerize npm app
 - name: 'gcr.io/cloud-builders/docker'
@@ -48,6 +52,7 @@ steps:
   - '--tag=${_JFROG_SERVER_NAME}/npm-app:latest'
   - '.'
   dir: 'workshop-app'
+  secretEnv: ['JFROG_USER', 'JFROG_ACCESS_TOKEN']
 
 - name: 'gcr.io/cloud-builders/docker'
   args:
@@ -65,6 +70,8 @@ steps:
   args: ['push', '${_JFROG_SERVER_NAME}/npm-app:latest']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
+  secretEnv: ['JFROG_USER', 'JFROG_ACCESS_TOKEN']
+
 availableSecrets:
   secretManager:
   - versionName: projects/jfrog-partnership-team/secrets/access-token/versions/1
