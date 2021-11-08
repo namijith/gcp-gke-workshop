@@ -65,8 +65,7 @@ steps:
 
 - name: 'gcr.io/cloud-builders/docker'
   entrypoint: 'bash'
-  args:
-  - ['c', 'docker login ${_JFROG_SERVER_NAME} -u ${_JFROG_USER} -p $$JFROG_ACCESS_TOKEN']
+  args: ['-c', 'docker login ${_JFROG_SERVER_NAME} -u ${_JFROG_USER} -p $$JFROG_ACCESS_TOKEN']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
   
