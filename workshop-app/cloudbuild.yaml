@@ -9,7 +9,7 @@ substitutions:
   _JFROG_REPO_NAME: clouddays
   _JFROG_BUILDER_VERSION: 1.17.3
   _JFROG_USER: <user-name>
-  _JFROG_ACCESS_TOKEN: $$JFROG_ACCESS_TOKEN
+  _JFROG_ACCESS_TOKEN: <JFROG_ACCESS_TOKEN>
 
 steps:
 - name: 'launcher.gcr.io/google/ubuntu1604'
@@ -17,11 +17,18 @@ steps:
   entrypoint: bash
   args:
   - -c
-  - echo "Secret key 'JFROG_ACCESS_TOKEN' has value ${_JFROG_ACCESS_TOKEN}"
+  - echo "Secret key 'JFROG_ACCESS_TOKEN' has value $$JFROG_ACCESS_TOKEN"
   secretEnv: ['JFROG_ACCESS_TOKEN']
 
+#- name: 'gcr.io/$PROJECT_ID/npm/jfrog:${_JFROG_BUILDER_VERSION}'
+ # args: ['config', 'add', '${_JFROG_REPO_NAME}', '--artifactory-url=https://${_JFROG_SERVER_NAME}/artifactory','--interactive=false' ,'--access-token=$$JFROG_ACCESS_TOKEN']
+  #env: ['TMPDIR=/workspace']
+  #dir: 'workshop-app'
+  #secretEnv: ['JFROG_ACCESS_TOKEN']
+  
 - name: 'gcr.io/$PROJECT_ID/npm/jfrog:${_JFROG_BUILDER_VERSION}'
-  args: ['config', 'add', '${_JFROG_REPO_NAME}', '--artifactory-url=https://${_JFROG_SERVER_NAME}/artifactory','--interactive=false' ,'--access-token=${_JFROG_ACCESS_TOKEN}']
+  entrypoint: 'bash'
+  args: ['-c', 'jfrog config add ${_JFROG_REPO_NAME} --artifactory-url=https://${_JFROG_SERVER_NAME}/artifactory --interactive=false --access-token=$$JFROG_ACCESS_TOKEN']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
