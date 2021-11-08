@@ -10,15 +10,7 @@ substitutions:
   _JFROG_BUILDER_VERSION: 1.17.3
   _JFROG_USER: <user-name>
 
-steps:
-- name: 'launcher.gcr.io/google/ubuntu1604'
-  id: 'Printing secrets'
-  entrypoint: bash
-  args:
-  - -c
-  - echo "Secret key 'JFROG_ACCESS_TOKEN' has value $$JFROG_ACCESS_TOKEN"
-  secretEnv: ['JFROG_ACCESS_TOKEN']
-  
+steps:  
 - name: 'gcr.io/$PROJECT_ID/npm/jfrog:${_JFROG_BUILDER_VERSION}'
   entrypoint: 'bash'
   args: ['-c', 'jfrog config add ${_JFROG_REPO_NAME} --artifactory-url=https://${_JFROG_SERVER_NAME}/artifactory --interactive=false --access-token=$$JFROG_ACCESS_TOKEN']
@@ -58,7 +50,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args:
   - 'build'
-  - '--tag=${_JFROG_SERVER_NAME}/npm-app:latest'
+  - '--tag=${_JFROG_SERVER_NAME}/npm-app-1:latest'
   - '.'
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
@@ -71,7 +63,7 @@ steps:
   
 # Docker Push the image to artifactiry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', '${_JFROG_SERVER_NAME}/npm-app:latest']
+  args: ['push', '${_JFROG_SERVER_NAME}/npm-app-1:latest']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
@@ -82,5 +74,5 @@ availableSecrets:
     env: 'JFROG_ACCESS_TOKEN'
     
 images:
-- '${_JFROG_SERVER_NAME}/npm-app:latest'
+- '${_JFROG_SERVER_NAME}/npm-app-1:latest'
 tags: ['cloud-builders-community']
