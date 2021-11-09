@@ -50,7 +50,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args:
   - 'build'
-  - '--tag=${_JFROG_SERVER_NAME}/npm-app-1:latest'
+  - '--tag=${_JFROG_SERVER_NAME}/npm-app:latest'
   - '.'
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
@@ -63,7 +63,7 @@ steps:
   
 # Docker Push the image to artifactiry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', '${_JFROG_SERVER_NAME}/npm-app-1:latest']
+  args: ['push', '${_JFROG_SERVER_NAME}/npm-app:latest']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
@@ -74,5 +74,5 @@ availableSecrets:
     env: 'JFROG_ACCESS_TOKEN'
     
 images:
-- '${_JFROG_SERVER_NAME}/npm-app-1:latest'
+- '${_JFROG_SERVER_NAME}/npm-app:latest'
 tags: ['cloud-builders-community']
