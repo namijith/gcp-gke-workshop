@@ -84,7 +84,3 @@ availableSecrets:
   secretManager:
   - versionName: projects/jfrog-partnership-team/secrets/access-token/versions/latest
     env: 'JFROG_ACCESS_TOKEN'
-    
-images:
-- '${_JFROG_SERVER_NAME}/npm-app:${COMMIT_SHA}'
-tags: ['cloud-builders-community']
