@@ -50,7 +50,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args:
   - 'build'
-  - '--tag=${_JFROG_SERVER_NAME}/npm-app:latest'
+  - '--tag=${_JFROG_SERVER_NAME}/npm-app:${COMMIT_SHA}'
   - '.'
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
@@ -63,10 +63,22 @@ steps:
   
 # Docker Push the image to artifactiry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', '${_JFROG_SERVER_NAME}/npm-app:latest']
+  args: ['push', '${_JFROG_SERVER_NAME}/npm-app:${COMMIT_SHA}']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
+  
+ # Create release in Google Cloud Deploy
+ - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+   entrypoint: gcloud
+   args: 
+     [
+       "beta", "deploy", "releases", "create", "rel-${SHORT_SHA}",
+       "--delivery-pipeline", "clouddays-pipeline",
+       "--region", "us-central1",
+       "--annotations", "commitId=${REVISION_ID}",
+       "--images", "image1=${_JFROG_SERVER_NAME}/npm-app:${COMMIT_SHA}"
+     ]
 
 availableSecrets:
   secretManager:
