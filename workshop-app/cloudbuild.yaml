@@ -68,17 +68,17 @@ steps:
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
   
- # Create release in Google Cloud Deploy
- - name: gcr.io/google.com/cloudsdktool/cloud-sdk
-   entrypoint: gcloud
-   args: 
-     [
-       "beta", "deploy", "releases", "create", "rel-${SHORT_SHA}",
-       "--delivery-pipeline", "clouddays-pipeline",
-       "--region", "us-central1",
-       "--annotations", "commitId=${REVISION_ID}",
-       "--images", "image1=${_JFROG_SERVER_NAME}/npm-app:${COMMIT_SHA}"
-     ]
+# Create release in Google Cloud Deploy
+- name: gcr.io/google.com/cloudsdktool/cloud-sdk
+  entrypoint: gcloud
+  args: 
+    [
+      "beta", "deploy", "releases", "create", "rel-${SHORT_SHA}",
+      "--delivery-pipeline", "clouddays-pipeline",
+      "--region", "us-central1",
+      "--annotations", "commitId=${REVISION_ID}",
+      "--images", "image1=${_JFROG_SERVER_NAME}/npm-app:${COMMIT_SHA}"
+    ]
 
 availableSecrets:
   secretManager:
