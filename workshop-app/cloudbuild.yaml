@@ -77,7 +77,7 @@ steps:
       "--delivery-pipeline", "clouddays-pipeline",
       "--region", "us-central1",
       "--annotations", "commitId=${REVISION_ID}",
-      "--images", "image1=${_JFROG_SERVER_NAME}/npm-app:${COMMIT_SHA}"
+      "--images", "npm-app=${_JFROG_SERVER_NAME}/npm-app:${COMMIT_SHA}"
     ]
 
 availableSecrets:
