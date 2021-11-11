@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: npm-app
-          image: partnership-clouddays.jfrog.io/npm-app:latest
+          image: npm-app
           imagePullPolicy: Always
           ports:
             - containerPort: 443
