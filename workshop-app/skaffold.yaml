@@ -1,5 +1,7 @@
 apiVersion: skaffold/v2beta16
-  kind: Config
+kind: Config
+metadata:
+  name: npm-app
 deploy:
   kubectl:
     manifests:
