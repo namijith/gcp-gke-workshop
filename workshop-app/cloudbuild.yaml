@@ -74,7 +74,7 @@ steps:
   args: 
     [
       "beta", "deploy", "releases", "create", "rel-${SHORT_SHA}",
-      "--delivery-pipeline", "clouddays-pipeline",
+      "--delivery-pipeline", "clouddays-demo",
       "--region", "us-central1",
       "--annotations", "commitId=${REVISION_ID}",
       "--images", "npm-app=${_JFROG_SERVER_NAME}/npm-app:${COMMIT_SHA}",
