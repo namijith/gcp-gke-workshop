@@ -50,7 +50,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args:
   - 'build'
-  - '--tag=${_JFROG_SERVER_NAME}/npm-app:${COMMIT_SHA}'
+  - '--tag=${_JFROG_SERVER_NAME}/npm-app-demo:${COMMIT_SHA}'
   - '.'
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
@@ -63,7 +63,7 @@ steps:
   
 # Docker Push the image to artifactiry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', '${_JFROG_SERVER_NAME}/npm-app:${COMMIT_SHA}']
+  args: ['push', '${_JFROG_SERVER_NAME}/npm-app-demo:${COMMIT_SHA}']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
@@ -77,7 +77,7 @@ steps:
       "--delivery-pipeline", "clouddays-demo",
       "--region", "us-central1",
       "--annotations", "commitId=${REVISION_ID}",
-      "--images", "npm-app=${_JFROG_SERVER_NAME}/npm-app:${COMMIT_SHA}",
+      "--images", "npm-app-demo=${_JFROG_SERVER_NAME}/npm-app-demo:${COMMIT_SHA}",
       "--source", "workshop-app"
     ]
 
