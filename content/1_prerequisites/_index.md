@@ -12,3 +12,5 @@ The following items are required for this workshop.
 - JFrog Platform instance - Use the [JFrog Platform Cloud Free Tier](https://jfrog.com/artifactory/start-free/) to get your own JFrog Platform instance with Artifactory and Xray.
 
 - Have a notepad available for saving important workshop data.
+
+![Prerequisites](/images/Prerequisites.png)

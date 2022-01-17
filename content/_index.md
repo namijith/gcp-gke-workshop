@@ -6,7 +6,6 @@ weight: 1
 
 ![GCP Logo](/images/gcp-logo.png) 
 
-# DevOps on GCP Workshop
 
 ### Welcome
 

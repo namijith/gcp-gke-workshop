@@ -9,7 +9,6 @@ In this workshop, we will demonstrate DevOps in the cloud with GKE and JFrog. We
 
 ![Hands On Diagram](/images/google-cloud-build-steps.png)
 
-![NPM APP](/images/npm-app.png)
 
 
 

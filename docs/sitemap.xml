@@ -1,125 +1,65 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/1_prerequisites.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/2_devops_cloud.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/3_workshop.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/5_build_publish_app.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/6_view_results.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/7_deploy_gke.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/8_conclusion.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/2_devops_cloud/21_continuous_integration_and_delivery.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/2_devops_cloud/22_binary_repository_management.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/2_devops_cloud/23_dev_sec_ops.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/2_devops_cloud/24_jfrog_platform_overview.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/5_build_publish_app/51_build_jfrog_cli_image.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/5_build_publish_app/52_build_docker_image.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/412_download_workshop_code.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/413_create_gke_cluster.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/421_jfrog_free.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/422_api_key.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/423_create_repos.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/424_configure_xray_index.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/425_create_xray_policy.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/426_create_xray_watch.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/categories.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/cleanup.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/resources.html</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jfrogtraining.github.io/gcp-gke-workshop/tags.html</loc>
   </url>
-  
 </urlset>
