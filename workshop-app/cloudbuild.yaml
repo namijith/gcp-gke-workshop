@@ -26,7 +26,7 @@ steps:
 
   # Configure npm repo
 - name: '${_JFROG_SERVER_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  args: ['npmc', '--repo-resolve=clouddays', '--repo-deploy=clouddays','--server-id-resolve=${_JFROG_REPO_NAME}','--server-id-deploy=${_JFROG_REPO_NAME}']
+  args: ['npmc', '--repo-resolve=wkshp', '--repo-deploy=wkshp','--server-id-resolve=${_JFROG_REPO_NAME}','--server-id-deploy=${_JFROG_REPO_NAME}']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
