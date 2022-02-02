@@ -7,7 +7,7 @@
 substitutions:
   _JFROG_SERVER_NAME: <servername-dockerReponame>.jfrog.io
   _JFROG_REPO_NAME: clouddays
-  _JFROG_BUILDER_VERSION: 2.11.0
+  _JFROG_CLI_VERSION: 2.11.0
   _JFROG_USER: <user-name>
 
 steps:  
