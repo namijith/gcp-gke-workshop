@@ -26,14 +26,14 @@ steps:
 
   # Configure npm repo
 - name: '${_JFROG_SERVER_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  args: ['rt', 'npm-config', '--repo-resolve=clouddays', '--repo-deploy=clouddays','--server-id-resolve=${_JFROG_REPO_NAME}','--server-id-deploy=${_JFROG_REPO_NAME}']
+  args: ['npmc', '--repo-resolve=clouddays', '--repo-deploy=clouddays','--server-id-resolve=${_JFROG_REPO_NAME}','--server-id-deploy=${_JFROG_REPO_NAME}']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
 
 # Build a sample npm project
 - name: '${_JFROG_SERVER_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  args: ['rt', 'npm-install', '--build-name=npm_build', '--build-number=3']
+  args: ['npm', 'install', '--build-name=npm_build', '--build-number=3']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
