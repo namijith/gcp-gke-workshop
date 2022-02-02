@@ -11,7 +11,7 @@ substitutions:
   _JFROG_USER: <user-name>
 
 steps:  
-- name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli-v2:${_JFROG_CLI_VERSION}'
+- name: '${_JFROG_SERVER_NAME}/jfrog-cli-v2:${_JFROG_CLI_VERSION}'
   entrypoint: 'bash'
   args: ['-c', 'jfrog config add ${_JFROG_REPO_NAME} --artifactory-url=https://${_JFROG_SERVER_NAME}/artifactory --interactive=false --access-token=$$JFROG_ACCESS_TOKEN']
   env: ['TMPDIR=/workspace']
@@ -19,28 +19,28 @@ steps:
   secretEnv: ['JFROG_ACCESS_TOKEN']
 
   # Configure npm repo
-- name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  args: ['rt', 'npm-config', '--repo-resolve=clouddays-npm', '--repo-deploy=clouddays','--server-id-resolve=${_JFROG_REPO_NAME}','--server-id-deploy=${_JFROG_REPO_NAME}']
+- name: '${_JFROG_SERVER_NAME}/jfrog-cli-v2:${_JFROG_CLI_VERSION}'
+  args: ['rt', 'npm-config', '--repo-resolve=clouddays', '--repo-deploy=clouddays','--server-id-resolve=${_JFROG_REPO_NAME}','--server-id-deploy=${_JFROG_REPO_NAME}']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
 
 # Build a sample npm project
-- name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
+- name: '${_JFROG_SERVER_NAME}/jfrog-cli-v2:${_JFROG_CLI_VERSION}'
   args: ['rt', 'npm-install', '--build-name=npm_build', '--build-number=3']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
 
   # publish the sample npm project
-- name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
+- name: '${_JFROG_SERVER_NAME}/jfrog-cli-v2:${_JFROG_CLI_VERSION}'
   args: ['rt', 'npm-publish', '--build-name=npm_build', '--build-number=3']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
 
   # build-publish the sample npm project
-- name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
+- name: '${_JFROG_SERVER_NAME}/jfrog-cli-v2:${_JFROG_CLI_VERSION}'
   args: ['rt', 'build-publish', 'npm_build', '1']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
