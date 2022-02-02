@@ -1,7 +1,8 @@
 ARG BASE_IMAGE=gcr.io/${PROJECT_ID}/npm:node-6.14.4
 FROM ${BASE_IMAGE}
 
-ARG JFROG_CLI_VERSION=1.17.1
+#ARG JFROG_CLI_VERSION=1.17.1
+ARG JFROG_CLI_VERSION=2.11.0
 #ARG USER_HOME_DIR="/root"
 
 # PR submitted to download versioned JFrog CLI
