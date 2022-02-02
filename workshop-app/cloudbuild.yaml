@@ -83,7 +83,7 @@ steps:
       "--delivery-pipeline", "clouddays-demo",
       "--region", "us-central1",
       "--annotations", "commitId=${REVISION_ID}",
-      "--images", "npm-app=${_JFROG_SERVER_NAME}/npm-app:${COMMIT_SHA}",
+      "--images", "npm-app=${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:${COMMIT_SHA}",
       "--source", "workshop-app"
     ]
 
