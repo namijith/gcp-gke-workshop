@@ -6,7 +6,6 @@ substitutions:
   _JFROG_SERVER_NAME: <servername>.jfrog.io
   _JFROG_USER: <name>@<yourcompany>.com
   _JFROG_API_KEY: <api key>
-  _JFROG_REPO_NAME: clouddays-docker
   _JFROG_CLI_VERSION: 2.11.0
   
 steps:
