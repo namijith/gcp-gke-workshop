@@ -17,7 +17,7 @@ RUN sed -i '/deb http:\/\/deb.debian.org\/debian jessie-updates main/d' /etc/apt
 RUN apt-get -o Acquire::Check-Valid-Until=false update
 RUN  apt-get install -qqy curl \
   && cd /tmp \
-  && curl -fL https://getcli.jfrog.io | sh -s -- v2 \
+  && curl -fL https://getcli.jfrog.io/v2 | sh \
   && mv jfrog /usr/bin/ \
   && apt-get remove -qqy --purge curl \
   && rm /var/lib/apt/lists/*_*
