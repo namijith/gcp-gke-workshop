@@ -15,7 +15,7 @@ steps:
   - 'build'
   - '--build-arg=BASE_IMAGE=gcr.io/cloud-builders/npm:node-14.10.0'
   - '--tag=gcr.io/$PROJECT_ID/npm/${_JFROG_CLI_VERSION}'
-  - '--tag=${_JFROG_SERVER_NAME}/jfrog-cli-v2:${_JFROG_CLI_VERSION}'
+  - '--tag=${_JFROG_SERVER_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
   - '.'
   wait_for: ['-']
 
@@ -23,8 +23,8 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args:
   - 'tag'
-  - '${_JFROG_SERVER_NAME}/jfrog-cli-v2:${_JFROG_CLI_VERSION}'
-  - '${_JFROG_SERVER_NAME}/jfrog-cli-v2'
+  - '${_JFROG_SERVER_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
+  - '${_JFROG_SERVER_NAME}/jfrog-cli'
 
 - name: 'gcr.io/cloud-builders/docker'
   args:
@@ -36,6 +36,6 @@ steps:
   - '${_JFROG_API_KEY}'
 
 images:
-- '${_JFROG_SERVER_NAME}/jfrog-cli-v2:${_JFROG_CLI_VERSION}'
-- '${_JFROG_SERVER_NAME}/jfrog-cli-v2'
+- '${_JFROG_SERVER_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
+- '${_JFROG_SERVER_NAME}/jfrog-cli'
 tags: ['cloud-builders-community']
