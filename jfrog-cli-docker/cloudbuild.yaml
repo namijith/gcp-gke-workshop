@@ -16,7 +16,7 @@ steps:
   - 'build'
   - '--build-arg=BASE_IMAGE=gcr.io/cloud-builders/npm:node-14.10.0'
   - '--tag=gcr.io/$PROJECT_ID/npm/jfrog:1.17.3'
-   - '--tag=${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
+  - '--tag=${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
   - '.'
   wait_for: ['-']
 
