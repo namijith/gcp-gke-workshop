@@ -5,7 +5,7 @@
 # $ gcloud builds submit . --config=cloudbuild.yaml
 
 substitutions:
-  _JFROG_SERVER_NAME: <servername-dockerReponame>.jfrog.io
+  _JFROG_SERVER_NAME: <servername>.jfrog.io
   _JFROG_REPO_NAME: clouddays
   _JFROG_CLI_VERSION: 2.11.0
   _JFROG_USER: <user-name>
@@ -17,7 +17,7 @@ steps:
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
   
-- name: '${_JFROG_SERVER_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
+- name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
   entrypoint: 'bash'
   args: ['-c', 'jfrog config add ${_JFROG_REPO_NAME} --artifactory-url=https://${_JFROG_SERVER_NAME}/artifactory --interactive=false --access-token=$$JFROG_ACCESS_TOKEN']
   env: ['TMPDIR=/workspace']
@@ -25,29 +25,29 @@ steps:
   secretEnv: ['JFROG_ACCESS_TOKEN']
 
   # Configure npm repo
-- name: '${_JFROG_SERVER_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  args: ['npmc', '--repo-resolve=wkshp', '--repo-deploy=wkshp','--server-id-resolve=${_JFROG_REPO_NAME}','--server-id-deploy=${_JFROG_REPO_NAME}']
+- name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
+  args: ['npmc', '--repo-resolve=clouddays-npm', '--repo-deploy=clouddays-npm','--server-id-resolve=${_JFROG_REPO_NAME}','--server-id-deploy=${_JFROG_REPO_NAME}']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
 
 # Build a sample npm project
-- name: '${_JFROG_SERVER_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  args: ['npm', 'install', '--build-name=npm_build', '--build-number=3']
+- name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
+  args: ['npm', 'install', '--build-name=npm_build', '--build-number=2']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
 
   # publish the sample npm project
-- name: '${_JFROG_SERVER_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  args: ['rt', 'npm-publish', '--build-name=npm_build', '--build-number=3']
+- name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
+  args: ['rt', 'npm-publish', '--build-name=npm_build', '--build-number=2']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
 
   # build-publish the sample npm project
-- name: '${_JFROG_SERVER_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  args: ['rt', 'build-publish', 'npm_build', '1']
+- name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
+  args: ['rt', 'build-publish', 'npm_build', '2']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
@@ -56,7 +56,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args:
   - 'build'
-  - '--tag=${_JFROG_SERVER_NAME}/npm-app:${COMMIT_SHA}'
+  - '--tag=${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:${COMMIT_SHA}'
   - '.'
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
@@ -69,7 +69,7 @@ steps:
   
 # Docker Push the image to artifactiry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', '${_JFROG_SERVER_NAME}/npm-app:${COMMIT_SHA}']
+  args: ['push', '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:${COMMIT_SHA}']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
@@ -83,11 +83,11 @@ steps:
       "--delivery-pipeline", "clouddays-demo",
       "--region", "us-central1",
       "--annotations", "commitId=${REVISION_ID}",
-      "--images", "npm-app=${_JFROG_SERVER_NAME}/npm-app:${COMMIT_SHA}",
+      "--images", "npm-app=${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:${COMMIT_SHA}",
       "--source", "workshop-app"
     ]
 
 availableSecrets:
   secretManager:
-  - versionName: projects/jfrog-partnership-team/secrets/access-token/versions/latest
+  - versionName: projects/165293802746/secrets/jfrog-access-token/versions/1
     env: 'JFROG_ACCESS_TOKEN'
