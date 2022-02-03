@@ -33,21 +33,21 @@ steps:
 
 # Build a sample npm project
 - name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  args: ['npm', 'install', '--build-name=npm_build', '--build-number=4']
+  args: ['npm', 'install', '--build-name=npm_build', '--build-number=2']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
 
   # publish the sample npm project
 - name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  args: ['rt', 'npm-publish', '--build-name=npm_build', '--build-number=4']
+  args: ['rt', 'npm-publish', '--build-name=npm_build', '--build-number=2']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
 
   # build-publish the sample npm project
 - name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  args: ['rt', 'build-publish', 'npm_build', '4']
+  args: ['rt', 'build-publish', 'npm_build', '2']
   env: ['TMPDIR=/workspace']
   dir: 'workshop-app'
   secretEnv: ['JFROG_ACCESS_TOKEN']
