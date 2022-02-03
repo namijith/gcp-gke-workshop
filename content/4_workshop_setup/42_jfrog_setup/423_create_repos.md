@@ -21,23 +21,25 @@ Next, we will set up a NPM and Docker repositories in Artifactory.
 
 4. Specify _clouddays_ for the **Repository Key**.
 
-![New Docker Repository](/images/new-docker-repository.png)
+![New Docker Repository](/images/docker-create-local.png)
 
-5. Click **Save & Finish**.
+5. Click **Create Local Repository**.
 
-6. **Close** the _New Docker Repository_ dialog.
-
-7. Next, we must create NPM repositories that will be used for NPM dependencies. JFrog provides an easy _Quick Setup_ option for this. Go to your profile and select **Quick Setup**. 
+6. Next, we must create NPM repositories that will be used for NPM dependencies. JFrog provides an easy _Quick Setup_ option for this. Go to your profile and select **Quick Setup**. 
 
 ![Quick Setup](/images/jfrog-quick-setup.png)
 
 8. Select **NPM**.
 
-![Quick Setup NPM](/images/jfrog-quick-setup-npm.png)
+![Quick Setup NPM](/images/select-npm.png)
 
-9. Then click **Create** and then **Finish**. This create default NPM repositories including a remote repository for npmjs.
+9. Select **Create a new repository** option. 
 
-![Quick Setup Done](/images/jfrog-quick-setup-done.png)
+![Quick Setup Create Repo](/images/create-repository-npm.png)
+
+10. Add **clouddays** as repository prefix and then click **create**. This create default NPM repositories including a remote repository for npmjs.
+
+![Quick Setup Done](/images/create-repository-prefix.png)
 
 {{% notice info %}}
 Three different types of repositories can be created: local, remote and virtual. **Local repositories** are physical, locally-managed repositories into which you can deploy artifacts. These are repositories that are local to the JFrog Artifactory instance. A **remote repository** serves as a caching proxy for a repository managed at a remote URL (which may itself be another Artifactory remote repository). A **virtual repository** (or "repository group") aggregates several repositories with the same package type under a common URL. A virtual repository can aggregate local and remote repositories.

@@ -7,9 +7,9 @@ pre: "<b>4.2.5 </b>"
 
 Next, we will create an Xray security policy that sets the types of security violations to alert on.
 
-1. Go to **Application** ► **Security & Compliance** ► **Policies**.
+1. Go to **Administration** ► **Xray** ► **Watches & Policies** ► **Policies**.
 
-![Xray Policies](/images/xray-policies.png)
+![Xray Policies](/images/xray-policy.png)
 
 2. Click on **Create a Policy**.
 
