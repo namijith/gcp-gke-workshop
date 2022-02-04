@@ -1,61 +1,93 @@
-# Sample cloudbuild.yaml that can containerize a Java app with JFrog Artifactory as a source of truth.
-# NOTE: JFrog cloud builder image should exist. cloudbuild.yaml to build JFrog cloud builder image exists one level up.
+# Sample cloudbuild.yaml that can containerize a npm app with JFrog Artifactory as a source of truth.
+# NOTE: JFrog cloud builder image should exist. "cloudbuild.yaml"  to build JFrog cloud builder image exists one level up.
 
 # In this directory, run the following command to build this builder.
 # $ gcloud builds submit . --config=cloudbuild.yaml
 
 substitutions:
   _JFROG_SERVER_NAME: <servername>.jfrog.io
-  _JFROG_USER: <name>@<yourcompany>.com
-  _JFROG_API_KEY: <password>
   _JFROG_REPO_NAME: clouddays
-  _JFROG_CLI_VERSION: 1.40.1
+  _JFROG_CLI_VERSION: 2.11.0
+  _JFROG_USER: <user-name>
 
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args:
-  - 'login'
-  - '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/java-app'
-  - '-u'
-  - '${_JFROG_USER}'
-  - '-p'
-  - '${_JFROG_API_KEY}'
-
+  entrypoint: 'bash'
+  args: ['-c', 'docker login ${_JFROG_SERVER_NAME} -u ${_JFROG_USER} -p $$JFROG_ACCESS_TOKEN']
+  dir: 'workshop-app'
+  secretEnv: ['JFROG_ACCESS_TOKEN']
+  
 - name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  args: ['rt', 'c', '${_JFROG_REPO_NAME}', '--url=https://${_JFROG_SERVER_NAME}/artifactory', '--user=${_JFROG_USER}', '--apikey=${_JFROG_API_KEY}']
+  entrypoint: 'bash'
+  args: ['-c', 'jfrog config add ${_JFROG_REPO_NAME} --artifactory-url=https://${_JFROG_SERVER_NAME}/artifactory --interactive=false --access-token=$$JFROG_ACCESS_TOKEN']
   env: ['TMPDIR=/workspace']
+  dir: 'workshop-app'
+  secretEnv: ['JFROG_ACCESS_TOKEN']
 
   # Configure npm repo
 - name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  args: ['rt', 'npmc', '--repo-resolve=npm', '--repo-deploy=npm','--server-id-resolve=${_JFROG_REPO_NAME}','--server-id-deploy=${_JFROG_REPO_NAME}']
+  args: ['npmc', '--repo-resolve=clouddays-npm', '--repo-deploy=clouddays-npm','--server-id-resolve=${_JFROG_REPO_NAME}','--server-id-deploy=${_JFROG_REPO_NAME}']
   env: ['TMPDIR=/workspace']
+  dir: 'workshop-app'
+  secretEnv: ['JFROG_ACCESS_TOKEN']
 
 # Build a sample npm project
 - name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  args: ['rt', 'npm-install', '--build-name=npm_build', '--build-number=1']
+  args: ['npm', 'install', '--build-name=npm_build', '--build-number=2']
   env: ['TMPDIR=/workspace']
+  dir: 'workshop-app'
+  secretEnv: ['JFROG_ACCESS_TOKEN']
 
-  # Build a sample npm project
+  # publish the sample npm project
 - name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  args: ['rt', 'npm-publish', '--build-name=npm_build', '--build-number=1']
+  args: ['rt', 'npm-publish', '--build-name=npm_build', '--build-number=2']
   env: ['TMPDIR=/workspace']
+  dir: 'workshop-app'
+  secretEnv: ['JFROG_ACCESS_TOKEN']
 
-  # Build a sample npm project
+  # build-publish the sample npm project
 - name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  args: ['rt', 'build-publish', 'npm_build', '1']
+  args: ['rt', 'build-publish', 'npm_build', '2']
   env: ['TMPDIR=/workspace']
+  dir: 'workshop-app'
+  secretEnv: ['JFROG_ACCESS_TOKEN']
 
 # Containerize npm app
 - name: 'gcr.io/cloud-builders/docker'
   args:
   - 'build'
-  - '--tag=${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:latest'
+  - '--tag=${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:${COMMIT_SHA}'
   - '.'
+  dir: 'workshop-app'
+  secretEnv: ['JFROG_ACCESS_TOKEN']
 
-- name: '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/jfrog-cli:${_JFROG_CLI_VERSION}'
-  args: ['rt', 'docker-push', '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:latest','${_JFROG_REPO_NAME}','--build-name=npm_build', '--build-number=1']
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: ['-c', 'docker login ${_JFROG_SERVER_NAME} -u ${_JFROG_USER} -p $$JFROG_ACCESS_TOKEN']
+  dir: 'workshop-app'
+  secretEnv: ['JFROG_ACCESS_TOKEN']
+  
+# Docker Push the image to artifactiry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:${COMMIT_SHA}']
   env: ['TMPDIR=/workspace']
+  dir: 'workshop-app'
+  secretEnv: ['JFROG_ACCESS_TOKEN']
+  
+# Create release in Google Cloud Deploy
+- name: gcr.io/google.com/cloudsdktool/cloud-sdk
+  entrypoint: gcloud
+  args: 
+    [
+      "beta", "deploy", "releases", "create", "rel-${SHORT_SHA}",
+      "--delivery-pipeline", "clouddays-demo",
+      "--region", "us-central1",
+      "--annotations", "commitId=${REVISION_ID}",
+      "--images", "npm-app=${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:${COMMIT_SHA}",
+      "--source", "workshop-app"
+    ]
 
-images:
-- '${_JFROG_SERVER_NAME}/${_JFROG_REPO_NAME}/npm-app:latest'
-tags: ['cloud-builders-community']
+availableSecrets:
+  secretManager:
+  - versionName: projects/165293802746/secrets/jfrog-access-token/versions/1
+    env: 'JFROG_ACCESS_TOKEN'

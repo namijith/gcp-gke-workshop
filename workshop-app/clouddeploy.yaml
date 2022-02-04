@@ -1,0 +1,38 @@
+apiVersion: deploy.cloud.google.com/v1beta1
+kind: DeliveryPipeline
+metadata:
+  name: clouddays-demo
+description: clouddays npm application delivery pipeline
+serialPipeline:
+ stages:
+ - targetId: test
+ - targetId: staging
+ - targetId: prod
+---
+
+apiVersion: deploy.cloud.google.com/v1beta1
+kind: Target
+metadata:
+  name: test
+description: test cluster
+gke:
+  cluster: projects/clgcporg1-010/locations/us-central1-a/clusters/testgcpworkshop
+---
+
+apiVersion: deploy.cloud.google.com/v1beta1
+kind: Target
+metadata:
+  name: staging
+description: staging cluster
+gke:
+  cluster: projects/clgcporg1-010/locations/us-central1-a/clusters/staginggcpworkshop
+---
+
+apiVersion: deploy.cloud.google.com/v1beta1
+kind: Target
+metadata:
+  name: prod
+description: prod cluster
+requireApproval: true
+gke:
+  cluster: projects/clgcporg1-010/locations/us-central1-a/clusters/gcpworkshop

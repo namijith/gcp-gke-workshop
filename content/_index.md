@@ -14,11 +14,11 @@ In this workshop you will learn about the JFrog Platform and how to leverage Art
 ### Learning Objectives
 - Understand the roles of Artifactory and Xray in your software delivery life cycle (SDLC).
 - Use the JFrog CLI in your build process.
-- Use Cloud Build for your CI/CD solution.
+- Use Cloud Build, triggers for your CI/CD solution.
 - Use Local, Remote and Virtual Repositories in Artifactory.
 - Publish artifact Build Info.
 - Scan your artifacts and builds for security vulnerabilities.
-- Deploy your application using Google Kubernetes Engine (GKE).
+- Deploy your application in Google Kubernetes Engine (GKE) using Cloud Deploy.
 
 {{% notice warning %}}
 The examples and sample code provided in this workshop are intended to be consumed as instructional content. These will help you understand how various services can be architected to build a solution while demonstrating best practices along the way. These examples are not intended for use in production environments.

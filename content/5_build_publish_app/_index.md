@@ -1,5 +1,5 @@
 ---
-title: "Build and Publish the Npm App"
+title: "Build, Publish and Deploy the Npm App"
 chapter: false
 weight: 5
 pre: "<b>5 </b>"
