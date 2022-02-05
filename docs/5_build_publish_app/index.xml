@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Build and Publish the Npm App on JFrog DevOps on GCP Workshop</title>
+    <title>Build, Publish and Deploy the Npm App on JFrog DevOps on GCP Workshop</title>
     <link>https://jfrogtraining.github.io/gcp-gke-workshop/5_build_publish_app.html</link>
-    <description>Recent content in Build and Publish the Npm App on JFrog DevOps on GCP Workshop</description>
+    <description>Recent content in Build, Publish and Deploy the Npm App on JFrog DevOps on GCP Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language><atom:link href="https://jfrogtraining.github.io/gcp-gke-workshop/5_build_publish_app/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -19,14 +19,14 @@ Google Cloud Build uses Docker to execute builds. For each build step, Cloud Bui
     </item>
     
     <item>
-      <title>Build the NPM Application Docker Image</title>
+      <title>Build and Deploy the NPM Application Docker Image</title>
       <link>https://jfrogtraining.github.io/gcp-gke-workshop/5_build_publish_app/52_build_docker_image.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jfrogtraining.github.io/gcp-gke-workshop/5_build_publish_app/52_build_docker_image.html</guid>
-      <description>Now, we can use new JFrog CLI image to build the NPM application Docker image and push it to Artifactory&amp;rsquo;s Docker repository.
+      <description>Now, we can use new JFrog CLI image to build the NPM application Docker image and push it to Artifactory&amp;rsquo;s Docker repository using Cloud Build Trigger.
   Return to your Google Cloud Shell terminal and change directory to gcp-gke-workshop/workshop-app.
-  Use Google Cloud Build and the JFrog CLI to build the NPM Docker image. This build command uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps:</description>
+  Use Google Cloud Build, trigger and the JFrog CLI to build the NPM Docker image. The cloud build trigger uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps:</description>
     </item>
     
   </channel>

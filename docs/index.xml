@@ -56,14 +56,14 @@ Google Cloud Build uses Docker to execute builds. For each build step, Cloud Bui
     </item>
     
     <item>
-      <title>Build the NPM Application Docker Image</title>
+      <title>Build and Deploy the NPM Application Docker Image</title>
       <link>https://jfrogtraining.github.io/gcp-gke-workshop/5_build_publish_app/52_build_docker_image.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jfrogtraining.github.io/gcp-gke-workshop/5_build_publish_app/52_build_docker_image.html</guid>
-      <description>Now, we can use new JFrog CLI image to build the NPM application Docker image and push it to Artifactory&amp;rsquo;s Docker repository.
+      <description>Now, we can use new JFrog CLI image to build the NPM application Docker image and push it to Artifactory&amp;rsquo;s Docker repository using Cloud Build Trigger.
   Return to your Google Cloud Shell terminal and change directory to gcp-gke-workshop/workshop-app.
-  Use Google Cloud Build and the JFrog CLI to build the NPM Docker image. This build command uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps:</description>
+  Use Google Cloud Build, trigger and the JFrog CLI to build the NPM Docker image. The cloud build trigger uses cloudbuild.yaml. If you look inside this file, you will find it performs following steps:</description>
     </item>
     
     <item>
@@ -87,14 +87,38 @@ Google Cloud Build uses Docker to execute builds. For each build step, Cloud Bui
     </item>
     
     <item>
-      <title>Create a GKE Cluster</title>
+      <title>Create GKE Clusters</title>
       <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/413_create_gke_cluster.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/413_create_gke_cluster.html</guid>
-      <description>In this section, we will create a GKE Cluster in our Google Cloud Shell using the gcloud CLI.
+      <description>In this section, we will create GKE Clusters in our Google Cloud Shell using the gcloud CLI.
 The gcloud command-line interface is the primary CLI tool to create and manage Google Cloud resources. You can use this tool to perform many common platform tasks either from the command line or in scripts and other automations.
   In your Google Cloud Shell, execute the following command to set an environment variable for the GCP environment project ID.</description>
+    </item>
+    
+    <item>
+      <title>Create a Cloud Deploy Pipeline</title>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/414_cloud_deploy.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/414_cloud_deploy.html</guid>
+      <description>In this section, we will create a Cloud Deploy pipeline to deploy our app in test, stage and prod environments.
+  First select Cloud Deploy from your product catalog and enable it if it&amp;rsquo;s already not enabled.
+  Execute the following command to add clouddeploy.jobRunner role to the serice account.
+  gcloud projects add-iam-policy-binding $PROJECT_ID \ --member=serviceAccount:$(gcloud projects describe $PROJECT_ID \ --format=&amp;quot;value(projectNumber)&amp;quot;)-compute@developer.gserviceaccount.com \ --role=&amp;quot;roles/clouddeploy.jobRunner&amp;quot; Now execute the below command to add the Kubernetes Developer permissions.</description>
+    </item>
+    
+    <item>
+      <title>Create a Cloud Build Trigger</title>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/415_cloud_trigger.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/415_cloud_trigger.html</guid>
+      <description>In this section, we will create a Cloud Build trigger which will trigger automatically the cloud build file on any push to the github repo and deploy to test.
+  Navigate to Cloud Buiild and select Triggers from the left pane.
+  Click on + CREATE TRIGGER and give it a name workshop.
+  Select CONNECT NEW REPOSITORY in source, which will take you to authenticate your github repo from where you want to trigger cloud build.</description>
     </item>
     
     <item>
@@ -125,9 +149,8 @@ When signing up for the JFrog Platform Cloud Free Tier, ensure that you select G
       
       <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/423_create_repos.html</guid>
       <description>Next, we will set up a NPM and Docker repositories in Artifactory.
- In your JFrog Platform instance go to Administration ► Repositories ► Repositories.  Click on New Local Repository on the right.  For package type, select Docker.  Specify clouddays for the Repository Key.   Click Save &amp;amp; Finish.
-  Close the New Docker Repository dialog.
-  Next, we must create NPM repositories that will be used for NPM dependencies.</description>
+ In your JFrog Platform instance go to Administration ► Repositories ► Repositories.  Click on New Local Repository on the right.  For package type, select Docker.  Specify clouddays for the Repository Key.   Click Create Local Repository.
+  Next, we must create NPM repositories that will be used for NPM dependencies. JFrog provides an easy Quick Setup option for this.</description>
     </item>
     
     <item>
@@ -137,9 +160,9 @@ When signing up for the JFrog Platform Cloud Free Tier, ensure that you select G
       
       <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/424_configure_xray_index.html</guid>
       <description>Next, we will configure Xray to index our new Docker repository. This allows Xray to automatically analyze all the artifacts in this repository.
- Let&amp;rsquo;s configure Xray to index the new Docker repository automatically. Go to Administration ► Xray Security &amp;amp; Compliance.   Click on Indexed Resources.
+ Let&amp;rsquo;s configure Xray to index the new Docker repository automatically. Go to Administration ► Xray ► Settings.   Click on Indexed Resources.
   Click on Add a Repository on the right.
-  Move the clouddays repository into the Included Repositories.  Click Save.</description>
+  Move the clouddays repository into the Included Repositories.  Click Save. You have now configured Xray to index the clouddays repository.</description>
     </item>
     
     <item>
@@ -149,7 +172,7 @@ When signing up for the JFrog Platform Cloud Free Tier, ensure that you select G
       
       <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/425_create_xray_policy.html</guid>
       <description>Next, we will create an Xray security policy that sets the types of security violations to alert on.
- Go to Application ► Security &amp;amp; Compliance ► Policies.   Click on Create a Policy.
+ Go to Administration ► Xray ► Watches &amp;amp; Policies ► Policies.   Click on Create a Policy.
   Give the policy a name like default-security and a description.
    Click on New Rule at the right.
   Give the rule a name like high-security-rule.
@@ -163,7 +186,7 @@ When signing up for the JFrog Platform Cloud Free Tier, ensure that you select G
       
       <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/426_create_xray_watch.html</guid>
       <description>Next, we will create an Xray security watch to scan our new Docker repository.
- Go to Application ► Security &amp;amp; Compliance ► Watches.   Click on Set up a Watch.
+ Go to Administration ► Xray ► Watches &amp;amp; Policies ► Watches.   Click on Set up a Watch.
   Give the watch a name like clouddays-docker-repo-watch and a description.
    Click on Add Repositories.
   Move the clouddays repository into the Included Repositories.

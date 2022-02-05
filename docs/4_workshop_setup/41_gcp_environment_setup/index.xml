@@ -27,14 +27,38 @@
     </item>
     
     <item>
-      <title>Create a GKE Cluster</title>
+      <title>Create GKE Clusters</title>
       <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/413_create_gke_cluster.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/413_create_gke_cluster.html</guid>
-      <description>In this section, we will create a GKE Cluster in our Google Cloud Shell using the gcloud CLI.
+      <description>In this section, we will create GKE Clusters in our Google Cloud Shell using the gcloud CLI.
 The gcloud command-line interface is the primary CLI tool to create and manage Google Cloud resources. You can use this tool to perform many common platform tasks either from the command line or in scripts and other automations.
   In your Google Cloud Shell, execute the following command to set an environment variable for the GCP environment project ID.</description>
+    </item>
+    
+    <item>
+      <title>Create a Cloud Deploy Pipeline</title>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/414_cloud_deploy.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/414_cloud_deploy.html</guid>
+      <description>In this section, we will create a Cloud Deploy pipeline to deploy our app in test, stage and prod environments.
+  First select Cloud Deploy from your product catalog and enable it if it&amp;rsquo;s already not enabled.
+  Execute the following command to add clouddeploy.jobRunner role to the serice account.
+  gcloud projects add-iam-policy-binding $PROJECT_ID \ --member=serviceAccount:$(gcloud projects describe $PROJECT_ID \ --format=&amp;quot;value(projectNumber)&amp;quot;)-compute@developer.gserviceaccount.com \ --role=&amp;quot;roles/clouddeploy.jobRunner&amp;quot; Now execute the below command to add the Kubernetes Developer permissions.</description>
+    </item>
+    
+    <item>
+      <title>Create a Cloud Build Trigger</title>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/415_cloud_trigger.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/415_cloud_trigger.html</guid>
+      <description>In this section, we will create a Cloud Build trigger which will trigger automatically the cloud build file on any push to the github repo and deploy to test.
+  Navigate to Cloud Buiild and select Triggers from the left pane.
+  Click on + CREATE TRIGGER and give it a name workshop.
+  Select CONNECT NEW REPOSITORY in source, which will take you to authenticate your github repo from where you want to trigger cloud build.</description>
     </item>
     
   </channel>
