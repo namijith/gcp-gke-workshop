@@ -1,8 +1,8 @@
 ﻿---
 title: "Create a Xray Policy"
 chapter: false
-weight: 425
-pre: "<b>4.2.5 </b>"
+weight: 426
+pre: "<b>4.2.6 </b>"
 ---
 
 Next, we will create an Xray security policy that sets the types of security violations to alert on.
