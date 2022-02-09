@@ -39,23 +39,33 @@ When signing up for the JFrog Platform Cloud Free Tier, ensure that you select G
     </item>
     
     <item>
-      <title>Configure a Xray Index</title>
-      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/424_configure_xray_index.html</link>
+      <title>Create a sceret for access token in Secret Manager</title>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/424_create_access_token_secret.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/424_configure_xray_index.html</guid>
-      <description>Next, we will configure Xray to index our new Docker repository. This allows Xray to automatically analyze all the artifacts in this repository.
- Let&amp;rsquo;s configure Xray to index the new Docker repository automatically. Go to Administration ► Xray ► Settings.   Click on Indexed Resources.
-  Click on Add a Repository on the right.
-  Move the clouddays repository into the Included Repositories.  Click Save. You have now configured Xray to index the clouddays repository.</description>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/424_create_access_token_secret.html</guid>
+      <description>We will now create an admin access token and use that token to store as secret in Secret Manager in GCP, which will be used by Cloud Build.
+  In your JFrog Platform instance go to Administration ► Identity and Access ► Access Tokens.
+  Click on Generate Token, enter the User name and click on Generate. Copy and save the generated token somewhere.
+  Now go to your GCP console and search for Secret Manager.</description>
+    </item>
+    
+    <item>
+      <title>Configure a Xray Index</title>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/425_configure_xray_index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/425_configure_xray_index.html</guid>
+      <description>We need to complete module 5.1 first in order to complete this next section where we will configure Xray to index our new Docker repository. This allows Xray to automatically analyze all the artifacts in this repository.
+  First we will have to enable Xray, for that go to package view Application ► Artifactory ► Pacakges. Click on any package and go to Xray Data and click on enable xray.</description>
     </item>
     
     <item>
       <title>Create a Xray Policy</title>
-      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/425_create_xray_policy.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/426_create_xray_policy.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/425_create_xray_policy.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/426_create_xray_policy.html</guid>
       <description>Next, we will create an Xray security policy that sets the types of security violations to alert on.
  Go to Administration ► Xray ► Watches &amp;amp; Policies ► Policies.   Click on Create a Policy.
   Give the policy a name like default-security and a description.
@@ -66,10 +76,10 @@ When signing up for the JFrog Platform Cloud Free Tier, ensure that you select G
     
     <item>
       <title>Create a Xray Watch</title>
-      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/426_create_xray_watch.html</link>
+      <link>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/427_create_xray_watch.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/426_create_xray_watch.html</guid>
+      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/427_create_xray_watch.html</guid>
       <description>Next, we will create an Xray security watch to scan our new Docker repository.
  Go to Administration ► Xray ► Watches &amp;amp; Policies ► Watches.   Click on Set up a Watch.
   Give the watch a name like clouddays-docker-repo-watch and a description.

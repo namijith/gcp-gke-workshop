@@ -9,7 +9,7 @@
 
     <link rel="icon" href="https://jfrogtraining.github.io/gcp-gke-workshop/images/favicon.png" type="image/png">
 
-    <title>Get a GCP Environment :: JFrog DevOps on GCP Workshop</title>
+    <title>Create a Xray Policy :: JFrog DevOps on GCP Workshop</title>
 
     
     <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/nucleus.css?1644387387" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="https://jfrogtraining.github.io/gcp-gke-workshop/amp/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html">
+  <body class="" data-url="https://jfrogtraining.github.io/gcp-gke-workshop/amp/4_workshop_setup/42_jfrog_setup/426_create_xray_policy.html">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -296,7 +296,7 @@ viewBox="0 0 1014.42 981.05"
   
     
     <li data-nav-id="/4_workshop_setup/41_gcp_environment_setup.html" title="Prepare the GCP Environment" class="dd-item 
-        parent
+        
         
         
         ">
@@ -324,7 +324,7 @@ viewBox="0 0 1014.42 981.05"
  
   
     
-      <li data-nav-id="/amp/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html" title="Get a GCP Environment" class="dd-item active">
+      <li data-nav-id="/amp/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html" title="Get a GCP Environment" class="dd-item ">
         <a href="https://jfrogtraining.github.io/gcp-gke-workshop/amp/4_workshop_setup/41_gcp_environment_setup/411_get_gcp_environment.html">
         <b>4.1.1 </b>Get a GCP Environment
         <i class="fas fa-check read-icon"></i>
@@ -439,7 +439,7 @@ viewBox="0 0 1014.42 981.05"
   
     
     <li data-nav-id="/4_workshop_setup/42_jfrog_setup.html" title="JFrog Platform Setup" class="dd-item 
-        
+        parent
         
         
         ">
@@ -572,7 +572,7 @@ viewBox="0 0 1014.42 981.05"
  
   
     
-      <li data-nav-id="/amp/4_workshop_setup/42_jfrog_setup/426_create_xray_policy.html" title="Create a Xray Policy" class="dd-item ">
+      <li data-nav-id="/amp/4_workshop_setup/42_jfrog_setup/426_create_xray_policy.html" title="Create a Xray Policy" class="dd-item active">
         <a href="https://jfrogtraining.github.io/gcp-gke-workshop/amp/4_workshop_setup/42_jfrog_setup/426_create_xray_policy.html">
         <b>4.2.6 </b>Create a Xray Policy
         <i class="fas fa-check read-icon"></i>
@@ -863,7 +863,7 @@ viewBox="0 0 1014.42 981.05"
             
           
           
-            <a href='https://jfrogtraining.github.io/gcp-gke-workshop/'>JFrog DevOps on GCP Workshop</a> > <a href='https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup.html'>Workshop Setup</a> > <a href='https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup.html'>Prepare the GCP Environment</a> > Get a GCP Environment
+            <a href='https://jfrogtraining.github.io/gcp-gke-workshop/'>JFrog DevOps on GCP Workshop</a> > <a href='https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup.html'>Workshop Setup</a> > <a href='https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup.html'>JFrog Platform Setup</a> > Create a Xray Policy
           
         
           
@@ -894,74 +894,51 @@ viewBox="0 0 1014.42 981.05"
           
             <h1>
               
-              Get a GCP Environment
+              Create a Xray Policy
             </h1>
           
 
         
 
 
-
-<div class="notices warning" ><p>If you have your own Google account and have your own GCP environment, skip this step.</p>
-</div>
-
-<p>This workshop requires a GCP environment. If this is a JFrog and Google hosted event, your instructor will provide a link and an activation code. The following steps walk through the process of obtaining a GCP environment using the provided link and activation code.
-Otherwise, use your own GCP environment and skip this step.</p>
-
-<div class="notices warning" ><p>When using this temporary GCP environment at a hosted event, use an <strong>Incognito Window</strong> to avoid conflicts with your existing Google Account.</p>
-</div>
-
+<p>Next, we will create an Xray security policy that sets the types of security violations to alert on.</p>
 <ol>
-<li>Open the instructor provided link in your browser. This will take you to environment registration page.</li>
+<li>Go to <strong>Administration</strong> ► <strong>Xray</strong> ► <strong>Watches &amp; Policies</strong> ► <strong>Policies</strong>.</li>
 </ol>
-<p><img src="https://jfrogtraining.github.io/gcp-gke-workshop/images/gcp-environment-registration.png" alt="GCP Environment Registration"></p>
+<p><img src="https://jfrogtraining.github.io/gcp-gke-workshop/images/xray-policy.png" alt="Xray Policies"></p>
 <ol start="2">
-<li>Fill out the form with your information and click <strong>Submit</strong>.</li>
+<li>
+<p>Click on <strong>Create a Policy</strong>.</p>
+</li>
+<li>
+<p>Give the policy a name like <em>default-security</em> and a description.</p>
+</li>
 </ol>
-<p><img src="https://jfrogtraining.github.io/gcp-gke-workshop/images/gcp-environment-registration-form.png" alt="GCP Environment Registration"></p>
-<ol start="3">
-<li>Next, click on the <strong>Launch Lab</strong> button.</li>
-</ol>
-<p><img src="https://jfrogtraining.github.io/gcp-gke-workshop/images/gcp-environment-launch-lab.png" alt="GCP Environment Launch"></p>
+<p><img src="https://jfrogtraining.github.io/gcp-gke-workshop/images/security-policy-name.png" alt="Security Policy Name"></p>
 <ol start="4">
-<li>It will take a couple minutes for your environment to be ready.</li>
-</ol>
-<p><img src="https://jfrogtraining.github.io/gcp-gke-workshop/images/gcp-environment-waiting.png" alt="GCP Environment Waiting"></p>
-<ol start="5">
-<li>When ready, your environment information will be provided. Take a moment to copy these values to your notepad.</li>
-</ol>
-<p><img src="https://jfrogtraining.github.io/gcp-gke-workshop/images/gcp-environment-ready.png" alt="GCP Environment Ready"></p>
-<ol start="6">
 <li>
-<p>Open the <strong>Sign-in link</strong> in a new browser tab. If you are already signed into Google Cloud with an exiting account, please sign out.</p>
+<p>Click on <strong>New Rule</strong> at the right.</p>
 </li>
 <li>
-<p>Sign in using the account credentials provided for the environment.</p>
-</li>
-</ol>
-<p><img src="https://jfrogtraining.github.io/gcp-gke-workshop/images/gcp-sign-in.png" alt="GCP Sign In"></p>
-<ol start="8">
-<li>
-<p><strong>Accept</strong> the new account agreement.</p>
+<p>Give the rule a name like <em>high-security-rule</em>.</p>
 </li>
 <li>
-<p>Accept the terms of service.</p>
+<p>For <strong>Minimal Severity</strong>, specify <strong>High</strong>.</p>
 </li>
 </ol>
-<p><img src="https://jfrogtraining.github.io/gcp-gke-workshop/images/gcp-terms.png" alt="GCP Terms"></p>
-<ol start="10">
-<li>You are now on your Google Cloud Console.</li>
+<p><img src="https://jfrogtraining.github.io/gcp-gke-workshop/images/xray-policy-rule.png" alt="Xray Policy Rule"></p>
+<ol start="7">
+<li>
+<p>Click <strong>Save</strong> for the new rule.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong> to create the new policy.</p>
+</li>
 </ol>
-<p><img src="https://jfrogtraining.github.io/gcp-gke-workshop/images/gcp-cloud-console.png" alt="GCP Cloud Console"></p>
-<ol start="11">
-<li>Click on the Google Cloud Shell button at the top right of the console to open Google Cloud Shell terminal in your browser.</li>
-</ol>
-<p><img src="https://jfrogtraining.github.io/gcp-gke-workshop/images/gcp-shell.png" alt="GCP Cloud Shell"></p>
-<ol start="12">
-<li>Click the <strong>Continue</strong> button and wait a few moments for you Google Cloud Shell Machine to be ready.</li>
-</ol>
-<p><img src="https://jfrogtraining.github.io/gcp-gke-workshop/images/gcp-shell-ready.png" alt="GCP Cloud Shell Ready"></p>
-<p>Great work! Let&rsquo;s move onto the next step.</p>
+
+<div class="notices info" ><p>Policies define security and license compliance behavior specifications. Policies enable you to create a set of rules, in which each rule defines a license/security criteria, with a corresponding set of automatic actions according to your needs. Policies are enforced when applying them to Watches. A policy is contextless, which means that it only defines what to enforce and not what to enforce it on.</p>
+</div>
+
 
 
 <footer class="footline">
@@ -1142,7 +1119,6 @@ Otherwise, use your own GCP environment and skip this step.</p>
             
                 
                     
-                    
                 
                 
 
@@ -1158,9 +1134,6 @@ Otherwise, use your own GCP environment and skip this step.</p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1236,22 +1209,6 @@ Otherwise, use your own GCP environment and skip this step.</p>
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1337,6 +1294,26 @@ Otherwise, use your own GCP environment and skip this step.</p>
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1460,10 +1437,10 @@ Otherwise, use your own GCP environment and skip this step.</p>
 	 
 	 
 		
-			<a class="nav nav-prev" href="https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup.html" title="Prepare the GCP Environment"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="https://jfrogtraining.github.io/gcp-gke-workshop/amp/4_workshop_setup/42_jfrog_setup/425_configure_xray_index.html" title="Configure a Xray Index"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="https://jfrogtraining.github.io/gcp-gke-workshop/amp/4_workshop_setup/41_gcp_environment_setup/412_download_workshop_code.html" title="Download the Workshop Code" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://jfrogtraining.github.io/gcp-gke-workshop/amp/4_workshop_setup/42_jfrog_setup/427_create_xray_watch.html" title="Create a Xray Watch" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
