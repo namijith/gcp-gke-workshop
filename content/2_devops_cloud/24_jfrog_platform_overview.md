@@ -29,9 +29,15 @@ This treasure trove of information about your software is available both via the
 
 **JFrog Access with Federation** provides governance to the distribution of artifacts by managing releases, permissions and access levels.
 
-**JFrog Pipelines** helps automate the non-human part of the whole software development process with continuous integration and empowers teams to implement the technical aspects of continuous delivery.
+**JFrog Pipelines** helps automate the non-human part of the whole software development process with continuous integration and empowers teams to implement the technical aspects of continuous delivery.With th
 
 The JFrog platform is enterprise ready with your choice of on-prem, cloud, multi-cloud or hybrid deployments that scale as you grow. These tools not only track your software for vulnerability or attacks, if there is a breach these tools also helps you answer these questions like is your software impacted by the breach? which compoponent is exactly affeted and the remediations.
+
+Recommended reads:
+
+[Automatically Assess and Remediate the SolarWinds Hack](https://jfrog.com/blog/automatically-assess-and-remediate-the-solarwinds-hack/)
+[Your Log4shell Remediation Cookbook Using the JFrog Platform](https://jfrog.com/blog/your-log4shell-remediation-cookbook-using-the-jfrog-platform/)
+[Signed Pipelines Build Trust in your Software Supply Chain](https://jfrog.com/blog/signed-pipelines-build-trust-in-your-software-supply-chain/)
 
 ![Platform UI](/images/platform-ui.png)
 
