@@ -74,8 +74,8 @@ Google Cloud Build uses Docker to execute builds. For each build step, Cloud Bui
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/412_download_workshop_code.html</guid>
-      <description>The workshop code is located at https://github.com/jfrogtraining/gcp-gke-workshop GitHub repository. We will clone this repository locally in order to pull the required workshop files and scripts.
- Click on the Google Cloud Shell button at the top right of the console to open Google Cloud Shell terminal in your browser.  Click the Continue button and wait a few moments for you Google Cloud Shell Machine to be ready.  Clone this repository to your local directory with the following command.</description>
+      <description>The workshop code is located at https://github.com/jfrogtraining/gcp-gke-workshop GitHub repository. We will fork this repo and then clone locally in order to pull the required workshop files and scripts.
+ Click on the Google Cloud Shell button at the top right of the console to open Google Cloud Shell terminal in your browser.  Click the Continue button and wait a few moments for you Google Cloud Shell Machine to be ready.</description>
     </item>
     
     <item>
@@ -108,6 +108,7 @@ The gcloud command-line interface is the primary CLI tool to create and manage G
       
       <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/415_cloud_trigger.html</guid>
       <description>In this section, we will create a Cloud Build trigger which will trigger automatically the cloud build file on any push to the github repo and deploy to test.
+  Go to https://github.com/jfrogtraining/gcp-gke-workshop and fork this repo.
   Navigate to Cloud Buiild and select Triggers from the left pane.
   Click on + CREATE TRIGGER and give it a name workshop.
   Select CONNECT NEW REPOSITORY in source, which will take you to authenticate your github repo from where you want to trigger cloud build.</description>
@@ -163,8 +164,10 @@ When signing up for the JFrog Platform Cloud Free Tier, ensure that you select G
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/425_configure_xray_index.html</guid>
-      <description>We need to complete module 5.1 first in order to complete this next section where we will configure Xray to index our new Docker repository. This allows Xray to automatically analyze all the artifacts in this repository.
-  First we will have to enable Xray, for that go to package view Application ► Artifactory ► Pacakges. Click on any package and go to Xray Data and click on enable xray.</description>
+      <description>First we will have to enable Xray if its not already enabled, for that go to package view Application ► Artifactory ► Packages. Click on any package and go to Xray Data and click on enable xray.
+  Let&amp;rsquo;s configure Xray to index the new Docker repository automatically. Go to Administration ► Xray ► Settings.
+   Click on Indexed Resources.
+  Click on Add a Repository on the right.</description>
     </item>
     
     <item>

@@ -48,7 +48,6 @@ With this command we have specified the following GKE cluster properties:
 - Specified the Kubernetes node machine type as _e2-standard-2_ and set it to container optimized.
 - Set disk storage type and size (SSD).
 - Configured the number of Kubernetes worker nodes (we only need 1 for our workshop).
-- Enabled logging to Stackdriver.
 - Enabled auto-upgrade.
 - Enabled auto-repair in case some part of our infrastructure fails.
 

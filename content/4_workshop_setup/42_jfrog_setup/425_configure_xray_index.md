@@ -5,9 +5,8 @@ weight: 425
 pre: "<b>4.2.5 </b>"
 ---
 
-We need to complete module **5.1** first in order to complete this next section where we will configure Xray to index our new Docker repository. This allows Xray to automatically analyze all the artifacts in this repository.
 
-1. First we will have to enable Xray, for that go to package view **Application** ► **Artifactory** ► **Pacakges**. Click on any package and go to **Xray Data** and click on **enable xray**.
+1. First we will have to enable Xray if its not already enabled, for that go to package view **Application** ► **Artifactory** ► **Packages**. Click on any package and go to **Xray Data** and click on **enable xray**.
 
 2. Let's configure Xray to index the new Docker repository automatically. Go to **Administration** ► **Xray** ► **Settings**.
 

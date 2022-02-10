@@ -36,10 +36,15 @@ Cloud Deploy Releaser
 Service Account User
 ```
 
-5. Now in your cloud shell navigate to _gcp-gke-workshop/workshop-app_ and execute below command. This will register your pipeline with the Google Cloud Deploy service and with targets (test,stage and prod).
+5. Now in your cloud shell navigate to _gcp-gke-workshop/workshop-app_ and update your clouddeploy.yaml with the GKE clusters created in **4.1.3** for test, stage and prod.
+
+![Cloud Deploy cluster update](/images/cloud-deploy-cluster-update.png)
+
+
+6. After that execute below command. This will register your pipeline with the Google Cloud Deploy service and with targets (test,stage and prod).
 
 ```
-gcloud deploy apply --file clouddeploy.yaml --region=us-central1 --project=$PROJECT_ID
+gcloud deploy apply --file clouddeploy.yaml --region=$REGION --project=$PROJECT_ID
 ```
 ![Cloud Deploy command](/images/cloud-deploy-pipeline-create.png)
 

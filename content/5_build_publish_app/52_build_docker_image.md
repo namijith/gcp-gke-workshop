@@ -34,15 +34,12 @@ kubectl get nodes
  5. We need to set our Artifactory registry credentials in order to pull the NPM application image. We will do this my creating Kubernetes secrets. Execute the following command, substitute your _server name_ and JFrog Platform credentials (_username_ and _API key_).
 
 ```
-kubectl create secret docker-registry regcred 
-    --docker-server=$JFROG_SERVER_NAME 
-    --docker-username=$JFROG_USER
-    --docker-password=$JFROG_API_KEY
+kubectl create secret docker-registry regcred --docker-server=$JFROG_SERVER_NAME --docker-username=$JFROG_USER --docker-password=$JFROG_API_KEY
 ```
 
-6. You have to create this secret in other 2 clusters also: **testgcpworkshop** & **staginggcpworkshop**.
+6. You have to create this secret in other 2 clusters also: **testgcpworkshop** and **staginggcpworkshop**.
 
-7. Now edit the cloudbuild.yaml in the current directory to update _versionName_ for access token secret which we have saved from **4.24** step and commit **git push** to trigger cloud build.
+7. Now edit the cloudbuild.yaml in your fork to update _versionName_ for access token secret which we have saved from **4.24** step and **commit** to trigger cloud build.
 
 ![Update Secret](/images/update-secret-cloudbuild.png)
 
@@ -73,9 +70,11 @@ Also the cloud build should create a release in Cloud Deploy pipeline and Deploy
 
 8. Execute the following to see your deployed pod.
 
-``
+```
+gcloud container clusters get-credentials testgcpworkshop --project=$PROJECT_ID --zone=$ZONE
+
 kubectl get pods
-``
+```
 
 You should see you npm-app pod.
 

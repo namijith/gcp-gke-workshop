@@ -12,21 +12,21 @@
     <title>Create a Cloud Deploy Pipeline :: JFrog DevOps on GCP Workshop</title>
 
     
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/nucleus.css?1644471833" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/fontawesome-all.min.css?1644471833" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/hybrid.css?1644471833" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/featherlight.min.css?1644471833" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/perfect-scrollbar.min.css?1644471833" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/auto-complete.css?1644471833" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/atom-one-dark-reasonable.css?1644471833" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/theme.css?1644471833" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/hugo-theme.css?1644471833" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/nucleus.css?1644480923" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/fontawesome-all.min.css?1644480923" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/hybrid.css?1644480923" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/featherlight.min.css?1644480923" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/perfect-scrollbar.min.css?1644480923" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/auto-complete.css?1644480923" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/atom-one-dark-reasonable.css?1644480923" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/theme.css?1644480923" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/hugo-theme.css?1644480923" rel="stylesheet">
     
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/theme-mine.css?1644471833" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/theme-mine.css?1644480923" rel="stylesheet">
     
     
 
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/jquery-3.3.1.min.js?1644471833"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/jquery-3.3.1.min.js?1644480923"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -67,14 +67,14 @@ viewBox="0 0 1014.42 981.05"
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://jfrogtraining.github.io/gcp-gke-workshop/js/lunr.min.js?1644471833"></script>
-<script type="text/javascript" src="https://jfrogtraining.github.io/gcp-gke-workshop/js/auto-complete.js?1644471833"></script>
+<script type="text/javascript" src="https://jfrogtraining.github.io/gcp-gke-workshop/js/lunr.min.js?1644480923"></script>
+<script type="text/javascript" src="https://jfrogtraining.github.io/gcp-gke-workshop/js/auto-complete.js?1644480923"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/jfrogtraining.github.io\/gcp-gke-workshop\/";
     
 </script>
-<script type="text/javascript" src="https://jfrogtraining.github.io/gcp-gke-workshop/js/search.js?1644471833"></script>
+<script type="text/javascript" src="https://jfrogtraining.github.io/gcp-gke-workshop/js/search.js?1644480923"></script>
 
     
   </div>
@@ -880,9 +880,13 @@ viewBox="0 0 1014.42 981.05"
 <pre tabindex="0"><code>Cloud Deploy Releaser
 </code></pre><pre tabindex="0"><code>Service Account User
 </code></pre><ol start="5">
-<li>Now in your cloud shell navigate to <em>gcp-gke-workshop/workshop-app</em> and execute below command. This will register your pipeline with the Google Cloud Deploy service and with targets (test,stage and prod).</li>
+<li>Now in your cloud shell navigate to <em>gcp-gke-workshop/workshop-app</em> and update your clouddeploy.yaml with the GKE clusters created in <strong>4.1.3</strong> for test, stage and prod.</li>
 </ol>
-<pre tabindex="0"><code>gcloud deploy apply --file clouddeploy.yaml --region=us-central1 --project=$PROJECT_ID
+<p><img src="https://jfrogtraining.github.io/gcp-gke-workshop/images/cloud-deploy-cluster-update.png" alt="Cloud Deploy cluster update"></p>
+<ol start="6">
+<li>After that execute below command. This will register your pipeline with the Google Cloud Deploy service and with targets (test,stage and prod).</li>
+</ol>
+<pre tabindex="0"><code>gcloud deploy apply --file clouddeploy.yaml --region=$REGION --project=$PROJECT_ID
 </code></pre><p><img src="https://jfrogtraining.github.io/gcp-gke-workshop/images/cloud-deploy-pipeline-create.png" alt="Cloud Deploy command"></p>
 <ol start="6">
 <li>Once above command execute successfully, navigate to <strong>Cloud Deploy</strong> and you should see one pipeline with name <strong>clouddays-demo</strong></li>
@@ -1367,19 +1371,19 @@ viewBox="0 0 1014.42 981.05"
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/clipboard.min.js?1644471833"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/perfect-scrollbar.min.js?1644471833"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/perfect-scrollbar.jquery.min.js?1644471833"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/jquery.sticky.js?1644471833"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/featherlight.min.js?1644471833"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/highlight.pack.js?1644471833"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/clipboard.min.js?1644480923"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/perfect-scrollbar.min.js?1644480923"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/perfect-scrollbar.jquery.min.js?1644480923"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/jquery.sticky.js?1644480923"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/featherlight.min.js?1644480923"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/highlight.pack.js?1644480923"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/modernizr.custom-3.6.0.js?1644471833"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/learn.js?1644471833"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/hugo-learn.js?1644471833"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/modernizr.custom-3.6.0.js?1644480923"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/learn.js?1644480923"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/hugo-learn.js?1644480923"></script>
     
         
-            <script src="https://jfrogtraining.github.io/gcp-gke-workshop/mermaid/mermaid.js?1644471833"></script>
+            <script src="https://jfrogtraining.github.io/gcp-gke-workshop/mermaid/mermaid.js?1644480923"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

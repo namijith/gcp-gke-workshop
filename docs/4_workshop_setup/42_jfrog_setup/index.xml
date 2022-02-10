@@ -56,8 +56,10 @@ When signing up for the JFrog Platform Cloud Free Tier, ensure that you select G
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/42_jfrog_setup/425_configure_xray_index.html</guid>
-      <description>We need to complete module 5.1 first in order to complete this next section where we will configure Xray to index our new Docker repository. This allows Xray to automatically analyze all the artifacts in this repository.
-  First we will have to enable Xray, for that go to package view Application ► Artifactory ► Pacakges. Click on any package and go to Xray Data and click on enable xray.</description>
+      <description>First we will have to enable Xray if its not already enabled, for that go to package view Application ► Artifactory ► Packages. Click on any package and go to Xray Data and click on enable xray.
+  Let&amp;rsquo;s configure Xray to index the new Docker repository automatically. Go to Administration ► Xray ► Settings.
+   Click on Indexed Resources.
+  Click on Add a Repository on the right.</description>
     </item>
     
     <item>

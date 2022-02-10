@@ -32,5 +32,3 @@ This command should result in a successful build of docker image and it should b
 ![JFrog CLI build success](/images/jfrog-cli-succes-docker.png)
 
 ![JFrog CLI build success](/images/jfrog-cli-docker-image.png)
-
-Before moving further lets move back to **4.24** module to enable xray. 

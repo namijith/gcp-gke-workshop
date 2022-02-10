@@ -22,8 +22,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/412_download_workshop_code.html</guid>
-      <description>The workshop code is located at https://github.com/jfrogtraining/gcp-gke-workshop GitHub repository. We will clone this repository locally in order to pull the required workshop files and scripts.
- Click on the Google Cloud Shell button at the top right of the console to open Google Cloud Shell terminal in your browser.  Click the Continue button and wait a few moments for you Google Cloud Shell Machine to be ready.  Clone this repository to your local directory with the following command.</description>
+      <description>The workshop code is located at https://github.com/jfrogtraining/gcp-gke-workshop GitHub repository. We will fork this repo and then clone locally in order to pull the required workshop files and scripts.
+ Click on the Google Cloud Shell button at the top right of the console to open Google Cloud Shell terminal in your browser.  Click the Continue button and wait a few moments for you Google Cloud Shell Machine to be ready.</description>
     </item>
     
     <item>
@@ -56,6 +56,7 @@ The gcloud command-line interface is the primary CLI tool to create and manage G
       
       <guid>https://jfrogtraining.github.io/gcp-gke-workshop/4_workshop_setup/41_gcp_environment_setup/415_cloud_trigger.html</guid>
       <description>In this section, we will create a Cloud Build trigger which will trigger automatically the cloud build file on any push to the github repo and deploy to test.
+  Go to https://github.com/jfrogtraining/gcp-gke-workshop and fork this repo.
   Navigate to Cloud Buiild and select Triggers from the left pane.
   Click on + CREATE TRIGGER and give it a name workshop.
   Select CONNECT NEW REPOSITORY in source, which will take you to authenticate your github repo from where you want to trigger cloud build.</description>

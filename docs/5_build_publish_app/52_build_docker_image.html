@@ -12,21 +12,21 @@
     <title>Build and Deploy the NPM Application Docker Image :: JFrog DevOps on GCP Workshop</title>
 
     
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/nucleus.css?1644471833" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/fontawesome-all.min.css?1644471833" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/hybrid.css?1644471833" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/featherlight.min.css?1644471833" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/perfect-scrollbar.min.css?1644471833" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/auto-complete.css?1644471833" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/atom-one-dark-reasonable.css?1644471833" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/theme.css?1644471833" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/hugo-theme.css?1644471833" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/nucleus.css?1644480923" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/fontawesome-all.min.css?1644480923" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/hybrid.css?1644480923" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/featherlight.min.css?1644480923" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/perfect-scrollbar.min.css?1644480923" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/auto-complete.css?1644480923" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/atom-one-dark-reasonable.css?1644480923" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/theme.css?1644480923" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/hugo-theme.css?1644480923" rel="stylesheet">
     
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/theme-mine.css?1644471833" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/theme-mine.css?1644480923" rel="stylesheet">
     
     
 
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/jquery-3.3.1.min.js?1644471833"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/jquery-3.3.1.min.js?1644480923"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -67,14 +67,14 @@ viewBox="0 0 1014.42 981.05"
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://jfrogtraining.github.io/gcp-gke-workshop/js/lunr.min.js?1644471833"></script>
-<script type="text/javascript" src="https://jfrogtraining.github.io/gcp-gke-workshop/js/auto-complete.js?1644471833"></script>
+<script type="text/javascript" src="https://jfrogtraining.github.io/gcp-gke-workshop/js/lunr.min.js?1644480923"></script>
+<script type="text/javascript" src="https://jfrogtraining.github.io/gcp-gke-workshop/js/auto-complete.js?1644480923"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/jfrogtraining.github.io\/gcp-gke-workshop\/";
     
 </script>
-<script type="text/javascript" src="https://jfrogtraining.github.io/gcp-gke-workshop/js/search.js?1644471833"></script>
+<script type="text/javascript" src="https://jfrogtraining.github.io/gcp-gke-workshop/js/search.js?1644480923"></script>
 
     
   </div>
@@ -878,16 +878,13 @@ viewBox="0 0 1014.42 981.05"
 </code></pre><ol start="5">
 <li>We need to set our Artifactory registry credentials in order to pull the NPM application image. We will do this my creating Kubernetes secrets. Execute the following command, substitute your <em>server name</em> and JFrog Platform credentials (<em>username</em> and <em>API key</em>).</li>
 </ol>
-<pre tabindex="0"><code>kubectl create secret docker-registry regcred 
-    --docker-server=$JFROG_SERVER_NAME 
-    --docker-username=$JFROG_USER
-    --docker-password=$JFROG_API_KEY
+<pre tabindex="0"><code>kubectl create secret docker-registry regcred --docker-server=$JFROG_SERVER_NAME --docker-username=$JFROG_USER --docker-password=$JFROG_API_KEY
 </code></pre><ol start="6">
 <li>
-<p>You have to create this secret in other 2 clusters also: <strong>testgcpworkshop</strong> &amp; <strong>staginggcpworkshop</strong>.</p>
+<p>You have to create this secret in other 2 clusters also: <strong>testgcpworkshop</strong> and <strong>staginggcpworkshop</strong>.</p>
 </li>
 <li>
-<p>Now edit the cloudbuild.yaml in the current directory to update <em>versionName</em> for access token secret which we have saved from <strong>4.24</strong> step and commit <strong>git push</strong> to trigger cloud build.</p>
+<p>Now edit the cloudbuild.yaml in your fork to update <em>versionName</em> for access token secret which we have saved from <strong>4.24</strong> step and <strong>commit</strong> to trigger cloud build.</p>
 </li>
 </ol>
 <p><img src="https://jfrogtraining.github.io/gcp-gke-workshop/images/update-secret-cloudbuild.png" alt="Update Secret"></p>
@@ -936,8 +933,10 @@ viewBox="0 0 1014.42 981.05"
 <ol start="8">
 <li>Execute the following to see your deployed pod.</li>
 </ol>
-<p><code>kubectl get pods</code></p>
-<p>You should see you npm-app pod.</p>
+<pre tabindex="0"><code>gcloud container clusters get-credentials testgcpworkshop --project=$PROJECT_ID --zone=$ZONE
+
+kubectl get pods
+</code></pre><p>You should see you npm-app pod.</p>
 <p><img src="https://jfrogtraining.github.io/gcp-gke-workshop/images/kubectl-get-pods.png" alt="Kubectl Get Pods"></p>
 <ol start="9">
 <li>Now let&rsquo;s get the external IP so that we can view your application. Execute the following.</li>
@@ -1433,19 +1432,19 @@ viewBox="0 0 1014.42 981.05"
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/clipboard.min.js?1644471833"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/perfect-scrollbar.min.js?1644471833"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/perfect-scrollbar.jquery.min.js?1644471833"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/jquery.sticky.js?1644471833"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/featherlight.min.js?1644471833"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/highlight.pack.js?1644471833"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/clipboard.min.js?1644480923"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/perfect-scrollbar.min.js?1644480923"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/perfect-scrollbar.jquery.min.js?1644480923"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/jquery.sticky.js?1644480923"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/featherlight.min.js?1644480923"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/highlight.pack.js?1644480923"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/modernizr.custom-3.6.0.js?1644471833"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/learn.js?1644471833"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/hugo-learn.js?1644471833"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/modernizr.custom-3.6.0.js?1644480923"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/learn.js?1644480923"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/hugo-learn.js?1644480923"></script>
     
         
-            <script src="https://jfrogtraining.github.io/gcp-gke-workshop/mermaid/mermaid.js?1644471833"></script>
+            <script src="https://jfrogtraining.github.io/gcp-gke-workshop/mermaid/mermaid.js?1644480923"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
