@@ -27,7 +27,7 @@ In this section, we will create a Cloud Build trigger which will trigger automat
 
 7. Now add substituition variable used in cloud build file: _JFROG_SERVER_NAME , _JFROG_USER
 
-![Tiggers sub var](/images/triggers-sub-var.png)
+![Tiggers sub var](/images/cloud-trigger-subs.png)
 
 8. Click on **Create**.
 
