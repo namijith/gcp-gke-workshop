@@ -33,17 +33,19 @@ kubectl get nodes
 ```
  5. We need to set our Artifactory registry credentials in order to pull the NPM application image. We will do this my creating Kubernetes secrets. Execute the following command, substitute your _server name_ and JFrog Platform credentials (_username_ and _API key_).
 
-``
+```
 kubectl create secret docker-registry regcred 
-    --namespace clouddays
     --docker-server=$JFROG_SERVER_NAME 
     --docker-username=$JFROG_USER
     --docker-password=$JFROG_API_KEY
-``
+```
 
 6. You have to create this secret in other 2 clusters also: **testgcpworkshop** & **staginggcpworkshop**.
 
-7. Now go back to **Cloud Build Trigger** and click **Run** or do any git commit in your repo to trigger the build.
+7. Now edit the cloudbuild.yaml in the current directory to update _versionName_ for access token secret which we have saved from **4.24** step and commit **git push** to trigger cloud build.
+
+![Update Secret](/images/update-secret-cloudbuild.png)
+
 
 {{%expand "Let's review!" %}}
 ![Google Cloud Build Steps](/images/google-cloud-build-steps.png)

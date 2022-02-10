@@ -2,6 +2,7 @@
 title: "Continuous Integration and Delivery"
 chapter: false
 weight: 21
+draft: true
 pre: "<b>2.1 </b>"
 ---
 

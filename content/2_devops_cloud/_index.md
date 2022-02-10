@@ -1,23 +1,22 @@
 ---
-title: "DevOps in the Cloud"
+title: "Software Supply Chain Security"
 chapter: false
 weight: 2
 pre: "<b>2 </b>"
 ---
 
-![Cloud Devops](/images/cloud-devops.png)
+When we talk about **software supply chain security**, we are talking about the process of identifying, analyzing, monitoring, and mitigating security risks, vulnerabilities, and compliance issues posed by third-party software vendors within an organization’s supply chain.
 
-The goal of DevOps is to allow your development teams to deliver quality software faster to your customers through continuous process improvement, leveraging the best of breed development tools and infrastructure,  and utilizing software development and IT operations best practices. Your team must deliver software faster than your competitors in order to get features and fixes to your customers sooner. JFrog terms this ideal as _[liquid software](https://jfrog.com/whitepaper/a-vision-of-liquid-software/)_.
+Poll says :
 
-> Looking forward, as release cycles get shorter and microservices get smaller, we can imagine a world in which at any one time, our systems’ software is being updated. Effectively, software will become liquid in that products and services will be connected to “software pipes” that constantly stream updates into our systems and devices; liquid software continuously and automatically updating our systems with no human intervention.
->
-> -- <cite>JFrog (2017), A Vision of Liquid Software, Retrieved from https://jfrog.com/whitepaper/a-vision-of-liquid-software/</cite>
+> In an average application, 85-90 percent of the codebase was open source.
 
+> 99 percent of codebases contain at least some open source code and 75 percent used at least one vulnerable open source component.
 
-A critical aspect of DevOps is infrastructure. Cloud computing infrastructure has allowed DevOps to advance and come closer to realizing _liquid software_. Cloud computing has allowed development teams to build these software pipes by:
+> 74 percent, of the applications with vulnerable libraries can be fixed by just updating the libraries
 
- - Using ephemeral cloud infrastructure to scale their development process and software delivery at levels not achievable with on-premise infrastructure.
- - Providing applications on a global scale with real-time response and resiliency.
- - Leveraging new cloud services in their application and software development processes to improve the quality, security and delivery of their applications.
- - Allowing multi-discipline teams to collaborate in the cloud across the software lifecycle to ensure quality, security, velocity and scale of applications.
- 
+**Software Supply Chain Attacks** : A technique in which an adversary slips malicious code or even a malicious component into a trusted piece of software or hardware.
+
+Federal executive order to all software used by goverment to have SBOM in order to subsidize software suplly chain attacks like Solarwinds.
+
+**SBOM** : Software Bill of Materials is a list of the “ingredients” that make up a piece of software, including libraries and modules — whether they are open source or proprietary, or free or paid — as well as information about the development tools, and CI (continuous integration) environmental variables used during the build process.

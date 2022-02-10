@@ -1,6 +1,7 @@
 ---
 title: "Deploy Application on GKE"
 chapter: false
+draft: true
 weight: 7
 pre: "<b>7 </b>"
 ---

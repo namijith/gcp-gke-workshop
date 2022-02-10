@@ -2,6 +2,7 @@
 title: "Binary Repository Management"
 chapter: false
 weight: 22
+draft: true
 pre: "<b>2.2 </b>"
 ---
 
