@@ -35,9 +35,12 @@ The JFrog platform is enterprise ready with your choice of on-prem, cloud, multi
 
 Recommended reads:
 
-[Automatically Assess and Remediate the SolarWinds Hack](https://jfrog.com/blog/automatically-assess-and-remediate-the-solarwinds-hack/)
-[Your Log4shell Remediation Cookbook Using the JFrog Platform](https://jfrog.com/blog/your-log4shell-remediation-cookbook-using-the-jfrog-platform/)
-[Signed Pipelines Build Trust in your Software Supply Chain](https://jfrog.com/blog/signed-pipelines-build-trust-in-your-software-supply-chain/)
+![Automatically Assess and Remediate the SolarWinds Hack](https://jfrog.com/blog/automatically-assess-and-remediate-the-solarwinds-hack/)
+
+![Your Log4shell Remediation Cookbook Using the JFrog Platform](https://jfrog.com/blog/your-log4shell-remediation-cookbook-using-the-jfrog-platform/)
+
+![Signed Pipelines Build Trust in your Software Supply Chain](https://jfrog.com/blog/signed-pipelines-build-trust-in-your-software-supply-chain/)
+
 
 ![Platform UI](/images/platform-ui.png)
 
