@@ -31,15 +31,15 @@ echo $ZONE
 3. Execute the following gcloud CLI commands to create 3 GKE clusters for test, stage and prod.
 
 ```
-gcloud container clusters create testgcpworkshop --zone $ZONE --release-channel=rapid --machine-type=e2-standard-2 --image-type=COS --disk-type=pd-ssd --disk-size=10 --num-nodes=1  --enable-autoupgrade --enable-autorepair
+gcloud container clusters create testgcpworkshop --zone $ZONE --release-channel=rapid --machine-type=e2-standard-2 --image-type=COS --disk-type=pd-ssd --disk-size=10 --num-nodes=1  --enable-autoupgrade --enable-autorepair --async
 ```
 
 ```
-gcloud container clusters create staginggcpworkshop --zone $ZONE --release-channel=rapid --machine-type=e2-standard-2 --image-type=COS --disk-type=pd-ssd --disk-size=10 --num-nodes=1  --enable-autoupgrade --enable-autorepair 
+gcloud container clusters create staginggcpworkshop --zone $ZONE --release-channel=rapid --machine-type=e2-standard-2 --image-type=COS --disk-type=pd-ssd --disk-size=10 --num-nodes=1  --enable-autoupgrade --enable-autorepair --async
 ```
 
 ```
-gcloud container clusters create gcpworkshop --zone $ZONE --release-channel=rapid --machine-type=e2-standard-2 --image-type=COS --disk-type=pd-ssd --disk-size=10 --num-nodes=1  --enable-autoupgrade --enable-autorepair 
+gcloud container clusters create gcpworkshop --zone $ZONE --release-channel=rapid --machine-type=e2-standard-2 --image-type=COS --disk-type=pd-ssd --disk-size=10 --num-nodes=1  --enable-autoupgrade --enable-autorepair --async
 ```
 
 With this command we have specified the following GKE cluster properties: 

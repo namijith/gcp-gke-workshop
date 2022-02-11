@@ -12,21 +12,21 @@
     <title>Create GKE Clusters :: JFrog DevOps on GCP Workshop</title>
 
     
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/nucleus.css?1644523565" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/fontawesome-all.min.css?1644523565" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/hybrid.css?1644523565" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/featherlight.min.css?1644523565" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/perfect-scrollbar.min.css?1644523565" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/auto-complete.css?1644523565" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/atom-one-dark-reasonable.css?1644523565" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/theme.css?1644523565" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/hugo-theme.css?1644523565" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/nucleus.css?1644549543" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/fontawesome-all.min.css?1644549543" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/hybrid.css?1644549543" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/featherlight.min.css?1644549543" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/perfect-scrollbar.min.css?1644549543" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/auto-complete.css?1644549543" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/atom-one-dark-reasonable.css?1644549543" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/theme.css?1644549543" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/hugo-theme.css?1644549543" rel="stylesheet">
     
-    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/theme-mine.css?1644523565" rel="stylesheet">
+    <link href="https://jfrogtraining.github.io/gcp-gke-workshop/css/theme-mine.css?1644549543" rel="stylesheet">
     
     
 
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/jquery-3.3.1.min.js?1644523565"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/jquery-3.3.1.min.js?1644549543"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -67,14 +67,14 @@ viewBox="0 0 1014.42 981.05"
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://jfrogtraining.github.io/gcp-gke-workshop/js/lunr.min.js?1644523565"></script>
-<script type="text/javascript" src="https://jfrogtraining.github.io/gcp-gke-workshop/js/auto-complete.js?1644523565"></script>
+<script type="text/javascript" src="https://jfrogtraining.github.io/gcp-gke-workshop/js/lunr.min.js?1644549543"></script>
+<script type="text/javascript" src="https://jfrogtraining.github.io/gcp-gke-workshop/js/auto-complete.js?1644549543"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/jfrogtraining.github.io\/gcp-gke-workshop\/";
     
 </script>
-<script type="text/javascript" src="https://jfrogtraining.github.io/gcp-gke-workshop/js/search.js?1644523565"></script>
+<script type="text/javascript" src="https://jfrogtraining.github.io/gcp-gke-workshop/js/search.js?1644549543"></script>
 
     
   </div>
@@ -875,9 +875,9 @@ echo $ZONE
 </code></pre><ol start="3">
 <li>Execute the following gcloud CLI commands to create 3 GKE clusters for test, stage and prod.</li>
 </ol>
-<pre tabindex="0"><code>gcloud container clusters create testgcpworkshop --zone $ZONE --release-channel=rapid --machine-type=e2-standard-2 --image-type=COS --disk-type=pd-ssd --disk-size=10 --num-nodes=1  --enable-autoupgrade --enable-autorepair
-</code></pre><pre tabindex="0"><code>gcloud container clusters create staginggcpworkshop --zone $ZONE --release-channel=rapid --machine-type=e2-standard-2 --image-type=COS --disk-type=pd-ssd --disk-size=10 --num-nodes=1  --enable-autoupgrade --enable-autorepair 
-</code></pre><pre tabindex="0"><code>gcloud container clusters create gcpworkshop --zone $ZONE --release-channel=rapid --machine-type=e2-standard-2 --image-type=COS --disk-type=pd-ssd --disk-size=10 --num-nodes=1  --enable-autoupgrade --enable-autorepair 
+<pre tabindex="0"><code>gcloud container clusters create testgcpworkshop --zone $ZONE --release-channel=rapid --machine-type=e2-standard-2 --image-type=COS --disk-type=pd-ssd --disk-size=10 --num-nodes=1  --enable-autoupgrade --enable-autorepair --async
+</code></pre><pre tabindex="0"><code>gcloud container clusters create staginggcpworkshop --zone $ZONE --release-channel=rapid --machine-type=e2-standard-2 --image-type=COS --disk-type=pd-ssd --disk-size=10 --num-nodes=1  --enable-autoupgrade --enable-autorepair --async
+</code></pre><pre tabindex="0"><code>gcloud container clusters create gcpworkshop --zone $ZONE --release-channel=rapid --machine-type=e2-standard-2 --image-type=COS --disk-type=pd-ssd --disk-size=10 --num-nodes=1  --enable-autoupgrade --enable-autorepair --async
 </code></pre><p>With this command we have specified the following GKE cluster properties:</p>
 <ul>
 <li>Specified the Kubernetes release channel which controls Kubernetes cluster version updates. Rapid gets the latest Kubernete release as early as possible.</li>
@@ -1367,19 +1367,19 @@ echo $ZONE
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/clipboard.min.js?1644523565"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/perfect-scrollbar.min.js?1644523565"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/perfect-scrollbar.jquery.min.js?1644523565"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/jquery.sticky.js?1644523565"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/featherlight.min.js?1644523565"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/highlight.pack.js?1644523565"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/clipboard.min.js?1644549543"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/perfect-scrollbar.min.js?1644549543"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/perfect-scrollbar.jquery.min.js?1644549543"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/jquery.sticky.js?1644549543"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/featherlight.min.js?1644549543"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/highlight.pack.js?1644549543"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/modernizr.custom-3.6.0.js?1644523565"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/learn.js?1644523565"></script>
-    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/hugo-learn.js?1644523565"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/modernizr.custom-3.6.0.js?1644549543"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/learn.js?1644549543"></script>
+    <script src="https://jfrogtraining.github.io/gcp-gke-workshop/js/hugo-learn.js?1644549543"></script>
     
         
-            <script src="https://jfrogtraining.github.io/gcp-gke-workshop/mermaid/mermaid.js?1644523565"></script>
+            <script src="https://jfrogtraining.github.io/gcp-gke-workshop/mermaid/mermaid.js?1644549543"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
