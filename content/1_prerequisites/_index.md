@@ -9,8 +9,8 @@ The following items are required for this workshop.
 
 - **GCP account** - Click on below link and use this activation code in order to get a GCP account.   
     
-    * **Sign up URL** :  https://bit.ly/3Ld1Yc9
-    *  **Activation code** :  ACTIVATE21724
+    * **Sign up URL** :  https://bit.ly/3uxJ0Hu
+    *  **Activation code** :  ACTIVATE21725
 
 - **JFrog Account** - https://jfrog.co/gcp_nam_6813
     
