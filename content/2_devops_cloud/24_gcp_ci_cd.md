@@ -1,9 +1,9 @@
 ---
 title: "Google Cloud for DevSecOps"
 chapter: false
-weight: 23
+weight: 22
 draft: false
-pre: "<b>2.3 </b>"
+pre: "<b>2.2 </b>"
 ---
 
 ![Cloud Devops](/images/cloud-devops.png)

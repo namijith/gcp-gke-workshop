@@ -29,7 +29,7 @@ We have built and published our NPM package and Docker image. Let's view these r
 
 {{% notice info %}}
 Xray supports all major package types, understands how to unpack them, and uses recursive scanning to see into all of the underlying layers and dependencies of components, even those packaged in Docker images, and zip files.
-The comprehensive vulnerability intelligence databases are constantly updated giving the most up-to-date understanding of the security and compliance of your binaries.
+The comprehensive vulnerability intelligence databases are constantly updated giving the most up-to-date understanding of the security and compliance of your binaries and features like threat contextual analysis, git repo scanning, jira integration, SBOM support for the SPDX and CycloneDX standard formats and many more.
 {{% /notice %}}
 
 8. Close the **Issue Details** tab.

@@ -7,15 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language><atom:link href="https://jfrogtraining.github.io/gcp-gke-workshop/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>DevSecOps</title>
-      <link>https://jfrogtraining.github.io/gcp-gke-workshop/2_devops_cloud/23_dev_sec_ops.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jfrogtraining.github.io/gcp-gke-workshop/2_devops_cloud/23_dev_sec_ops.html</guid>
-      <description>Any security issue identified by a security scanning may be reviewed by a small security team that may lack the technical knowledge. This challenge can be reduced by shifting left to the developer and operations teams, making them also responsible for security and compliance. This moves security earlier in the software delivery process. Source code, dependency and artifact security scanning are some examples of moving security into the development process. Implementing the identification of security issues earlier in the CI/CD pipeline, as well as automating security and compliance policies in the Software Development Lifecycle (SDLC), rather than using manual processes, is crucial.</description>
-    </item>
-    
-    <item>
       <title>JFrog Platform for DevSecOps in the Cloud</title>
       <link>https://jfrogtraining.github.io/gcp-gke-workshop/2_devops_cloud/24_jfrog_platform_overview.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
