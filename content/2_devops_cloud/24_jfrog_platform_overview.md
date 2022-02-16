@@ -19,9 +19,9 @@ With the JFrog DevOps Platform — and in particular with **JFrog Artifactory, J
 
 This treasure trove of information about your software is available both via the JFrog UI and via the JFrog REST API, so you can export it to third-party tools of your choice.
 
-**JFrog Artifactory** is an Artifact Repository Manager that fully supports software packages created by any language or technology. Furthermore, it integrates with all major CI/CD and DevOps tools to provide an end-to-end, automated solution for tracking artifacts from development to production.
+**JFrog Artifactory** is an Artifact Repository Manager that fully supports software packages created by any language or technology. Furthermore, it integrates with all major CI/CD and DevOps tools to provide an end-to-end, automated solution for tracking artifacts from development to production. Also it captures your **buildinfo** with every build which can be used to develop SBOM and keep track of software supply chain.
 
-**JFrog Xray** provides universal artifact analysis, increasing visibility and performance of your software components by recursively scanning all layers of your organization’s binary packages to provide radical transparency and unparalleled insight into your software architecture.
+**JFrog Xray** provides universal artifact analysis, increasing visibility and performance of your software components by recursively scanning all layers of your organization’s binary packages to provide radical transparency and unparalleled insight into your software architecture. Boost your software security with features like **threat contextual analysis, git repo scanning, jira integration, SBOM support for the SPDX and CycloneDX standard formats** and many more.
 
 **JFrog Pipelines** helps automate the non-human part of the whole software development process with continuous integration and empowers teams to implement the technical aspects of continuous delivery.It also produce **pipeinfo** that can be used for SBOM.
 

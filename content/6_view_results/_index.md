@@ -19,9 +19,13 @@ We have built and published our NPM package and Docker image. Let's view these r
 ![Npm Build Published Modules](/images/npm-app-versions.png)
 5. In the **Xray Data** tab, view the security violations. License violations are available in the JFrog Platform Pro and Enterprise tiers.
 ![Npm Build Xray Data](/images/npm-build-xray-data.png)
-6. Click on any violation to see the details and impact in the **Issue Details** tab.
+6. Click on **Actions** drop down and you can download **SBOM** as SPDX or CycloneDX.
+![Xray sbom](/images/xray-sbom.png)
+7. Click on **Descendants** tab to see at which particular layer your softaware is infected.
+![Xray descendants](/images/xray-descendant.png)
+8. Click on any violation to see the details and impact in the **Issue Details** tab.
 ![Npm Build Xray Detail](/images/npm-build-xray-detail.png)
-7. Scroll down to the **References** section to access links to documentation that can help you remediate the issue.
+9. Scroll down to the **References** section to access links to documentation that can help you remediate the issue.
 ![Npm Build Xray Detail References](/images/npm-build-xray-detail-references.png)
 
     In many cases, you just need to update the component and Xray will indicate this.
@@ -32,12 +36,12 @@ Xray supports all major package types, understands how to unpack them, and uses 
 The comprehensive vulnerability intelligence databases are constantly updated giving the most up-to-date understanding of the security and compliance of your binaries and features like threat contextual analysis, git repo scanning, jira integration, SBOM support for the SPDX and CycloneDX standard formats and many more.
 {{% /notice %}}
 
-8. Close the **Issue Details** tab.
-9. View the Docker configuration for the image in the **Docker Layers** tab.
-10. On the **Builds** tab, click on _npm\_build_ in the list.
+10. Close the **Issue Details** tab.
+11. View the Docker configuration for the image in the **Docker Layers** tab.
+12. On the **Builds** tab, click on _npm\_build_ in the list.
 ![Npm Build List](/images/npm-build-list.png)
-11. Then click on your most recent build.
-12. In the **Published Modules** tab, view the set of artifacts and dependencies for your build.
+13. Then click on your most recent build.
+14. In the **Published Modules** tab, view the set of artifacts and dependencies for your build.
 ![Npm Published Modules](/images/npm-published-modules.png)
 
 Our JFrog CLI CI/CD "pipeline" provided an overview of a typical build, docker build and push, security scan and promotion process using Artifactory and Xray.
