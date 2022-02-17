@@ -7,13 +7,6 @@
 	"content": "Welcome In this workshop you will learn about the JFrog Platform and how to leverage Artifactory and Xray for managing your Software Development Lifecycle (SDLC) and bring DevOps to the cloud on Google Cloud Platform.\nLearning Objectives  Understand the roles of Artifactory and Xray in your software delivery life cycle (SDLC). Use the JFrog CLI in your build process. Use Cloud Build, triggers for your CI/CD solution. Use Local, Remote and Virtual Repositories in Artifactory. Publish artifact Build Info. Scan your artifacts and builds for security vulnerabilities. Deploy your application in Google Kubernetes Engine (GKE) using Cloud Deploy.  The examples and sample code provided in this workshop are intended to be consumed as instructional content. These will help you understand how various services can be architected to build a solution while demonstrating best practices along the way. These examples are not intended for use in production environments.\n "
 },
 {
-	"uri": "https://jfrogtraining.github.io/gcp-gke-workshop/1_prerequisites.html",
-	"title": "Prerequisites",
-	"tags": [],
-	"description": "",
-	"content": "The following items are required for this workshop.\n  GCP account - Click on below link and use this activation code in order to get a GCP account.\n Sign up URL : https://bit.ly/3uxJ0Hu Activation code : ACTIVATE21725    JFrog Account - https://jfrog.co/gcp_emea_1132\n  Have a notepad available for saving important workshop data.\n  "
-},
-{
 	"uri": "https://jfrogtraining.github.io/gcp-gke-workshop/2_devops_cloud.html",
 	"title": "Software Supply Chain Security",
 	"tags": [],
