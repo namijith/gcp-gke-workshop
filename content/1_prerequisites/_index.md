@@ -12,9 +12,9 @@ The following items are required for this workshop.
     * **Sign up URL** :  https://bit.ly/3uxJ0Hu
     *  **Activation code** :  ACTIVATE21725
 
-- **JFrog Account** - https://jfrog.co/gcp_nam_6813
+- **JFrog Account** - https://jfrog.co/gcp_emea_1132
     
-    ![jfrog instance](/images/free-tier-instructions.png)
+    ![jfrog instance](/images/gcp-emea.png)
 
 - Have a notepad available for saving important workshop data.
 
